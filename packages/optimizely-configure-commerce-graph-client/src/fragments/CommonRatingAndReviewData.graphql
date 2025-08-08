@@ -1,0 +1,17 @@
+fragment CommonRatingAndReviewData on stagingCommonRatingAndReview {
+  Type
+  __typename
+  CustomCSS
+  Destination {
+    Type
+    Value
+    Url
+  }
+  Id
+  IsLayout
+  MaxNumberOfItems
+  ParentId
+  Title
+  Type
+  Zone
+}

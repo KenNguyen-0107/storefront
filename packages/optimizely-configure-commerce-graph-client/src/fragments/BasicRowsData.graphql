@@ -1,0 +1,13 @@
+fragment BasicRowsData on stagingBasicRows {
+  Type
+  __typename
+  CssClass
+  CustomCSS
+  Gap
+  Id
+  IsFullWidth
+  IsLayout
+  ParentId
+  RowCount
+  Zone
+}

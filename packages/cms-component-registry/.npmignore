@@ -1,0 +1,50 @@
+# Source files (we only publish the lib directory)
+**/*.ts
+**/*.tsx
+!**/*.d.ts
+
+# Config files
+tsconfig.json
+jest.config.js
+jest.setup.js
+.eslintrc.js
+.prettierrc
+.editorconfig
+
+# Tests
+**/__tests__/**
+**/*.test.*
+/coverage
+
+# Git and GitHub
+.git
+.github
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env*
+
+# Documentation source
+/docs
+
+# Scripts
+/scripts
+
+# Other
+.DS_Store
+Thumbs.db
+.cursorindexingignore
+.specstory 

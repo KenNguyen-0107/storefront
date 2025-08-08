@@ -1,0 +1,375 @@
+{
+  "key": "ContainerElementCarousel",
+  "displayName": "Carousel",
+  "contentType": "ContainerElement",
+  "isDefault": true,
+  "settings": {
+    "width": {
+      "displayName": "Width",
+      "editor": "",
+      "sortOrder": 1,
+      "choices": {
+        "full": {
+          "displayName": "Full Width",
+          "sortOrder": 2
+        },
+        "wide": {
+          "displayName": "Wide",
+          "sortOrder": 3
+        },
+        "narrow": {
+          "displayName": "Narrow",
+          "sortOrder": 4
+        }
+      }
+    },
+    "autoSetSpaceBetweenItems": {
+      "displayName": "Auto Set Space Between Items",
+      "editor": "Margins between items in Carousel",
+      "sortOrder": 20,
+      "choices": {
+        "yes": {
+          "displayName": "Yes",
+          "sortOrder": 1
+        },
+        "no": {
+          "displayName": "No",
+          "sortOrder": 2
+        }
+      }
+    },
+    "slidesPerGroupDesktop": {
+      "displayName": "Items in a Slide Desktop",
+      "editor": "Number of items in a slide",
+      "sortOrder": 30,
+      "choices": {
+        "one": {
+          "displayName": "1",
+          "sortOrder": 1
+        },
+        "two": {
+          "displayName": "2",
+          "sortOrder": 2
+        },
+        "three": {
+          "displayName": "3",
+          "sortOrder": 3
+        },
+        "four": {
+          "displayName": "4",
+          "sortOrder": 4
+        },
+        "five": {
+          "displayName": "5",
+          "sortOrder": 5
+        },
+        "six": {
+          "displayName": "6",
+          "sortOrder": 6
+        },
+        "eight": {
+          "displayName": "8",
+          "sortOrder": 7
+        },
+        "sixteen": {
+          "displayName": "16",
+          "sortOrder": 8
+        }
+      }
+    },
+    "slidesPerGroupMobile": {
+      "displayName": "Items in a Slide Mobile",
+      "editor": "Number of items in a slide",
+      "sortOrder": 30,
+      "choices": {
+        "one": {
+          "displayName": "1",
+          "sortOrder": 1
+        },
+        "two": {
+          "displayName": "2",
+          "sortOrder": 2
+        },
+        "three": {
+          "displayName": "3",
+          "sortOrder": 3
+        },
+        "four": {
+          "displayName": "4",
+          "sortOrder": 4
+        },
+        "five": {
+          "displayName": "5",
+          "sortOrder": 5
+        },
+        "six": {
+          "displayName": "6",
+          "sortOrder": 6
+        },
+        "eight": {
+          "displayName": "8",
+          "sortOrder": 7
+        },
+        "sixteen": {
+          "displayName": "16",
+          "sortOrder": 8
+        }
+      }
+    },
+    "slidesPerViewDesktop": {
+      "displayName": "Slide per view Desktop",
+      "editor": "Slide per view Desktop",
+      "sortOrder": 40,
+      "choices": {
+        "one": {
+          "displayName": "1",
+          "sortOrder": 1
+        },
+        "two": {
+          "displayName": "2",
+          "sortOrder": 2
+        },
+        "three": {
+          "displayName": "3",
+          "sortOrder": 3
+        },
+        "four": {
+          "displayName": "4",
+          "sortOrder": 4
+        },
+        "five": {
+          "displayName": "5",
+          "sortOrder": 5
+        }
+      }
+    },
+    "slidesPerViewMobile": {
+      "displayName": "Slide per view Mobile",
+      "editor": "Slide per view Mobile",
+      "sortOrder": 50,
+      "choices": {
+        "one": {
+          "displayName": "1",
+          "sortOrder": 1
+        },
+        "two": {
+          "displayName": "2",
+          "sortOrder": 2
+        }
+      }
+    },
+    "dotPositionDesktop": {
+      "displayName": "Dot Position (Desktop)",
+      "editor": " ",
+      "sortOrder": 50,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 1
+        },
+        "left": {
+          "displayName": "Left",
+          "sortOrder": 2
+        },
+        "right": {
+          "displayName": "Right",
+          "sortOrder": 3
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 4
+        }
+      }
+    },
+    "dotPositionMobile": {
+      "displayName": "Dot Position (Mobile)",
+      "editor": " ",
+      "sortOrder": 60,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 1
+        },
+        "left": {
+          "displayName": "Left",
+          "sortOrder": 2
+        },
+        "right": {
+          "displayName": "Right",
+          "sortOrder": 3
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 4
+        }
+      }
+    },
+    "arrowPositionDesktop": {
+      "displayName": "Arrow Position (Desktop)",
+      "editor": " ",
+      "sortOrder": 70,
+      "choices": {
+        "carousel_edge": {
+          "displayName": "At the edge of carousel grid",
+          "sortOrder": 1
+        },
+        "section_edge": {
+          "displayName": "At the edge of section",
+          "sortOrder": 2
+        },
+        "none": {
+          "displayName": "None",
+          "sortOrder": 3
+        }
+      }
+    },
+    "arrowPositionMobile": {
+      "displayName": "Arrow Position (Mobile)",
+      "editor": " ",
+      "sortOrder": 80,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 1
+        },
+        "show": {
+          "displayName": "Show",
+          "sortOrder": 2
+        }
+      }
+    },
+    "arrowIconDisplay": {
+      "displayName": "Arrow Next Back Position (Desktop)",
+      "editor": " ",
+      "sortOrder": 85,
+      "choices": {
+        "both": {
+          "displayName": "left and right",
+          "sortOrder": 1
+        },
+        "left": {
+          "displayName": "left only",
+          "sortOrder": 2
+        },
+        "right": {
+          "displayName": "right only",
+          "sortOrder": 3
+        }
+      }
+    },
+    "autoPlay": {
+      "displayName": "Auto play",
+      "editor": " ",
+      "sortOrder": 90,
+      "choices": {
+        "no": {
+          "displayName": "No",
+          "sortOrder": 1
+        },
+        "yes": {
+          "displayName": "Yes",
+          "sortOrder": 2
+        }
+      }
+    },
+    "infinite": {
+      "displayName": "Infinite loop",
+      "editor": " ",
+      "sortOrder": 100,
+      "choices": {
+        "no": {
+          "displayName": "No",
+          "sortOrder": 1
+        },
+        "yes": {
+          "displayName": "Yes",
+          "sortOrder": 2
+        }
+      }
+    },
+    "speedMs": {
+      "displayName": "Slide Speed(ms)",
+      "editor": " ",
+      "sortOrder": 110,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 1
+        },
+        "slow": {
+          "displayName": "1000ms",
+          "sortOrder": 2
+        },
+        "medium": {
+          "displayName": "2000ms",
+          "sortOrder": 3
+        },
+        "long": {
+          "displayName": "3000ms",
+          "sortOrder": 4
+        },
+        "veryLong": {
+          "displayName": "4000ms",
+          "sortOrder": 5
+        }
+      }
+    },
+    "autoPlayDelayMS": {
+      "displayName": "Auto Play Delay(ms)",
+      "editor": " ",
+      "sortOrder": 120,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 1
+        },
+        "slow": {
+          "displayName": "1000ms",
+          "sortOrder": 2
+        },
+        "medium": {
+          "displayName": "2000ms",
+          "sortOrder": 3
+        },
+        "long": {
+          "displayName": "3000ms",
+          "sortOrder": 4
+        },
+        "veryLong": {
+          "displayName": "4000ms",
+          "sortOrder": 5
+        }
+      }
+    },
+    "enableBorder": {
+      "displayName": "Enable Border",
+      "editor": " ",
+      "sortOrder": 130,
+      "choices": {
+        "no": {
+          "displayName": "No",
+          "sortOrder": 1
+        },
+        "yes": {
+          "displayName": "Yes",
+          "sortOrder": 2
+        }
+      }
+    },
+    "direction": {
+      "displayName": "direction",
+      "editor": " ",
+      "sortOrder": 140,
+      "choices": {
+        "horizontal": {
+          "displayName": "horizontal",
+          "sortOrder": 1
+        },
+        "vertical": {
+          "displayName": "vertical",
+          "sortOrder": 2
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {
+  MetaTitle
+  MetaDescription
+  MetaKeywords
+  ThumbnailImage {
+    ...ReferenceData
+  }
+}

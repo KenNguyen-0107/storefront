@@ -1,0 +1,33 @@
+fragment ExperienceData on _IExperience {
+  _deleted
+  _fulltext
+  _modified
+  _score
+  _id
+  _metadata {
+    ...IContentInfo
+  }
+  composition {
+    ...CompositionNodeData
+    nodes {
+      ...CompositionNodeData
+      ... on ICompositionStructureNode {
+        nodes {
+          ...CompositionNodeData
+          ... on ICompositionStructureNode {
+            nodes {
+              ...CompositionNodeData
+              ... on ICompositionStructureNode {
+                nodes {
+                  ...CompositionNodeData
+                  ...CompositionComponentNodeData
+                }
+              }
+            }
+          }
+        }
+      }
+      ...CompositionComponentNodeData
+    }
+  }
+}

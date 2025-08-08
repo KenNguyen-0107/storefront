@@ -1,0 +1,58 @@
+{
+  "key": "CardColumn",
+  "displayName": "Card",
+  "nodeType": "column",
+  "isDefault": false,
+  "settings": {
+    "itemOrderOnSmallScreen": {
+      "displayName": "First item on small screen",
+      "editor": "",
+      "sortOrder": 20,
+      "choices": {
+        "normal": {
+          "displayName": "Normal",
+          "sortOrder": 10
+        },
+        "last": {
+          "displayName": "Last",
+          "sortOrder": 20
+        }
+      }
+    },
+    "backgroundColor": {
+      "displayName": "Background Color",
+      "editor": "",
+      "sortOrder": 70,
+      "choices": {
+        "muted": {
+          "displayName": "muted",
+          "sortOrder": 1
+        },
+        "white": {
+          "displayName": "white",
+          "sortOrder": 2
+        },
+        "transparent": {
+          "displayName": "transparent",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "blue",
+          "sortOrder": 4
+        },
+        "red": {
+          "displayName": "red",
+          "sortOrder": 5
+        },
+        "brown": {
+          "displayName": "brown",
+          "sortOrder": 6
+        },
+        "navy": {
+          "displayName": "navy",
+          "sortOrder": 7
+        }
+      }
+    }
+  }
+}

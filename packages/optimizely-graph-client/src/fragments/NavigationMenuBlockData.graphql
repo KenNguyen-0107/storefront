@@ -1,0 +1,7 @@
+fragment NavigationMenuBlockData on NavigationMenuBlock {
+  ...IElementData
+  MenuNavigationHeading
+  NavigationLinks {
+    ...LinkData
+  }
+}

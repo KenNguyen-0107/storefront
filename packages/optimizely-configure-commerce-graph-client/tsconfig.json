@@ -1,0 +1,13 @@
+{
+  "extends": "../../generic-cms/tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": "../..",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/packages/*": ["./packages/*"]
+    }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
+  "exclude": ["./dist/**"]
+}

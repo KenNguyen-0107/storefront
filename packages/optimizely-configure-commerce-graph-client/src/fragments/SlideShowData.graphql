@@ -1,0 +1,24 @@
+fragment SlideShowData on stagingSlideShow {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+  Height
+  TextAlignment
+  ShowArrows
+  SlideIndicator
+  Autoplay
+  ResponsiveFontSizes
+  CustomFontSizes
+  CssClass
+  SlideType
+  SlideContainer {
+    SlideItems {
+      ...SlideItem
+    }
+  }
+}

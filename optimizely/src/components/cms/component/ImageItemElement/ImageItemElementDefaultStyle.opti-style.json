@@ -1,0 +1,381 @@
+{
+  "key": "ImageItemElementDefaultStyle",
+  "displayName": "Default",
+  "contentType": "ImageItemElement",
+  "isDefault": true,
+  "settings": {
+    "aspectRatio": {
+      "displayName": "Image aspect ratio",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "square": {
+          "displayName": "Square (1:1)",
+          "sortOrder": 10
+        },
+        "banner": {
+          "displayName": "Banner (4:1)",
+          "sortOrder": 20
+        },
+        "monitor": {
+          "displayName": "Classic Monitor (4:3)",
+          "sortOrder": 30
+        },
+        "photo": {
+          "displayName": "Photo (3:2)",
+          "sortOrder": 40
+        },
+        "widescreen": {
+          "displayName": "Widescreen (16:9)",
+          "sortOrder": 50
+        }
+      }
+    },
+    "imageHeight": {
+      "displayName": "Image Height",
+      "editor": "",
+      "sortOrder": 20,
+      "choices": {
+        "large": {
+          "displayName": "large",
+          "sortOrder": 10
+        },
+        "medium": {
+          "displayName": "medium",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "small",
+          "sortOrder": 20
+        }
+      }
+    },
+    "orientation": {
+      "displayName": "Image orientation",
+      "editor": "",
+      "sortOrder": 30,
+      "choices": {
+        "landscape": {
+          "displayName": "landscape",
+          "sortOrder": 10
+        },
+        "portrait": {
+          "displayName": "portrait",
+          "sortOrder": 20
+        }
+      }
+    },
+    "paddingTop": {
+      "displayName": "Padding Top",
+      "editor": "selectOne",
+      "sortOrder": 200,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingBottom": {
+      "displayName": "Padding Bottom",
+      "editor": "selectOne",
+      "sortOrder": 210,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingLeft": {
+      "displayName": "Padding Left",
+      "editor": "selectOne",
+      "sortOrder": 220,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingRight": {
+      "displayName": "Padding Right",
+      "editor": "selectOne",
+      "sortOrder": 230,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingTopDesktop": {
+      "displayName": "Padding Top Desktop",
+      "editor": "selectOne",
+      "sortOrder": 240,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingBottomDesktop": {
+      "displayName": "Padding Bottom Desktop",
+      "editor": "selectOne",
+      "sortOrder": 250,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingLeftDesktop": {
+      "displayName": "Padding Left Desktop",
+      "editor": "selectOne",
+      "sortOrder": 260,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingRightDesktop": {
+      "displayName": "Padding Right Desktop",
+      "editor": "selectOne",
+      "sortOrder": 270,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "eight_px": {
+          "displayName": "8px",
+          "sortOrder": 20
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 30
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 40
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 50
+        },
+        "forty_px": {
+          "displayName": "40px",
+          "sortOrder": 60
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 70
+        },
+        "one_twenty_px": {
+          "displayName": "120px",
+          "sortOrder": 80
+        }
+      }
+    }
+  }
+}

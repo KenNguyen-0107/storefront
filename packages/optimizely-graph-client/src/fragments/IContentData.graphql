@@ -1,0 +1,11 @@
+fragment IContentData on _IContent {
+  _deleted
+  _fulltext
+  _modified
+  _score
+  _id
+  _metadata {
+    ...IContentInfo
+  }
+  _type: __typename
+}

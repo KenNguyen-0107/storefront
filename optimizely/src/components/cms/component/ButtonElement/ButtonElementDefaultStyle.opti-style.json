@@ -1,0 +1,221 @@
+{
+  "key": "ButtonElementDefaultStyle",
+  "displayName": "Default",
+  "contentType": "ButtonElement",
+  "isDefault": true,
+  "created": "2025-07-17T09:48:34.6387196+00:00",
+  "createdBy": "trang.ntt@niteco.se",
+  "lastModified": "2025-07-24T04:35:18.6662451+00:00",
+  "lastModifiedBy": "trang.ntt@niteco.se",
+  "settings": {
+    "buttonType": {
+      "displayName": "Button Type",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "primary": {
+          "displayName": "Primary",
+          "sortOrder": 10
+        },
+        "secondary": {
+          "displayName": "Secondary",
+          "sortOrder": 20
+        },
+        "emphasize": {
+          "displayName": "Emphasize",
+          "sortOrder": 30
+        },
+        "stroke": {
+          "displayName": "Stroke",
+          "sortOrder": 40
+        },
+        "stroke_blue": {
+          "displayName": "Stroke-blue",
+          "sortOrder": 50
+        },
+        "link": {
+          "displayName": "Link",
+          "sortOrder": 60
+        }
+      }
+    },
+    "displayPosition": {
+      "displayName": "display Position",
+      "editor": "display position on column",
+      "sortOrder": 20,
+      "choices": {
+        "default": {
+          "displayName": "default",
+          "sortOrder": 10
+        },
+        "relative": {
+          "displayName": "relative",
+          "sortOrder": 20
+        },
+        "absolute": {
+          "displayName": "absolute",
+          "sortOrder": 20
+        }
+      }
+    },
+    "maxWidth": {
+      "displayName": "max Width",
+      "editor": "",
+      "sortOrder": 30,
+      "choices": {
+        "large": {
+          "displayName": "large",
+          "sortOrder": 0
+        },
+        "medium": {
+          "displayName": "medium",
+          "sortOrder": 0
+        },
+        "small": {
+          "displayName": "small",
+          "sortOrder": 0
+        }
+      }
+    },
+    "buttonAlign": {
+      "displayName": "Align button",
+      "editor": "selectOne",
+      "sortOrder": 20,
+      "choices": {
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 10
+        },
+        "left": {
+          "displayName": "Left",
+          "sortOrder": 20
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 30
+        },
+        "right": {
+          "displayName": "Right",
+          "sortOrder": 40
+        }
+      }
+    },
+    "margin": {
+      "displayName": "Margin",
+      "editor": "selectOne",
+      "sortOrder": 280,
+      "choices": {
+        "none": {
+          "displayName": "none",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    },
+    "marginTop": {
+      "displayName": "Margin Top",
+      "editor": "selectOne",
+      "sortOrder": 60,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    },
+    "marginBottom": {
+      "displayName": "Margin Bottom",
+      "editor": "selectOne",
+      "sortOrder": 70,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    }
+  }
+}

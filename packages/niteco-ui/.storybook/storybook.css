@@ -1,0 +1,28 @@
+/* Storybook-specific font definitions */
+
+:root {
+    --font-lora: "Lora", Georgia, serif;
+}
+
+
+/* Ensure font-accent uses Lora properly in Storybook */
+
+.font-accent {
+    font-family: var(--font-lora), Georgia, serif;
+}
+
+
+/* Additional utility classes for Lora font */
+
+.font-lora {
+    font-family: var(--font-lora), Georgia, serif;
+}
+
+.text-lora {
+    font-family: var(--font-lora), Georgia, serif;
+}
+
+@font-face {
+    font-family: "frutigerBold";
+    src: local("frutigerBold"), url("../public/fonts/new-frutiger-bold.woff2") format("opentype") tech(color-COLRv1);
+}

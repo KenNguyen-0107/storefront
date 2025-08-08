@@ -1,0 +1,77 @@
+fragment Cart on Cart {
+  discountCodes
+  showPricesIncludingVat
+  productTotalIncludingVat
+  productTotalExcludingVat
+  shippingCostIncludingVat
+  shippingCostExcludingVat
+  totalFeesIncludingVat
+  totalFeesExcludingVat
+  totalPromotionsAndDiscountsIncludingVat
+  totalPromotionsAndDiscountsExcludingVat
+  grandTotal
+  totalVat
+  productCount
+  giftCards
+  country {
+    ...Country
+  }
+  currency {
+    ...Currency
+  }
+  rows {
+    ...OrderRow
+  }
+  discountInfos {
+    ...DiscountInfo
+  }
+}
+
+fragment CartMutation on Cart {
+  discountCodes
+  showPricesIncludingVat
+  productTotalIncludingVat
+  productTotalExcludingVat
+  shippingCostIncludingVat
+  shippingCostExcludingVat
+  totalFeesIncludingVat
+  totalFeesExcludingVat
+  totalPromotionsAndDiscountsIncludingVat
+  totalPromotionsAndDiscountsExcludingVat
+  grandTotal
+  totalVat
+  productCount
+  giftCards
+}
+
+fragment OrderRow on OrderRow {
+  rowId
+  articleNumber
+  quantity
+  description
+  rowType
+  unitPriceIncludingVat
+  unitPriceExcludingVat
+  totalIncludingVat
+  totalExcludingVat
+  totalVat
+  vatRate
+  product {
+    id
+    name
+    articleNumber
+  }
+  additionalInfo {
+    key
+    value
+  }
+  unitOfMeasurement {
+    ...UnitOfMeasurement
+  }
+  vatDetails {
+    ...VatDetail
+  }
+  discountInfos {
+    ...DiscountInfo
+  }
+}

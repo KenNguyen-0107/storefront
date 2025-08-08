@@ -1,0 +1,3 @@
+fragment PDPSpecificationsElementData on PDPSpecificationsElement {
+  empty: _metadata { key }
+}

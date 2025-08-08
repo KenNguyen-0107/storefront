@@ -1,0 +1,9 @@
+query getHeader {
+  header: WebHeaderConfigrationBlock(
+    where: { _metadata: { status: { eq: "Published" } } }
+  ) {
+    item {
+      ...WebHeaderConfigrationBlockData
+    }
+  }
+}

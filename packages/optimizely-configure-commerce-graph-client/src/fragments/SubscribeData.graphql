@@ -1,0 +1,10 @@
+fragment SubscribeData on stagingSubscribe {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+}

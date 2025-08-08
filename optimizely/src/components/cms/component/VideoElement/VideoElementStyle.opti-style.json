@@ -1,0 +1,160 @@
+{
+  "key": "VideoElementDefaultStyle",
+  "displayName": "Default",
+  "contentType": "VideoElement",
+  "isDefault": true,
+  "created": "2025-07-17T09:48:34.5298913+00:00",
+  "createdBy": "trang.ntt@niteco.se",
+  "lastModified": "2025-07-24T04:35:18.6016343+00:00",
+  "lastModifiedBy": "trang.ntt@niteco.se",
+  "settings": {
+    "paddingY": {
+      "displayName": "Padding Top Bottom",
+      "editor": "selectOne",
+      "sortOrder": 60,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "paddingX": {
+      "displayName": "Padding Left Right",
+      "editor": "selectOne",
+      "sortOrder": 140,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "marginTop": {
+      "displayName": "Margin Top",
+      "editor": "selectOne",
+      "sortOrder": 150,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    },
+    "marginBottom": {
+      "displayName": "Margin Bottom",
+      "editor": "selectOne",
+      "sortOrder": 160,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    }
+  }
+}

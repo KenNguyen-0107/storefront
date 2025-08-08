@@ -1,0 +1,251 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Performance Guidelines
+
+## React Performance
+
+1. **Component Optimization**
+   ```typescript
+   // components/optimized-list.tsx
+   const MemoizedItem = memo(function ListItem({ data }: Props) {
+     return <div>{data.title}</div>;
+   }, (prev, next) => prev.data.id === next.data.id);
+
+   function VirtualizedList({ items }: ListProps) {
+     const renderItem = useCallback(({ index }) => (
+       <MemoizedItem data={items[index]} />
+     ), [items]);
+
+     return (
+       <VirtualScroller
+         itemCount={items.length}
+         renderItem={renderItem}
+         itemSize={50}
+       />
+     );
+   }
+   ```
+
+2. **Hook Optimization**
+   ```typescript
+   // hooks/use-debounced-search.ts
+   function useDebouncedSearch<T>(
+     searchFn: (query: string) => Promise<T[]>,
+     delay = 300
+   ) {
+     const [query, setQuery] = useState('');
+     const [results, setResults] = useState<T[]>([]);
+     
+     const debouncedSearch = useMemo(
+       () => debounce(searchFn, delay),
+       [searchFn, delay]
+     );
+
+     useEffect(() => {
+       debouncedSearch(query).then(setResults);
+     }, [query, debouncedSearch]);
+
+     return { query, setQuery, results };
+   }
+   ```
+
+## Cloudflare Worker Performance
+
+1. **Caching Strategy**
+   ```typescript
+   // cache/strategy.ts
+   interface CacheConfig {
+     ttl: number;
+     staleWhileRevalidate: boolean;
+     cacheTags: string[];
+   }
+
+   async function getCachedResponse(
+     request: Request,
+     config: CacheConfig
+   ): Promise<Response> {
+     const cache = caches.default;
+     let response = await cache.match(request);
+
+     if (!response) {
+       response = await fetchAndCache(request, config);
+     } else if (isStale(response) && config.staleWhileRevalidate) {
+       // Return stale response while fetching fresh one
+       revalidateInBackground(request, config);
+     }
+
+     return response;
+   }
+   ```
+
+2. **Request Coalescing**
+   ```typescript
+   // utils/request-coalescing.ts
+   class RequestCoalescer {
+     private ongoing = new Map<string, Promise<Response>>();
+
+     async fetch(request: Request): Promise<Response> {
+       const key = this.getKey(request);
+       
+       if (this.ongoing.has(key)) {
+         return this.ongoing.get(key)!.then(r => r.clone());
+       }
+
+       const promise = fetch(request).finally(() => {
+         this.ongoing.delete(key);
+       });
+
+       this.ongoing.set(key, promise);
+       return promise;
+     }
+   }
+   ```
+
+## Image Optimization
+
+1. **Image Loading**
+   ```typescript
+   // components/optimized-image.tsx
+   interface ImageProps {
+     src: string;
+     width: number;
+     height: number;
+     priority?: boolean;
+   }
+
+   function OptimizedImage({ src, width, height, priority }: ImageProps) {
+     return (
+       <img
+         src={src}
+         width={width}
+         height={height}
+         loading={priority ? 'eager' : 'lazy'}
+         decoding="async"
+         srcSet={generateSrcSet(src)}
+         sizes={generateSizes(width)}
+       />
+     );
+   }
+   ```
+
+2. **Image Processing**
+   ```typescript
+   // utils/image-processing.ts
+   interface ImageProcessingOptions {
+     width: number;
+     quality: number;
+     format: 'webp' | 'avif' | 'jpeg';
+   }
+
+   async function optimizeImage(
+     buffer: ArrayBuffer,
+     options: ImageProcessingOptions
+   ): Promise<ArrayBuffer> {
+     // Implementation using Sharp or similar
+     return processedBuffer;
+   }
+   ```
+
+## Bundle Optimization
+
+1. **Code Splitting**
+   ```typescript
+   // app/routes.tsx
+   const UserDashboard = lazy(() => import('./pages/UserDashboard'));
+   const Settings = lazy(() => import('./pages/Settings'));
+
+   function Routes() {
+     return (
+       <Suspense fallback={<LoadingSpinner />}>
+         <Switch>
+           <Route path="/dashboard" component={UserDashboard} />
+           <Route path="/settings" component={Settings} />
+         </Switch>
+       </Suspense>
+     );
+   }
+   ```
+
+2. **Bundle Analysis**
+   ```typescript
+   // webpack.config.js
+   module.exports = {
+     plugins: [
+       new BundleAnalyzerPlugin({
+         analyzerMode: 'static',
+         reportFilename: 'bundle-report.html'
+       })
+     ],
+     optimization: {
+       splitChunks: {
+         chunks: 'all',
+         maxInitialRequests: 25,
+         minSize: 20000
+       }
+     }
+   };
+   ```
+
+## Performance Monitoring
+
+1. **Web Vitals Tracking**
+   ```typescript
+   // monitoring/web-vitals.ts
+   function reportWebVitals({ id, name, value }: Metric) {
+     analytics.track('Web Vitals', {
+       metric: name,
+       value: Math.round(name === 'CLS' ? value * 1000 : value),
+       rating: getRating(name, value),
+       id
+     });
+   }
+   ```
+
+2. **Performance Marks**
+   ```typescript
+   // monitoring/performance-marks.ts
+   class PerformanceMonitor {
+     start(label: string) {
+       performance.mark(`${label}-start`);
+     }
+
+     end(label: string) {
+       performance.mark(`${label}-end`);
+       performance.measure(label, 
+         `${label}-start`, 
+         `${label}-end`
+       );
+     }
+
+     report() {
+       const measures = performance.getEntriesByType('measure');
+       return measures.map(measure => ({
+         name: measure.name,
+         duration: measure.duration
+       }));
+     }
+   }
+   ```
+
+## Best Practices
+
+1. **React Optimization**
+   - Use memo for expensive renders
+   - Implement virtualization for long lists
+   - Lazy load components
+   - Use proper key props
+
+2. **Network Optimization**
+   - Implement proper caching
+   - Use HTTP/2 or HTTP/3
+   - Compress responses
+   - Optimize API responses
+
+3. **Resource Loading**
+   - Preload critical resources
+   - Lazy load images
+   - Use appropriate image formats
+   - Implement resource hints

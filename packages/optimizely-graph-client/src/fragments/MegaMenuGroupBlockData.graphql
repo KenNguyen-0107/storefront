@@ -1,0 +1,10 @@
+fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {
+  ...IElementData
+  MenuMenuHeading
+  MegaMenuUrl {
+    ...ContentUrlData
+  }
+  MegaMenuContentArea {
+    ...IContentData
+  }
+}

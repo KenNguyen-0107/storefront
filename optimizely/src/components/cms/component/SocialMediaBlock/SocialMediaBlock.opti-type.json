@@ -1,0 +1,34 @@
+{
+  "key": "SocialMediaBlock",
+  "displayName": "Social Media Block",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {
+    "URLMedia": {
+      "type": "component",
+      "contentType": "link",
+      "displayName": "URL Media",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "imageIcon": {
+      "type": "component",
+      "contentType": "ImageItemElement",
+      "displayName": "imageIcon",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    }
+  }
+}

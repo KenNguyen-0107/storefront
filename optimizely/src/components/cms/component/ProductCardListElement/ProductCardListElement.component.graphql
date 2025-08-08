@@ -1,0 +1,11 @@
+fragment ProductCardListElementData on ProductCardListElement {
+  CategoryID
+  EnableFilter
+  EnableSorting
+  DefaultView
+  EnableProductCount
+  VisibleElements {
+    ...ReferenceData
+  }
+  PagingSize
+}

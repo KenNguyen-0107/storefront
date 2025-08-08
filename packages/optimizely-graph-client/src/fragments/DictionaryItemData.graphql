@@ -1,0 +1,5 @@
+fragment DictionaryItemData on DictionaryItem {
+  ...IElementData
+  DictionaryItemKey
+  DictionaryItemValue
+}

@@ -1,0 +1,14 @@
+fragment ImageItemElementData on ImageItemElement {
+  ImageDesktop {
+    ...ReferenceData
+  }
+  ImageMobile {
+    ...ReferenceData
+  }
+  Loading
+  Alt
+  IsFullWidthImage
+  IsBackground
+  OverlayOpacity
+  OverlayColor
+}

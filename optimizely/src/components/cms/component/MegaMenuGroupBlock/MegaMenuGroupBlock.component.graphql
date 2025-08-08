@@ -1,0 +1,15 @@
+fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {
+  MenuMenuHeading
+  MegaMenuUrl {
+    ...LinkData
+  }
+  MegaMenuContentArea {
+    ...IContentListItem
+    ...NavigationMenuBlockData
+    ...ButtonElementData
+    ...SocialMediaBlockData
+    ...ContentTextElementData
+    ...SocialMediaBlocksData
+  }
+  ExpandableMobile
+}

@@ -1,0 +1,106 @@
+#import "../fragments/B2BHomePageData.graphql"
+#import "../fragments/B2BPageData.graphql"
+#import "../fragments/ProductListPageData.graphql"
+#import "../fragments/BasicBannerData.graphql"
+#import "../fragments/BasicButtonData.graphql"
+#import "../fragments/BasicGridData.graphql"
+#import "../fragments/BasicImageData.graphql"
+#import "../fragments/BasicLinkData.graphql"
+#import "../fragments/BasicLogoData.graphql"
+#import "../fragments/BasicPageTitleData.graphql"
+#import "../fragments/BasicQuestionAnswersData.graphql"
+#import "../fragments/BasicRichContentData.graphql"
+#import "../fragments/BasicRowData.graphql"
+#import "../fragments/BasicRowsData.graphql"
+#import "../fragments/BasicSocialLinksData.graphql"
+#import "../fragments/CategoryListData.graphql"
+#import "../fragments/CommonCartLinkData.graphql"
+#import "../fragments/CommonHeaderSignInData.graphql"
+#import "../fragments/CommonPlaceholderData.graphql"
+#import "../fragments/CommonProductCarouselData.graphql"
+#import "../fragments/CommonRatingAndReviewData.graphql"
+#import "../fragments/CommonSignInData.graphql"
+#import "../fragments/FooterContainerData.graphql"
+#import "../fragments/HeaderMainNavigationData.graphql"
+#import "../fragments/HeaderSearchInputData.graphql"
+#import "../fragments/LinkListData.graphql"
+#import "../fragments/ProductDetailsViewData.graphql"
+#import "../fragments/ProductListCardListData.graphql"
+#import "../fragments/ProductListColumnsData.graphql"
+#import "../fragments/SharedContentData.graphql"
+#import "../fragments/SlideShowData.graphql"
+#import "../fragments/SlideItem.graphql"
+#import "../fragments/SubscribeData.graphql"
+#import "../fragments/ButtonLink.graphql"
+#import "../fragments/CustomVideoData.graphql"
+
+query GetContentByPath($path: String!, $siteId: String!) {
+  stagingB2BPage(where: { Url: { eq: $path }, WebsiteId: { eq: $siteId } }) {
+    items {
+      Type
+      Locales {
+        Items {
+          Code
+          Segment
+          IsDefault
+        }
+      }
+      Language {
+        _deleted
+        _modified
+        _score
+        _id
+        Id
+        LanguageCode
+        CultureCode
+        Description
+      }
+      ...B2BHomePageData
+      ...B2BPageData
+      ...ProductListPageData
+      HideFromSearchEngines
+      BreadcrumbContainer {
+        BreadCrumbs {
+          PageUrl
+          PageTitle
+          PageId
+        }
+      }
+      WidgetContainer {
+        __typename
+        Widgets {
+          ...BasicBannerData
+          ...BasicButtonData
+          ...BasicGridData
+          ...BasicImageData
+          ...BasicLinkData
+          ...BasicLogoData
+          ...BasicPageTitleData
+          ...BasicQuestionAnswersData
+          ...BasicRichContentData
+          ...BasicRowData
+          ...BasicRowsData
+          ...BasicSocialLinksData
+          ...CategoryListData
+          ...CommonCartLinkData
+          ...CommonHeaderSignInData
+          ...CommonPlaceholderData
+          ...CommonProductCarouselData
+          ...CommonRatingAndReviewData
+          ...CommonSignInData
+          ...FooterContainerData
+          ...HeaderMainNavigationData
+          ...HeaderSearchInputData
+          ...LinkListData
+          ...ProductDetailsViewData
+          ...ProductListCardListData
+          ...ProductListColumnsData
+          ...SharedContentData
+          ...SlideShowData
+          ...SubscribeData
+          ...CustomVideoData
+        }
+      }
+    }
+  }
+}

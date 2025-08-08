@@ -1,0 +1,36 @@
+{
+  "key": "ContentTextElement",
+  "displayName": "ContentText",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "Heading": {
+      "type": "string",
+      "format": "html",
+      "displayName": "Heading",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 10,
+      "editorSettings": {}
+    },
+    "Paragraph": {
+      "type": "string",
+      "format": "html",
+      "displayName": "Paragraph",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 20,
+      "editorSettings": {}
+    }
+  }
+}

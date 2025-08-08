@@ -1,0 +1,19 @@
+fragment SocialMediaBlockData on SocialMediaBlock {
+  URLMedia {
+    ...LinkPropertyData
+  }
+  imageIcon {
+    ImageDesktop {
+      ...ReferenceData
+    }
+    ImageMobile {
+      ...ReferenceData
+    }
+    Loading
+    OverlayColor
+    OverlayOpacity
+    Alt
+    IsFullWidthImage
+    IsBackground
+  }
+}

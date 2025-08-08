@@ -1,0 +1,224 @@
+{
+  "key": "ImageTextItemElementCategoryItemStyle",
+  "displayName": "CategoryItem",
+  "contentType": "ImageTextItemElement",
+  "isDefault": false,
+  "settings": {
+    "buttonType": {
+      "displayName": "Button Type",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "primary": {
+          "displayName": "primary",
+          "sortOrder": 10
+        },
+        "secondary": {
+          "displayName": "secondary",
+          "sortOrder": 20
+        },
+        "emphasize": {
+          "displayName": "emphasize",
+          "sortOrder": 30
+        },
+        "stroke": {
+          "displayName": "stroke",
+          "sortOrder": 40
+        },
+        "stroke_blue": {
+          "displayName": "stroke-blue",
+          "sortOrder": 50
+        },
+        "link": {
+          "displayName": "link",
+          "sortOrder": 60
+        }
+      }
+    },
+    "headingType": {
+      "displayName": "Heading Type",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "h1": {
+          "displayName": "Heading 1",
+          "sortOrder": 10
+        },
+        "h2": {
+          "displayName": "Heading 2",
+          "sortOrder": 20
+        },
+        "h3": {
+          "displayName": "Heading 3",
+          "sortOrder": 30
+        },
+        "h4": {
+          "displayName": "Heading 4",
+          "sortOrder": 40
+        },
+        "h5": {
+          "displayName": "Heading 5",
+          "sortOrder": 50
+        },
+        "h6": {
+          "displayName": "Heading 6",
+          "sortOrder": 60
+        },
+        "plain": {
+          "displayName": "Plain text",
+          "sortOrder": 250
+        }
+      }
+    },
+    "verticalSpacing": {
+      "displayName": "Vertical Spacing",
+      "editor": "Vertical spacing between Heading & Paragraph",
+      "sortOrder": 20,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 20
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 30
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 40
+        },
+        "fourty_px": {
+          "displayName": "40px",
+          "sortOrder": 50
+        },
+        "fourty_eight_px": {
+          "displayName": "48px",
+          "sortOrder": 60
+        },
+        "fifty_px": {
+          "displayName": "50px",
+          "sortOrder": 70
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "justifyAlign": {
+      "displayName": "Justify Align",
+      "editor": "",
+      "sortOrder": 30,
+      "choices": {
+        "left": {
+          "displayName": "Left",
+          "sortOrder": 1
+        },
+        "right": {
+          "displayName": "Right",
+          "sortOrder": 2
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 3
+        }
+      }
+    },
+    "verticalAlign": {
+      "displayName": "Vertical Align",
+      "editor": "",
+      "sortOrder": 40,
+      "choices": {
+        "top": {
+          "displayName": "Top",
+          "sortOrder": 1
+        },
+        "middle": {
+          "displayName": "Middle",
+          "sortOrder": 2
+        },
+        "bottom": {
+          "displayName": "Bottom",
+          "sortOrder": 3
+        }
+      }
+    },
+    "textTransform": {
+      "displayName": "Text Transform",
+      "editor": "",
+      "sortOrder": 50,
+      "choices": {
+        "as_entered": {
+          "displayName": "As entered",
+          "sortOrder": 1
+        },
+        "uppercase": {
+          "displayName": "Uppercase",
+          "sortOrder": 2
+        },
+        "lowercase": {
+          "displayName": "Lowercase",
+          "sortOrder": 3
+        },
+        "capitalized": {
+          "displayName": "Capitalized",
+          "sortOrder": 4
+        }
+      }
+    },
+    "showAs": {
+      "displayName": "Render as",
+      "editor": "",
+      "sortOrder": 60,
+      "choices": {
+        "heading": {
+          "displayName": "Heading element",
+          "sortOrder": 10
+        },
+        "element": {
+          "displayName": "Basic element",
+          "sortOrder": 20
+        }
+      }
+    },
+    "backgroundColor": {
+      "displayName": "Background Color",
+      "editor": "",
+      "sortOrder": 70,
+      "choices": {
+        "muted": {
+          "displayName": "muted",
+          "sortOrder": 1
+        },
+        "white": {
+          "displayName": "white",
+          "sortOrder": 2
+        },
+        "transparent": {
+          "displayName": "transparent",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "blue",
+          "sortOrder": 4
+        },
+        "red": {
+          "displayName": "red",
+          "sortOrder": 5
+        },
+        "brown": {
+          "displayName": "brown",
+          "sortOrder": 6
+        },
+        "navy": {
+          "displayName": "navy",
+          "sortOrder": 7
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "key": "FAQsSection",
+  "displayName": "FAQs Section",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "sectionEnabled"
+  ],
+  "properties": {
+    "HeadingText": {
+      "type": "string",
+      "displayName": "Heading Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "allowMultiple": {
+      "type": "boolean",
+      "displayName": "Allow multiple expand item",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 275,
+      "editorSettings": {}
+    },
+    "ListItem": {
+      "type": "array",
+      "displayName": "ListItem",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 300,
+      "editorSettings": {},
+      "items": {
+        "type": "content",
+        "allowedTypes": [
+          "ContentTextElement"
+        ],
+        "restrictedTypes": []
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+fragment HeaderSearchInputData on stagingHeaderSearchInput {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+}

@@ -1,0 +1,34 @@
+fragment Page on IPageItem {
+  id
+  name
+  url
+  metadata {
+    ...Metadata
+  }
+}
+
+fragment ArticlePage on ArticlePage {
+  ...Page
+  templateName
+  fields {
+    _name
+    title
+    introduction
+  }
+}
+
+fragment ProductListPage on ProductListPage {
+  ...Page
+  templateName
+  fields {
+    _name
+  }
+}
+
+fragment HomePage on HomePage {
+  ...Page
+  templateName
+  fields {
+    _name
+  }
+}

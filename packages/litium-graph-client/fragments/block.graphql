@@ -1,0 +1,433 @@
+fragment SectionBlock on SectionBlock {
+  __typename
+  fields {
+    __typename
+    _name
+    backgroundColorHex
+    paddingX {
+      ...IntOption
+    }
+    paddingXDesktop {
+      ...IntOption
+    }
+    paddingY {
+      ...IntOption
+    }
+    paddingYDesktop {
+      ...IntOption
+    }
+  }
+  children {
+    ...RowBlock
+  }
+}
+
+fragment RowBlock on RowBlock {
+  __typename
+  fields {
+    __typename
+    _name
+    rowWidthOptionDesktop {
+      ...TextOption
+    }
+    rowWidthOptionMobile {
+      ...TextOption
+    }
+    numberOfItemOnDesktop
+    numberOfItemOnMobile
+    contentSpaceXDesktop {
+      ...IntOption
+    }
+    contentSpaceX {
+      ...IntOption
+    }
+    contentSpaceY {
+      ...IntOption
+    }
+    contentSpaceYDesktop {
+      ...IntOption
+    }
+    commonStyles {
+      ...CommonStylesBlock
+    }
+    backgroundColorHex
+    backgroundColorOpacity
+    blockHeight
+  }
+  children {
+    ...ColumnBlock
+    ...ContentBlockTypes
+    ...TopHeader
+    ...FooterColumnBlock
+  }
+}
+
+fragment ColumnBlock on ColumnBlock {
+  __typename
+  templateName
+  systemId
+  fields {
+    __typename
+    _name
+    commonStyles {
+      ...CommonStylesBlock
+    }
+    numberOfItemOnDesktop
+    numberOfItemOnMobile
+    widthOptionDesktop {
+      ...TextOption
+    }
+    widthOptionMobile {
+      ...TextOption
+    }
+    blockHeight
+    contentSpaceX {
+      ...IntOption
+    }
+    contentSpaceXDesktop {
+      ...IntOption
+    }
+    contentSpaceY {
+      ...IntOption
+    }
+    contentSpaceYDesktop {
+      ...IntOption
+    }
+  }
+  children {
+    __typename
+    ...ContentBlockTypes
+  }
+}
+
+fragment FooterColumnBlock on FooterColumnBlock {
+  __typename
+  templateName
+  systemId
+  fields {
+    __typename
+    _name
+    navigationLinksHeader {
+      ...Link
+    }
+    richText
+  }
+  children {
+    __typename
+    ...ContentBlockTypes
+  }
+}
+
+fragment ContentBlockTypes on IBlock {
+  __typename
+  ...BannerItemBlock
+  ...ImageTextItemBlock
+  ...SliderBlock
+  ...SubscribeBlock
+  ...TopHeader
+  ...NavigationLinksBlock
+  ...ImageListBlock
+  ...ButtonBlock
+  ...RichContentBlock
+}
+
+fragment ImageTextItemBlock on ImageTextItemBlock {
+  __typename
+  fields {
+    __typename
+    _name
+    commonStyles {
+      ...CommonStylesBlock
+    }
+    richText
+    contentImage {
+      ...ContentImage
+    }
+    contentImagePosition {
+      ...TextOption
+    }
+    button {
+      ...Button
+    }
+    backgroundColorHex
+    backgroundLink {
+      ...Link
+    }
+    loading {
+      ...TextOption
+    }
+  }
+}
+
+fragment SliderBlock on SliderBlock {
+  __typename
+  fields {
+    __typename
+    _name
+    autoplay
+    autoplayDelayMs
+    infinite
+    arrowsDesktop
+    arrowsMobile
+    arrowPosition {
+      ...TextOption
+    }
+    paginationDotsDesktop
+    paginationDotsMobile
+    paginationDotsOverlapDesktop
+    paginationDotsOverlapMobile
+    slidesPerViewDesktop
+    slidesPerViewMobile
+    slidesPerGroupDesktop
+    slidesPerGroupMobile
+    speedMs
+    centeredSlides
+    direction {
+      ...TextOption
+    }
+    commonStyles {
+      ...CommonStylesBlock
+    }
+    contentSpaceX {
+      ...IntOption
+    }
+    contentSpaceXDesktop {
+      ...IntOption
+    }
+    contentSpaceY {
+      ...IntOption
+    }
+    contentSpaceYDesktop {
+      ...IntOption
+    }
+  }
+  children {
+    __typename
+    ...ImageTextItemBlock
+    ...BannerItemBlock
+  }
+}
+
+fragment SubscribeBlock on SubscribeBlock {
+  __typename
+  fields {
+    __typename
+    _name
+    richText
+    subscribeInputText
+    placeholderText
+    button {
+      ...Button
+    }
+
+    commonStyles {
+      ...CommonStylesBlock
+    }
+  }
+}
+
+fragment BannerItemBlock on BannerItemBlock {
+  __typename
+  fields {
+    __typename
+    _name
+    commonStyles {
+      ...CommonStylesBlock
+    }
+    richText
+    backgroundColorOverlay
+    backgroundColorOverlayOpacity
+    contentImage {
+      ...ContentImage
+    }
+
+    backgroundLink {
+      ...Link
+    }
+
+    button {
+      ...Button
+    }
+
+    blockHeight
+    loading {
+      ...TextOption
+    }
+  }
+}
+
+fragment Button on ButtonBlockFieldDefinition {
+  __typename
+  cssClass
+  buttonLink {
+    ...Link
+  }
+  buttonType {
+    ...TextOption
+  }
+}
+
+fragment CommonStylesBlock on CommonStylesBlockFieldDefinition {
+  __typename
+  cssClass
+  textAlign {
+    ...TextOption
+  }
+  verticalAlign {
+    ...TextOption
+  }
+  paddingTop {
+    ...IntOption
+  }
+  paddingRight {
+    ...IntOption
+  }
+  paddingBottom {
+    ...IntOption
+  }
+  paddingLeft {
+    ...IntOption
+  }
+  marginTop {
+    ...IntOption
+  }
+  marginRight {
+    ...IntOption
+  }
+  marginBottom {
+    ...IntOption
+  }
+  marginLeft {
+    ...IntOption
+  }
+  textAlignDesktop {
+    ...TextOption
+  }
+  verticalAlignDesktop {
+    ...TextOption
+  }
+  paddingTopDesktop {
+    ...IntOption
+  }
+  paddingLeftDesktop {
+    ...IntOption
+  }
+  paddingBottomDesktop {
+    ...IntOption
+  }
+  paddingRightDesktop {
+    ...IntOption
+  }
+  marginTopDesktop {
+    ...IntOption
+  }
+  marginLeftDesktop {
+    ...IntOption
+  }
+  marginBottomDesktop {
+    ...IntOption
+  }
+  marginRightDesktop {
+    ...IntOption
+  }
+}
+
+fragment FooterContainerBlock on FooterContainerBlock {
+  __typename
+  children {
+    ...RowBlock
+  }
+}
+
+fragment TopHeader on TopHeaderBlock {
+  __typename
+  templateName
+  fields {
+    __typename
+    _name
+    position {
+      ...TextOption
+    }
+    richText
+    backgroundColorHex
+    links {
+      __typename
+      navigationLink {
+        ...Link
+      }
+    }
+  }
+}
+
+fragment NavigationLinksBlock on NavigationLinksBlock {
+  fields {
+    collapsibleMobile
+    headerLabel
+    navigationLinksHeader {
+      ...Link
+    }
+    navigationLinks {
+      navigationLink {
+        ...Link
+      }
+    }
+  }
+}
+
+fragment RichContentBlock on RichContentBlock {
+  fields {
+    richText
+    backgroundColorHex
+    commonStyles {
+      ...CommonStylesBlock
+    }
+  }
+}
+
+fragment ButtonBlock on ButtonBlock {
+  fields {
+    button {
+      ...Button
+    }
+    commonStyles {
+      ...CommonStylesBlock
+    }
+  }
+}
+
+fragment ImageListBlock on ImageListBlock {
+  fields {
+    contentSpaceX {
+      ...IntOption
+    }
+    contentSpaceXDesktop {
+      ...IntOption
+    }
+    contentSpaceY {
+      ...IntOption
+    }
+    contentSpaceYDesktop {
+      ...IntOption
+    }
+    commonStyles {
+      ...CommonStylesBlock
+    }
+    numberOfItemOnDesktop
+    numberOfItemOnMobile
+  }
+
+  children {
+    ...ImageItemBlock
+  }
+}
+
+fragment ImageItemBlock on ImageItemBlock {
+  fields {
+    contentImage {
+      ...ContentImage
+    }
+    navigationLink {
+      ...Link
+    }
+  }
+}

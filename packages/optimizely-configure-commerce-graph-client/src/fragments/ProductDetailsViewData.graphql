@@ -1,0 +1,10 @@
+fragment ProductDetailsViewData on stagingProductDetailsView {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+}

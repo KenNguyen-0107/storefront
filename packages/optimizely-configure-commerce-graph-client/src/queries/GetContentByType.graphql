@@ -1,0 +1,74 @@
+#import "../fragments/HeaderMainNavigationData.graphql"
+#import "../fragments/BasicBannerData.graphql"
+#import "../fragments/BasicButtonData.graphql"
+#import "../fragments/BasicGridData.graphql"
+#import "../fragments/BasicImageData.graphql"
+#import "../fragments/BasicLinkData.graphql"
+#import "../fragments/BasicLogoData.graphql"
+#import "../fragments/BasicPageTitleData.graphql"
+#import "../fragments/BasicQuestionAnswersData.graphql"
+#import "../fragments/BasicRichContentData.graphql"
+#import "../fragments/BasicRowData.graphql"
+#import "../fragments/BasicRowsData.graphql"
+#import "../fragments/BasicSocialLinksData.graphql"
+#import "../fragments/CategoryListData.graphql"
+#import "../fragments/CommonCartLinkData.graphql"
+#import "../fragments/CommonHeaderSignInData.graphql"
+#import "../fragments/CommonPlaceholderData.graphql"
+#import "../fragments/CommonProductCarouselData.graphql"
+#import "../fragments/CommonRatingAndReviewData.graphql"
+#import "../fragments/CommonSignInData.graphql"
+#import "../fragments/FooterContainerData.graphql"
+#import "../fragments/HeaderSearchInputData.graphql"
+#import "../fragments/LinkListData.graphql"
+#import "../fragments/ProductDetailsViewData.graphql"
+#import "../fragments/ProductListCardListData.graphql"
+#import "../fragments/ProductListColumnsData.graphql"
+#import "../fragments/SharedContentData.graphql"
+#import "../fragments/SlideShowData.graphql"
+#import "../fragments/SubscribeData.graphql"
+#import "../fragments/CustomVideoData.graphql"
+
+query GetContentByType($type: String!, $siteId: String!, $languageCode: String!) {
+  B2BPage: stagingB2BPage(
+    where: { Type: { eq: $type }, WebsiteId: { eq: $siteId }, Language: { LanguageCode: { eq: $languageCode } } }
+  ) {
+    items {
+      WidgetContainer {
+        __typename
+        Widgets {
+          ...BasicBannerData
+          ...BasicButtonData
+          ...BasicGridData
+          ...BasicImageData
+          ...BasicLinkData
+          ...BasicLogoData
+          ...BasicPageTitleData
+          ...BasicQuestionAnswersData
+          ...BasicRichContentData
+          ...BasicRowData
+          ...BasicRowsData
+          ...BasicSocialLinksData
+          ...CategoryListData
+          ...CommonCartLinkData
+          ...CommonHeaderSignInData
+          ...CommonPlaceholderData
+          ...CommonProductCarouselData
+          ...CommonRatingAndReviewData
+          ...CommonSignInData
+          ...FooterContainerData
+          ...HeaderMainNavigationData
+          ...HeaderSearchInputData
+          ...LinkListData
+          ...ProductDetailsViewData
+          ...ProductListCardListData
+          ...ProductListColumnsData
+          ...SharedContentData
+          ...SlideShowData
+          ...SubscribeData
+          ...CustomVideoData
+        }
+      }
+    }
+  }
+}

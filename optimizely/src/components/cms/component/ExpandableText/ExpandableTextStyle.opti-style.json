@@ -1,0 +1,354 @@
+{
+  "key": "ExpandableTextDefaultStyle",
+  "displayName": "Default",
+  "contentType": "ExpandableText",
+  "isDefault": true,
+  "created": "2025-07-17T09:48:34.5298913+00:00",
+  "createdBy": "trang.ntt@niteco.se",
+  "lastModified": "2025-07-24T04:35:18.6016343+00:00",
+  "lastModifiedBy": "trang.ntt@niteco.se",
+  "settings": {
+    "textAlign": {
+      "displayName": "Text align",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 1
+        },
+        "left": {
+          "displayName": "Left",
+          "sortOrder": 2
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 3
+        },
+        "right": {
+          "displayName": "Right",
+          "sortOrder": 4
+        },
+        "justify": {
+          "displayName": "Justify",
+          "sortOrder": 5
+        }
+      }
+    },
+    "textColor": {
+      "displayName": "Text Color",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 1
+        },
+        "muted": {
+          "displayName": "Muted",
+          "sortOrder": 2
+        },
+        "blue": {
+          "displayName": "Blue",
+          "sortOrder": 3
+        },
+        "white": {
+          "displayName": "White",
+          "sortOrder": 4
+        },
+        "black": {
+          "displayName": "Black",
+          "sortOrder": 5
+        },
+        "primary": {
+          "displayName": "Primary",
+          "sortOrder": 6
+        },
+        "secondary": {
+          "displayName": "Secondary",
+          "sortOrder": 7
+        }
+      }
+    },
+    "buttonTextColor": {
+      "displayName": "Button Text Color",
+      "editor": "",
+      "sortOrder": 30,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 1
+        },
+        "muted": {
+          "displayName": "Muted",
+          "sortOrder": 2
+        },
+        "blue": {
+          "displayName": "Blue",
+          "sortOrder": 3
+        },
+        "white": {
+          "displayName": "White",
+          "sortOrder": 4
+        },
+        "black": {
+          "displayName": "Black",
+          "sortOrder": 5
+        },
+        "primary": {
+          "displayName": "Primary",
+          "sortOrder": 6
+        },
+        "secondary": {
+          "displayName": "Secondary",
+          "sortOrder": 7
+        }
+      }
+    },
+    "textTransform": {
+      "displayName": "Text Transform",
+      "editor": "",
+      "sortOrder": 40,
+      "choices": {
+        "as_entered": {
+          "displayName": "As entered",
+          "sortOrder": 1
+        },
+        "uppercase": {
+          "displayName": "Uppercase",
+          "sortOrder": 2
+        },
+        "lowercase": {
+          "displayName": "Lowercase",
+          "sortOrder": 3
+        },
+        "capitalized": {
+          "displayName": "Capitalized",
+          "sortOrder": 4
+        }
+      }
+    },
+    "contentSpacing": {
+      "displayName": "content Spacing",
+      "editor": "Vertical spacing between Heading Paragraph Button",
+      "sortOrder": 30,
+      "choices": {
+        "none": {
+          "displayName": "none",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "paddingY": {
+      "displayName": "Padding Top Bottom",
+      "editor": "selectOne",
+      "sortOrder": 60,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "paddingX": {
+      "displayName": "Padding Left Right",
+      "editor": "selectOne",
+      "sortOrder": 70,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "marginTop": {
+      "displayName": "Margin Top",
+      "editor": "selectOne",
+      "sortOrder": 80,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    },
+    "marginBottom": {
+      "displayName": "Margin Bottom",
+      "editor": "selectOne",
+      "sortOrder": 90,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    },
+    "backgroundColor": {
+      "displayName": "Background Color",
+      "editor": "",
+      "sortOrder": 100,
+      "choices": {
+        "transparent": {
+          "displayName": "Transparent",
+          "sortOrder": 1
+        },
+        "muted": {
+          "displayName": "Muted",
+          "sortOrder": 2
+        },
+        "white": {
+          "displayName": "White",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "Blue",
+          "sortOrder": 4
+        },
+        "red_brown": {
+          "displayName": "Red brown",
+          "sortOrder": 5
+        },
+        "mocha": {
+          "displayName": "Mocha",
+          "sortOrder": 6
+        },
+        "duck": {
+          "displayName": "Duck",
+          "sortOrder": 7
+        },
+        "light_muted": {
+          "displayName": "Light muted",
+          "sortOrder": 8
+        }
+      }
+    }
+  }
+}

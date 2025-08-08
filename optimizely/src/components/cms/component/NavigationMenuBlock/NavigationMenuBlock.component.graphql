@@ -1,0 +1,18 @@
+fragment NavigationMenuBlockData on NavigationMenuBlock {
+  ...NavigationMenuBlockFields
+  SubMenuItem {
+    ...NavigationMenuBlockFields
+  }
+}
+fragment NavigationMenuBlockFields on NavigationMenuBlock
+{
+  ...IElementData
+  MenuNavigationHeading
+  
+  Link {
+    ...LinkItemData
+  }
+  ThumbnailBanner {
+    ...ReferenceData
+  }
+}

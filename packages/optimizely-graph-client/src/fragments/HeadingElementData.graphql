@@ -1,0 +1,6 @@
+fragment HeadingElementData on HeadingElement {
+  ...IElementData
+  Heading {
+    ...RichTextData
+  }
+}

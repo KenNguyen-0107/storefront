@@ -1,0 +1,12 @@
+fragment BasicLogoData on stagingBasicLogo {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  IsMobileSpecific
+  LogoImage
+  MobileSpecificImage
+  ParentId
+  Zone
+}

@@ -1,0 +1,119 @@
+{
+  "key": "ProductCardListElement",
+  "displayName": "Product Cart List Element",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": ["sectionEnabled", "elementEnabled"],
+  "properties": {
+    "ProductItems": {
+      "type": "array",
+      "displayName": "ProductItems",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "items": {
+        "type": "content",
+        "allowedTypes": [],
+        "restrictedTypes": []
+      }
+    },
+    "CategoryID": {
+      "type": "string",
+      "displayName": "CategoryID",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "EnableFilter": {
+      "type": "boolean",
+      "displayName": "Enable Filter",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 10,
+      "editorSettings": {}
+    },
+    "EnableSorting": {
+      "type": "boolean",
+      "displayName": "Enable Sorting",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 20,
+      "editorSettings": {}
+    },
+    "DefaultView": {
+      "type": "array",
+      "format": "selectMany",
+      "displayName": "Product List Default View",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 40,
+      "editorSettings": {},
+      "items": {
+        "type": "string",
+        "enum": {
+          "values": [
+            {
+              "displayName": "List",
+              "value": "list"
+            },
+            {
+              "displayName": "Grid",
+              "value": "grid"
+            },
+            {
+              "displayName": "Table",
+              "value": "table"
+            }
+          ]
+        }
+      }
+    },
+    "EnableProductCount": {
+      "type": "boolean",
+      "displayName": "Enable Product Count",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 50,
+      "editorSettings": {}
+    },
+    "VisibleElements": {
+      "type": "contentReference",
+      "displayName": "Visible Elements",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 60,
+      "editorSettings": {},
+      "allowedTypes": [],
+      "restrictedTypes": []
+    },
+    "PagingSize": {
+      "type": "integer",
+      "displayName": "PagingSize",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 300,
+      "editorSettings": {}
+    }
+  }
+}

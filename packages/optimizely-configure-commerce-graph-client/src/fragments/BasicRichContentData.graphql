@@ -1,0 +1,13 @@
+fragment BasicRichContentData on stagingBasicRichContent {
+  Type
+  __typename
+  BackgroundColor
+  Content
+  CssClass
+  CustomCSS
+  Id
+  IsLayout
+  Padding
+  ParentId
+  Zone
+}

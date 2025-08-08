@@ -1,0 +1,6 @@
+fragment BlankExperienceData on BlankExperience {
+  ...ExperienceData
+  SeoSettings {
+    ...PageSeoSettingsPropertyData
+  }
+}

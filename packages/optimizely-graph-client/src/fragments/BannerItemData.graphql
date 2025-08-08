@@ -1,0 +1,23 @@
+fragment BannerItemData on BannerItem {
+  ...IElementData
+  RichText {
+    ...RichTextData
+  }
+  BackgroundLink {
+    ...ContentUrlData
+  }
+  ButtonLink {
+    ...ContentUrlData
+  }
+  ButtonText
+  ImageDesktop {
+    ...ContentReferenceData
+  }
+  ImageMobile {
+    ...ContentReferenceData
+  }
+  Alt
+  ButtonType
+  IsFullWidthImage
+  Loading
+}

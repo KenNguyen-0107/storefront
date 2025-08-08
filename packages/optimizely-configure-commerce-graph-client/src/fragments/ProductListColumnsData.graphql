@@ -1,0 +1,10 @@
+fragment ProductListColumnsData on stagingProductListColumns {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+}

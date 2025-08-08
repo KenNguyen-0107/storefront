@@ -1,0 +1,162 @@
+@layer base {
+  html {
+    @apply text-primary;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* Default max-width */
+    max-width: 1280px;
+  }
+
+  /* Responsive variants */
+  @media (min-width: 640px) {
+    .wrapper {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .wrapper {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wrapper {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .wrapper {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1120px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.optimizely-swiper-pagination {
+  position: relative;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8%;
+
+  .swiper-pagination-bullet {
+    display: inline-block;
+    background-clip: content-box;
+    background-color: #8c8b90;
+    height: 2px;
+    width: 30px;
+  }
+
+  .swiper-pagination-bullet-active {
+    display: inline-block;
+    background-color: #e2b010;
+    height: 2px;
+    width: 30px;
+  }
+}
+
+.modifierPaginationbullets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 2px;
+  margin-top: 40px;
+
+  .swiper-pagination-bullet {
+    display: inline-block;
+    background-clip: content-box;
+    background-color: #8c8b90;
+    opacity: 0.5;
+    height: 2px;
+    width: 30px;
+  }
+
+  .swiper-pagination-bullet-active {
+    display: inline-block;
+    background-color: #e2b010;
+    height: 2px;
+    width: 30px;
+  }
+}
+
+.swiper-slide {
+  height: unset !important;
+}
+
+.swiper-pagination {
+  position: relative !important;
+}
+
+/* Hiển thị pagination từ md trở lên */
+
+@media (min-width: 768px) {
+  /* Ẩn pagination trên mobile */
+  .swiper-pagination-bullet {
+    display: none;
+  }
+  .swiper-pagination-bullet-active {
+    display: none;
+  }
+}
+
+.arrow-down {
+  position: relative;
+  width: 6px;
+  height: 6px;
+}
+
+.arrow-down::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: rotate(135deg) translate(-3px, 3px);
+  border-color: currentcolor currentcolor transparent transparent;
+  border-style: solid;
+  border-width: 3px;
+  transition: opacity 0.3s ease;
+}
+
+.sub-menu-link {
+  position: relative;
+  padding-right: 10px;
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: rotate(45deg) translate(-2px, -2px);
+    border-top: 4px solid var(--color-yellow);
+    border-right: 4px solid var(--color-yellow);
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+}

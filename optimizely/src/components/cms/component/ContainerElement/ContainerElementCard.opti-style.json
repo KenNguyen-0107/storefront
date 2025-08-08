@@ -1,0 +1,61 @@
+{
+  "key": "ContainerElementCard",
+  "displayName": "Card",
+  "contentType": "ContainerElement",
+  "isDefault": false,
+  "settings": {
+    "columnsInASlideMobile": {
+      "displayName": "Columns in a slide (Mobile)",
+      "editor": "Columns in a silde Mobile",
+      "sortOrder": 1,
+      "choices": {
+        "one": {
+          "displayName": "1",
+          "sortOrder": 1
+        },
+        "two": {
+          "displayName": "2",
+          "sortOrder": 2
+        }
+      }
+    },
+    "columnsInASlideDesktop": {
+      "displayName": "Columns in a slide (Desktop)",
+      "editor": "Columns in a silde Desktop",
+      "sortOrder": 2,
+      "choices": {
+        "two": {
+          "displayName": "2",
+          "sortOrder": 2
+        },
+        "three": {
+          "displayName": "3",
+          "sortOrder": 3
+        },
+        "four": {
+          "displayName": "4",
+          "sortOrder": 4
+        },
+        "five": {
+          "displayName": "5",
+          "sortOrder": 5
+        }
+      }
+    },
+    "enableBorder": {
+      "displayName": "Enable Border",
+      "editor": " ",
+      "sortOrder": 3,
+      "choices": {
+        "no": {
+          "displayName": "No",
+          "sortOrder": 1
+        },
+        "yes": {
+          "displayName": "Yes",
+          "sortOrder": 2
+        }
+      }
+    }
+  }
+}

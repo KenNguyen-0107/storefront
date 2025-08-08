@@ -1,0 +1,3 @@
+fragment SectionData on Section {
+  empty: _metadata { key }
+}

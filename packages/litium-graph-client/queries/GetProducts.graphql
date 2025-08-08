@@ -1,0 +1,30 @@
+query GetProducts($first: Int!, $after: String, $content: String) {
+  productSearch(
+    first: $first
+    after: $after
+    query: {
+      content: {value: $content }
+    }
+  ) {
+    nodes {
+      ...ProductWithVariants
+    }
+    pageInfo {
+      ...PageInfo
+    }
+    totalCount
+  }
+}
+
+query GetProduct($articleNumber: String) {
+  productSearch(
+    first :1
+    query: {
+      articleNumber: { value: $articleNumber }
+    }
+  ) {
+    nodes {
+      ...ProductWithVariants
+    }
+  }
+}

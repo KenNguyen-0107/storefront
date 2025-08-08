@@ -1,0 +1,148 @@
+You are a coding assistant.
+Always follow these project conventions when generating any code or folder structure.
+
+---
+
+1. Project Structure
+
+   **Domain-Driven Design Structure**
+   For domain-specific modules (e.g., commercetools, auth, etc.), use the following structure:
+
+   ```
+   module-name/
+   ├── interfaces/           # Core interfaces and contracts, Use "I" prefix for interfaces that define behavior (methods)
+   │   ├── repository.interface.ts
+   │   ├── service.interface.ts
+   │   └── client.interface.ts
+   ├── models/              # Domain models and types, Domain Models (no "I" prefix):
+   │   ├── entity.model.ts
+   │   ├── value-object.model.ts
+   │   └── config.model.ts
+   ├── repositories/        # Data access layer
+   │   └── entity.repository.ts
+   ├── services/           # Business logic layer
+   │   └── entity.service.ts
+   ├── providers/          # External service providers/clients
+   │   └── external-client.ts
+   ├── utils/             # Domain-specific utilities
+   │   ├── error.utils.ts
+   │   └── validation.utils.ts
+   ├── constants/         # Domain-specific constants
+   │   └── entity.constants.ts
+   └── graphql/           # GraphQL related code (if applicable)
+       ├── queries/
+       ├── mutations/
+       └── fragments/
+   ```
+
+---
+
+1. Naming Conventions
+
+   **Frontend (React)**
+   - Components: `.tsx`, PascalCase (e.g., `VMStatusCard.tsx`)
+   - Hooks: `.ts`, camelCase starting with `use` (e.g., `useVMStatus.ts`)
+   - Pages & Features & components: `.tsx`, PascalCase (e.g., `VMDashboard.tsx`)
+
+   **Application**
+   - Services: `.ts`, kebab-case with `.service.ts` suffix (e.g., `vm-manager.service.ts`)
+   - Controllers: `.ts`, kebab-case with `.controller.ts` suffix (e.g., `vm-status.controller.ts`)
+   - Handlers: `.ts`, kebab-case with `.handler.ts` suffix (e.g., `proxy-request.handler.ts`)
+   - Middleware: `.ts`, kebab-case with `.middleware.ts` suffix (e.g., `auth.middleware.ts`)
+
+   **Domain-Driven Design**
+   - Interfaces: `.interface.ts` (e.g., `repository.interface.ts`)
+   - Models: `.model.ts` (e.g., `product.model.ts`)
+   - Repositories: `.repository.ts` (e.g., `product.repository.ts`)
+   - Services: `.service.ts` (e.g., `product.service.ts`)
+   - Providers: `.provider.ts` (e.g., `graphql.provider.ts`)
+   - Utils: `.utils.ts` (e.g., `error.utils.ts`)
+   - Constants: `.constants.ts` (e.g., `api.constants.ts`)
+
+   **Common**
+   - Types: `.types.ts` (e.g., `vm.types.ts`)
+   - Utils: `.util.ts` (e.g., `logger.util.ts`)
+   - Constants: `.constants.ts` (e.g., `api.constants.ts`)
+   - Interfaces:
+     - File name: kebab-case with `.interface.ts` suffix (e.g., `vm-manager.interface.ts`)
+     - Interface name: PascalCase starting with `I` (e.g., `IVMManager`, `IUserSession`)
+   - Enums:
+     - File name: kebab-case with `.enum.ts` suffix (e.g., `order-status.enum.ts`)
+     - Enum name: PascalCase (e.g., `OrderStatus`, `VMType`)
+     - Enum members: SCREAMING_SNAKE_CASE (all uppercase, underscore-separated, e.g., `PENDING`, `SHIPPED`, `FAILED`)
+     - Place enums inside `types/` (for domain enums) or `constants/` (for UI enums) depending on usage
+     - Example:
+       ```ts
+       // file: packages/common/src/types/order-status.enum.ts
+       export enum OrderStatus {
+         PENDING = "PENDING",
+         SHIPPED = "SHIPPED",
+         DELIVERED = "DELIVERED",
+         CANCELLED = "CANCELLED",
+         FAILED = "FAILED",
+       }
+       ```
+
+   **Tests**
+   - Unit tests: `.test.ts` (e.g., `vm-manager.service.test.ts`)
+   - Integration tests: `.spec.ts` (e.g., `vm-management.spec.ts`)
+
+   **GraphQL (Raw .graphql Files)**
+   - Queries:
+     - File name: kebab-case with `.query.graphql` suffix (e.g., `get-vm-status.query.graphql`)
+     - Operation name: PascalCase ending with `Query` (e.g., `GetVMStatusQuery`)
+   - Mutations:
+     - File name: kebab-case with `.mutation.graphql` suffix (e.g., `create-vm.mutation.graphql`)
+     - Operation name: PascalCase ending with `Mutation` (e.g., `CreateVMMutation`)
+   - Fragments:
+     - File name: kebab-case with `.fragment.graphql` suffix (e.g., `vm-detail.fragment.graphql`)
+     - Fragment name: PascalCase ending with `Fragment` (e.g., `VMDetailFragment`)
+   - Place `.graphql` files inside a `graphql/` folder or within `fragments/`, `queries/`, `mutations/` subfolders of each feature.
+
+   **GraphQL (Embedded in TypeScript)**
+   - File name: `feature.queries.ts`, `feature.mutations.ts`, `feature.fragments.ts`
+   - Exported constant names: SCREAMING_SNAKE_CASE (e.g., `CREATE_CART`, `ADD_LINE_ITEM`)
+   - GraphQL operation names inside gql template: PascalCase ending with `Query` or `Mutation`
+   - Always wrap GraphQL in `gql` from `graphql-request` or `@apollo/client`
+
+---
+
+3. Code Generation Rules
+   - Always use **TypeScript**.
+   - Use **React functional components with hooks** for UI.
+   - Follow directory and file naming conventions strictly.
+   - Ensure imports reference correct relative paths.
+   - For GraphQL:
+     - Prefer raw `.graphql` files when possible.
+     - For embedded queries/mutations in `.ts` files, follow constant and operation naming rules.
+
+---
+
+4. Output
+   - Always provide file paths, file names, and full code content.
+   - Generated code must strictly follow these conventions automatically.
+
+---
+
+5. Design Patterns
+   - Use Repository Pattern for data access
+   - Use Service Layer Pattern for business logic
+   - Use Factory Pattern for object creation
+   - Use Singleton Pattern with proper DI support
+   - Use Strategy Pattern for interchangeable algorithms
+   - Use Observer Pattern for event handling
+   - Use Adapter Pattern for external service integration
+
+---
+
+6. Error Handling
+   - Use custom error classes for domain-specific errors
+   - Implement proper error logging and monitoring
+   - Use error codes and messages consistently
+   - Handle async errors with try/catch blocks
+   - Provide meaningful error messages
+   - Implement proper error recovery strategies
+
+## Import Patterns
+
+alway use alias @

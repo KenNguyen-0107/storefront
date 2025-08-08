@@ -1,0 +1,11 @@
+fragment CommonCartLinkData on stagingCommonCartLink {
+  Type
+  __typename
+  CustomCSS
+  Icon
+  Id
+  IsLayout
+  ParentId
+  VisibilityState
+  Zone
+}

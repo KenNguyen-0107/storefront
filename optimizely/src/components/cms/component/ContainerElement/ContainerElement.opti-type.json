@@ -1,0 +1,60 @@
+{
+  "key": "ContainerElement",
+  "displayName": "Container",
+  "description": "Use to pull multiple block items into 1 column",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "Items": {
+      "type": "array",
+      "displayName": "Items",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "items": {
+        "type": "contentReference",
+        "allowedTypes": [
+          "BannerItemElement",
+          "ImageTextItemElement",
+          "ImageItemElement"
+        ],
+        "restrictedTypes": []
+      }
+    },
+    "TypeOfItems": {
+      "type": "string",
+      "format": "selectOne",
+      "displayName": "Item Content Type",
+      "description": "",
+      "localized": false,
+      "required": true,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "enum": {
+        "values": [
+          {
+            "displayName": "BannerItem",
+            "value": "BannerItemElement"
+          },
+          {
+            "displayName": "ImageTextItem",
+            "value": "ImageTextItemElement"
+          },
+          {
+            "displayName": "ImageItem",
+            "value": "ImageItemElement"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "prompts": {
+    "css-frontend": {
+      "path": "./prompts/css-review.prompt",
+      "description": "Css coding conventions",
+      "applyTo": [
+        "**/*.tsx",
+        "**/*.ts",
+        "**/*.css",
+        "**/*.scss"
+      ]
+    },
+    "frontend-base-ui": {
+      "path": "./prompts/frontend-baseUI.prompt",
+      "description": "Frontend coding conventions",
+      "applyTo": [
+        "**/*.tsx",
+        "**/*.ts"
+      ]
+    },
+    "backend": {
+      "path": "./prompts/foundation-codebase.prompt",
+      "description": "Backend coding conventions",
+      "applyTo": [
+        "**/*.tsx",
+        "**/*.ts"
+      ]
+    }
+  },
+  "useGlobalPrompt": false
+}

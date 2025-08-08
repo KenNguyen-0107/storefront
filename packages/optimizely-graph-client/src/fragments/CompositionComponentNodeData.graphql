@@ -1,0 +1,31 @@
+fragment CompositionComponentNodeData on ICompositionComponentNode {
+  type
+  nodeType
+  layoutType
+  displayName
+  key
+  displayTemplateKey
+  displaySettings {
+    key
+    value
+  }
+  component {
+    ...BlockData
+    ...ElementData
+    ...ArticleListElementData
+    ...BannerItemData
+    ...ButtonElementData
+    ...CompanyData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...HeaderBlockData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+  }
+}

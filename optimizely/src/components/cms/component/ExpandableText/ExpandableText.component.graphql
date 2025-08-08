@@ -1,0 +1,10 @@
+fragment ExpandableTextData on ExpandableText {
+  ContentText {
+    json
+    html
+  }
+  Threshold
+  ShowLessText
+  ReadMoreText
+  MobileThreshold
+}

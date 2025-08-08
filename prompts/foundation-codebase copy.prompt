@@ -1,0 +1,71 @@
+You are reviewing the following TypeScript codebase segment:
+**Target (specify one of the following)**
+- src/utils/date.ts
+- packages/core 
+- src/services/user/
+
+Please analyze the following aspects, provide detailed feedback, and highlight both strengths and actionable recommendations. Focus on identifying best practices and any anti-patterns.
+
+1. Design Patterns & Architecture
+   - Are appropriate design patterns (e.g., Singleton, Factory, Adapter, Strategy, Observer, Dependency Injection, etc.) used where relevant?
+   - Is SOLID principle (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) applied throughout the code?
+   - Is the architecture modular, decoupled, and extensible?
+   - Are responsibilities clearly separated across modules/classes?
+   - Is code reusable and composable?
+
+2. Object-Oriented Programming (OOP) Best Practices
+   - Are classes, interfaces, and types used effectively to encapsulate behavior and structure?
+   - Is inheritance used appropriately, or is composition favored where better?
+   - Are abstract classes, interfaces, and generics leveraged to maximize flexibility and type safety?
+   - Are public/protected/private access modifiers used correctly?
+   - Is code DRY (Don’t Repeat Yourself) and avoids duplication?
+
+3. Coding Conventions & Style
+   - Is code consistently formatted (indentation, spacing, brackets, etc.)?
+   - Are consistent code styles enforced (e.g., Prettier, ESLint, custom rules)?
+   - Are arrow functions, function declarations, and classes used consistently per project standards?
+   - Are imports organized and free from unused dependencies?
+
+4. Naming Conventions
+   - Are variables, functions, classes, types, and interfaces named clearly and descriptively?
+   - Is camelCase used for variables and functions, PascalCase for classes/types/interfaces, and UPPER_SNAKE_CASE for constants?
+   - Are naming patterns consistent across the codebase?
+   - Are ambiguous names, abbreviations, and inconsistent naming avoided?
+
+5. Performance & Efficiency
+   - Are algorithms and data structures chosen for optimal performance and scalability?
+   - Are there any obvious bottlenecks, unnecessary computations, or memory leaks?
+   - Is asynchronous code handled efficiently with Promises/async-await?
+   - Are resource-intensive operations batched, throttled, or debounced as needed?
+
+6. TypeScript Usage & Type Safety
+   - Are all values strongly typed, avoiding `any` where possible?
+   - Are type aliases, generics, unions, and intersection types used appropriately?
+   - Are type assertions and casts minimized and safe?
+   - Is the public API of modules well-typed and documented?
+
+7. Error Handling & Robustness
+   - Is error handling (try-catch, custom error classes, error boundaries) comprehensive and consistent?
+   - Are errors logged, surfaced, or handled according to best practices?
+   - Are edge cases and failure scenarios considered?
+
+8. Documentation & Maintainability
+   - Are public APIs, classes, and methods well-documented with clear comments or docblocks?
+   - Is the codebase structured for easy navigation and onboarding?
+   - Are rationale and decisions explained where non-obvious?
+   - Is it easy to extend or refactor without breaking changes?
+
+---
+Please provide your review as a list of strengths and actionable recommendations. Include code snippets or architectural diagrams where relevant.
+
+---
+
+**FINAL DECISION:**
+- ✅ APPROVE: Ready to merge
+- 🔄 REQUEST CHANGES: Issues must be addressed
+- 💬 COMMENT: Suggestions for improvement
+
+**Priority Issues Found:**
+🔴 CRITICAL: [List blocking issues]  
+🟡 HIGH: [List important improvements]  
+🔵 MEDIUM: [List nice-to-have changes]  

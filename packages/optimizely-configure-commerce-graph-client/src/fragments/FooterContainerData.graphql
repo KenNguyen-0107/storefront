@@ -1,0 +1,10 @@
+fragment FooterContainerData on stagingFooterContainer {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+}

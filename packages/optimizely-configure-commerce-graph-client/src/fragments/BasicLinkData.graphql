@@ -1,0 +1,14 @@
+fragment BasicLinkData on stagingBasicLink {
+  Type
+  __typename
+  CustomCSS
+  Destination {
+    Type
+    Value
+  }
+  Id
+  IsLayout
+  OverrideTitle
+  ParentId
+  Zone
+}

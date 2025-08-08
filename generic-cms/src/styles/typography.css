@@ -1,0 +1,94 @@
+/* Typography Base Styles */
+
+h1 {
+    font-size: var(--text-4xl);
+    line-height: var(--leading-sm);
+}
+
+h2 {
+    font-size: var(--text-3xl);
+    line-height: var(--leading-sm);
+}
+
+h3 {
+    font-size: var(--text-2xl);
+    line-height: var(--leading-xs);
+}
+
+h4 {
+    font-size: var(--text-xl);
+    line-height: var(--leading-xs);
+}
+
+h5 {
+    font-size: var(--text-lg);
+    line-height: var(--leading-md);
+}
+
+h6 {
+    font-size: var(--text-md);
+    line-height: var(--leading-md);
+}
+
+p,
+span,
+ul,
+ol,
+li {
+    line-height: var(--leading-md);
+}
+
+.text {
+    padding-right: 22px;
+    padding-left: 22px;
+}
+
+p:not([class*="font-"]),
+span:not([class*="font-"]),
+ul:not([class*="font-"]),
+ol:not([class*="font-"]),
+li:not([class*="font-"]) {
+    font-family: var(--font-lora);
+}
+
+p:not([class*="text-"]),
+span:not([class*="text-"]),
+ul:not([class*="text-"]),
+ol:not([class*="text-"]),
+li:not([class*="text-"]) {
+    font-size: var(--text-lg);
+}
+
+@media screen and (max-width: 991px) {
+    h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+    }
+
+    h3 {
+        font-size: var(--text-xl);
+    }
+
+    h4 {
+        font-size: var(--text-md);
+    }
+
+    h5 {
+        font-size: var(--text-sm);
+    }
+
+    h6 {
+        font-size: var(--text-xs);
+    }
+
+    p:not([class*="text-"]),
+    span:not([class*="text-"]),
+    ul:not([class*="text-"]),
+    ol:not([class*="text-"]),
+    li:not([class*="text-"]) {
+        font-size: var(--text-md);
+    }
+}

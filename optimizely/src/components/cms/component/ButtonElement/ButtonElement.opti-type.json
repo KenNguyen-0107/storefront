@@ -1,0 +1,45 @@
+{
+  "key": "ButtonElement",
+  "displayName": "Button",
+  "description": "Button element for inclusion in other blocks/pages",
+  "baseType": "component",
+  "sortOrder": 100,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "ButtonText": {
+      "type": "string",
+      "displayName": "ButtonText",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "ButtonLink": {
+      "type": "url",
+      "displayName": "ButtonLink",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "className": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "CSS Classes",
+      "description": "Additional CSS Classes for the button",
+      "localized": false,
+      "required": false,
+      "group": "RenderSettings",
+      "sortOrder": 100,
+      "editorSettings": {}
+    }
+  }
+}

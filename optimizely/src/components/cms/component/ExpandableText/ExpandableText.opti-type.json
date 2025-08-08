@@ -1,0 +1,67 @@
+{
+  "key": "ExpandableText",
+  "displayName": "Expandable Text",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "ContentText": {
+      "type": "string",
+      "format": "html",
+      "displayName": "Content Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "threshold": {
+      "type": "integer",
+      "displayName": "Threshold",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "ShowLessText": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Show Less Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "ReadMoreText": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Read More Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "mobileThreshold": {
+      "type": "integer",
+      "displayName": "Mobile Threshold",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 100,
+      "editorSettings": {}
+    }
+  }
+}

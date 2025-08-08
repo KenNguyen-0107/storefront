@@ -1,0 +1,26 @@
+{
+  "key": "ProductDetailExperience",
+  "displayName": "Product Detail Experience Page",
+  "description": "",
+  "baseType": "experience",
+  "sortOrder": 0,
+  "mayContainTypes": [
+    "*"
+  ],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {
+    "SEOsettings": {
+      "type": "content",
+      "displayName": "SeoSettings",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "SeoSettings",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [],
+      "restrictedTypes": []
+    }
+  }
+}

@@ -1,0 +1,17 @@
+fragment BasicGridData on stagingBasicGrid {
+  Type
+  __typename
+  CssClass
+  CustomCSS
+  ExtraLargeColumnCount
+  ExtraLargeRowCount
+  ExtraSmallColumnCount
+  Id
+  IsFullWidth
+  IsLayout
+  LargeColumnCount
+  MediumColumnCount
+  ParentId
+  SmallColumnCount
+  Zone
+}

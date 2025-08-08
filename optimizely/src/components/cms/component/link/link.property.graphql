@@ -1,0 +1,6 @@
+fragment LinkPropertyData on Link {
+  url { ...LinkData }
+  title
+  text
+  target
+}

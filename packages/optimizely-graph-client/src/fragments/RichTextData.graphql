@@ -1,0 +1,4 @@
+fragment RichTextData on RichText {
+  html
+  json
+}

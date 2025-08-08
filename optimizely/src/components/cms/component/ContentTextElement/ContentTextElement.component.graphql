@@ -1,0 +1,7 @@
+fragment ContentTextElementData on ContentTextElement {
+  HeadingText
+  Paragraph {
+    json
+    html
+  }
+}

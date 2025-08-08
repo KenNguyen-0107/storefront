@@ -1,0 +1,7 @@
+fragment CompanyData on Company {
+  ...IElementData
+  Name
+  Logo {
+    ...ContentReferenceData
+  }
+}

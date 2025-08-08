@@ -1,0 +1,324 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# Accessibility Guidelines
+
+## Component Patterns
+
+1. **Accessible Button**
+   ```typescript
+   // components/button/accessible-button.tsx
+   interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+     label: string;
+     icon?: React.ReactNode;
+     loading?: boolean;
+     variant?: 'primary' | 'secondary';
+   }
+
+   export function AccessibleButton({
+     label,
+     icon,
+     loading,
+     disabled,
+     variant = 'primary',
+     ...props
+   }: ButtonProps) {
+     return (
+       <button
+         {...props}
+         disabled={loading || disabled}
+         aria-busy={loading}
+         aria-label={label}
+         className={`btn btn-${variant}`}
+       >
+         {icon && (
+           <span className="btn-icon" aria-hidden="true">
+             {icon}
+           </span>
+         )}
+         <span className="btn-text">{label}</span>
+         {loading && (
+           <span className="sr-only">Loading...</span>
+         )}
+       </button>
+     );
+   }
+   ```
+
+2. **Form Input**
+   ```typescript
+   // components/form/accessible-input.tsx
+   interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+     label: string;
+     error?: string;
+     helpText?: string;
+     id: string;
+   }
+
+   export function AccessibleInput({
+     label,
+     error,
+     helpText,
+     id,
+     required,
+     ...props
+   }: InputProps) {
+     const helpId = `${id}-help`;
+     const errorId = `${id}-error`;
+
+     return (
+       <div className="form-field">
+         <label htmlFor={id} className="form-label">
+           {label}
+           {required && <span aria-label="required">*</span>}
+         </label>
+         <input
+           {...props}
+           id={id}
+           aria-describedby={`${helpText ? helpId : ''} ${error ? errorId : ''}`}
+           aria-invalid={!!error}
+           aria-required={required}
+         />
+         {helpText && (
+           <span id={helpId} className="help-text">
+             {helpText}
+           </span>
+         )}
+         {error && (
+           <span id={errorId} className="error-text" role="alert">
+             {error}
+           </span>
+         )}
+       </div>
+     );
+   }
+   ```
+
+## Focus Management
+
+1. **Focus Trap**
+   ```typescript
+   // hooks/use-focus-trap.ts
+   function useFocusTrap(ref: React.RefObject<HTMLElement>) {
+     useEffect(() => {
+       const element = ref.current;
+       if (!element) return;
+
+       const focusableElements = element.querySelectorAll(
+         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+       );
+       
+       const firstFocusable = focusableElements[0] as HTMLElement;
+       const lastFocusable = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+       function handleTabKey(e: KeyboardEvent) {
+         if (e.key !== 'Tab') return;
+
+         if (e.shiftKey) {
+           if (document.activeElement === firstFocusable) {
+             lastFocusable.focus();
+             e.preventDefault();
+           }
+         } else {
+           if (document.activeElement === lastFocusable) {
+             firstFocusable.focus();
+             e.preventDefault();
+           }
+         }
+       }
+
+       element.addEventListener('keydown', handleTabKey);
+       firstFocusable.focus();
+
+       return () => {
+         element.removeEventListener('keydown', handleTabKey);
+       };
+     }, [ref]);
+   }
+   ```
+
+2. **Skip Link**
+   ```typescript
+   // components/navigation/skip-link.tsx
+   export function SkipLink() {
+     return (
+       <a
+         href="#main-content"
+         className="skip-link"
+         onFocus={e => e.target.classList.add('visible')}
+         onBlur={e => e.target.classList.remove('visible')}
+       >
+         Skip to main content
+       </a>
+     );
+   }
+   ```
+
+## ARIA Patterns
+
+1. **Modal Dialog**
+   ```typescript
+   // components/modal/accessible-modal.tsx
+   interface ModalProps {
+     isOpen: boolean;
+     onClose: () => void;
+     title: string;
+     children: React.ReactNode;
+   }
+
+   export function AccessibleModal({
+     isOpen,
+     onClose,
+     title,
+     children
+   }: ModalProps) {
+     const modalRef = useRef<HTMLDivElement>(null);
+     useFocusTrap(modalRef);
+
+     useEffect(() => {
+       if (isOpen) {
+         document.body.style.overflow = 'hidden';
+         return () => {
+           document.body.style.overflow = '';
+         };
+       }
+     }, [isOpen]);
+
+     if (!isOpen) return null;
+
+     return (
+       <div
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modal-title"
+         className="modal-overlay"
+         onClick={onClose}
+       >
+         <div
+           ref={modalRef}
+           className="modal-content"
+           onClick={e => e.stopPropagation()}
+         >
+           <h2 id="modal-title" className="modal-title">
+             {title}
+           </h2>
+           <div className="modal-body">{children}</div>
+           <button
+             onClick={onClose}
+             aria-label="Close modal"
+             className="modal-close"
+           >
+             ×
+           </button>
+         </div>
+       </div>
+     );
+   }
+   ```
+
+2. **Accordion**
+   ```typescript
+   // components/accordion/accessible-accordion.tsx
+   interface AccordionItemProps {
+     title: string;
+     children: React.ReactNode;
+     id: string;
+   }
+
+   export function AccordionItem({
+     title,
+     children,
+     id
+   }: AccordionItemProps) {
+     const [isExpanded, setIsExpanded] = useState(false);
+     const contentId = `${id}-content`;
+     const headerId = `${id}-header`;
+
+     return (
+       <div className="accordion-item">
+         <h3>
+           <button
+             id={headerId}
+             aria-expanded={isExpanded}
+             aria-controls={contentId}
+             onClick={() => setIsExpanded(!isExpanded)}
+             className="accordion-trigger"
+           >
+             {title}
+             <span className="accordion-icon" aria-hidden="true">
+               {isExpanded ? '−' : '+'}
+             </span>
+           </button>
+         </h3>
+         <div
+           id={contentId}
+           role="region"
+           aria-labelledby={headerId}
+           hidden={!isExpanded}
+           className="accordion-content"
+         >
+           {children}
+         </div>
+       </div>
+     );
+   }
+   ```
+
+## Color and Contrast
+
+```typescript
+// utils/color-contrast.ts
+function getContrastRatio(foreground: string, background: string): number {
+  const getLuminance = (color: string) => {
+    // Convert color to luminance value
+    // Implementation details...
+  };
+
+  const fg = getLuminance(foreground);
+  const bg = getLuminance(background);
+  
+  return (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);
+}
+
+function isAccessible(
+  foreground: string,
+  background: string,
+  level: 'AA' | 'AAA' = 'AA'
+): boolean {
+  const ratio = getContrastRatio(foreground, background);
+  return level === 'AA' ? ratio >= 4.5 : ratio >= 7;
+}
+```
+
+## Best Practices
+
+1. **Semantic HTML**
+   - Use proper heading hierarchy
+   - Use semantic elements (`<nav>`, `<main>`, `<article>`)
+   - Provide proper landmarks
+
+2. **Keyboard Navigation**
+   - Ensure all interactive elements are focusable
+   - Provide visible focus indicators
+   - Implement logical tab order
+
+3. **Screen Readers**
+   - Provide descriptive alt text
+   - Use ARIA labels when needed
+   - Announce dynamic content changes
+
+4. **Testing**
+   ```typescript
+   // tests/accessibility.test.tsx
+   import { axe } from 'jest-axe';
+
+   describe('Accessibility', () => {
+     it('should have no accessibility violations', async () => {
+       const { container } = render(<Component />);
+       const results = await axe(container);
+       expect(results).toHaveNoViolations();
+     });
+   });
+   ```

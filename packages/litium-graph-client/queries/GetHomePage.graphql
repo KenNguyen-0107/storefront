@@ -1,0 +1,23 @@
+query GetHomePage {
+  content {
+    ... on HomePage {
+      __typename
+      id
+      url
+      name
+      metadata {
+        ...Metadata
+      }
+
+      fields {
+        _name
+        __typename
+      }
+      blocks {
+        main {
+          ...SectionBlock
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+fragment BlockData on _IComponent {
+  ...IContentData
+}

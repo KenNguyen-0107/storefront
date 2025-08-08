@@ -1,0 +1,94 @@
+{
+  "key": "ProductCardElement",
+  "displayName": "ProductCard",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "ProductName": {
+      "type": "string",
+      "displayName": "ProductName",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "Image": {
+      "type": "contentReference",
+      "displayName": "Image",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [
+        "Image",
+        "ImageItemElement"
+      ],
+      "restrictedTypes": []
+    },
+    "ShortDescription": {
+      "type": "string",
+      "format": "html",
+      "displayName": "Short Description",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 10,
+      "editorSettings": {}
+    },
+    "InventoryStatus": {
+      "type": "string",
+      "format": "selectOne",
+      "displayName": "Inventory Status",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 40,
+      "indexingType": "searchable",
+      "editorSettings": {},
+      "enum": {
+        "values": [
+          {
+            "displayName": "in stock",
+            "value": "in stock"
+          },
+          {
+            "displayName": "out of stock",
+            "value": "out of stock"
+          }
+        ]
+      }
+    },
+    "inventory": {
+      "type": "integer",
+      "displayName": "inventory",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 50,
+      "editorSettings": {}
+    },
+    "CanBuy": {
+      "type": "boolean",
+      "displayName": "CanBuy",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 80,
+      "editorSettings": {}
+    }
+  }
+}

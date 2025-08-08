@@ -1,0 +1,4 @@
+fragment ContainerElementData on ContainerElement {
+  Items { ...ReferenceData }
+  TypeOfItems
+}

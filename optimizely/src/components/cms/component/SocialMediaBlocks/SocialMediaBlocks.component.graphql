@@ -1,0 +1,3 @@
+fragment SocialMediaBlocksData on SocialMediaBlocks {
+  ListItems { ...SocialMediaBlockData }
+}

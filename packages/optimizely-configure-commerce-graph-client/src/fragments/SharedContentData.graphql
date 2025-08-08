@@ -1,0 +1,11 @@
+fragment SharedContentData on stagingSharedContent {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  PageId
+  ParentId
+  Type
+  Zone
+}

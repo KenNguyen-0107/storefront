@@ -1,0 +1,11 @@
+fragment CommonPlaceholderData on stagingCommonPlaceholder {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Variant
+  Zone
+}

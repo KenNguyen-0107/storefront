@@ -1,0 +1,59 @@
+{
+  "name": "@niteco/optimizely-cms-react",
+  "license": "Apache-2.0",
+  "version": "5.0.2",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./components": "./dist/components.js",
+    "./rsc": "./dist/rsc.js"
+  },
+  "typesVersions": {
+    "*": {
+      "components": [
+        "dist/components.d.ts"
+      ],
+      "rsc": [
+        "dist/rsc.d.ts"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@niteco/optimizely-graph-client": "workspace:5.0.2",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^22.15.17",
+    "@types/react": "^18.3.21",
+    "@types/react-dom": "18.3.7",
+    "entities": "^6.0.0",
+    "graphql": "^16.11.0",
+    "graphql-request": "^6.1.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "scheduler": "^0.25.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "crypto-js": "^4.2.0"
+  },
+  "peerDependencies": {
+    "@niteco/optimizely-graph-client": "^5",
+    "entities": "^6",
+    "graphql": "^16",
+    "graphql-request": "^6",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "prepare": "yarn tsc --build --force",
+    "watch": "tsc --watch",
+    "recompile": "tsc --build --clean && tsc --build --force"
+  }
+}

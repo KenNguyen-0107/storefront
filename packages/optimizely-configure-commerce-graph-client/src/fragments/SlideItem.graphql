@@ -1,0 +1,24 @@
+fragment SlideItem on stagingSlideItem {
+  ButtonLink {
+    ...ButtonLink
+  }
+  BackgroundLink {
+    ...ButtonLink
+  }
+  SlideTitle
+  Background
+  Background
+  Image
+  ImageOverlay
+  PartialOverlay
+  PartialOverlayPositioning
+  ResponsiveImageBehavior
+  BackgroundColor
+  FocalPoint
+  Heading
+  Subheading
+  ButtonLabel
+  ButtonVariant
+  ContentPadding
+  CenterTextVertically
+}

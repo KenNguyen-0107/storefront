@@ -1,0 +1,25 @@
+fragment Category on ICategoryItem {
+  id
+  url
+  metadata {
+    ...Metadata
+  }
+}
+
+fragment CategoryProductCategory on CategoryProductCategory {
+  ...Category
+  name
+  templateName
+  fields {
+    _name
+    _description
+  }
+  children(first: 100) {
+    nodes {
+      ...Category
+    }
+    pageInfo {
+      ...PageInfo
+    }
+  }
+}

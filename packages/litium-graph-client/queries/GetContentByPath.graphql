@@ -1,0 +1,59 @@
+query GetContentByPath($path: String!) {
+  pageSearch(query: { bool: { should: [{ field: { stringValue: { field: "_url", value: $path } } }] } }) {
+    nodes {
+      __typename
+      ... on HomePage {
+        __typename
+        id
+        url
+        name
+        metadata {
+          ...Metadata
+        }
+        fields {
+          _name
+          __typename
+        }
+        blocks {
+          main {
+            ...SectionBlock
+          }
+        }
+      }
+      ... on ArticlePage {
+        __typename
+        id
+        url
+        name
+        metadata {
+          ...Metadata
+        }
+        fields {
+          _name
+          __typename
+        }
+        blocks {
+          top {
+            __typename
+          }
+          content {
+            __typename
+          }
+        }
+      }
+      ... on LoginPage {
+        __typename
+        id
+        url
+        name
+        metadata {
+          ...Metadata
+        }
+        fields {
+          _name
+          __typename
+        }
+      }
+    }
+  }
+}

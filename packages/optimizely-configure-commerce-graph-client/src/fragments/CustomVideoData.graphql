@@ -1,0 +1,20 @@
+fragment CustomVideoData on stagingCustomVideo {
+  Type
+  CssClass
+  Title
+  Type
+  VideoUrl
+  CustomCSS
+  Title
+  BackgroundImageUrl
+  Description
+  IsLayout
+  autoplayAsBool: Autoplay
+  PlayOnPopup
+  ParentId
+  Id
+  __typename
+  IsLayout
+  Zone
+  Loading
+}

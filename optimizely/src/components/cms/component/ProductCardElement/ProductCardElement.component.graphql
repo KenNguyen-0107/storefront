@@ -1,0 +1,8 @@
+fragment ProductCardElementData on ProductCardElement {
+  ProductName
+  Image { ...ReferenceData }
+  ShortDescription { json, html }
+  InventoryStatus
+  inventory
+  CanBuy
+}

@@ -1,0 +1,8 @@
+fragment LinkData on Link {
+  url {
+    ...ContentUrlData
+  }
+  title
+  text
+  target
+}

@@ -1,0 +1,70 @@
+{
+  "name": "storefront",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.13.8",
+    "@apollo/client-integration-nextjs": "^0.12.2",
+    "@formatjs/intl-localematcher": "^0.6.1",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@parcel/watcher": "^2.5.1",
+    "clsx": "^2.1.1",
+    "crypto-js": "^4.2.0",
+    "deepmerge": "^4.3.1",
+    "entities": "^6.0.0",
+    "graphql-request": "^7.2.0",
+    "negotiator": "^1.0.0",
+    "next": "15.3.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "swiper": "^11.2.8",
+    "tailwind-merge": "^3.3.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@graphql-codegen/cli": "5.0.7",
+    "@graphql-codegen/client-preset": "4.8.2",
+    "@graphql-codegen/introspection": "4.0.3",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-graphql-request": "^6.3.0",
+    "@graphql-codegen/typescript-operations": "^4.6.1",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.3",
+    "@radix-ui/react-tooltip": "^1.1.6",
+    "@storybook/react": "^9.0.10",
+    "@storybook/react-vite": "^9.0.10",
+    "@tailwindcss/postcss": "^4",
+    "@types/crypto-js": "^4.2.2",
+    "@types/negotiator": "^0.6.3",
+    "@types/node": "^22.15.17",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "15.3.3",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "graphql": "^16.11.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "lucide-react": "^0.522.0",
+    "prettier": "^3.5.3",
+    "prop-types": "^15.8.1",
+    "scheduler": "^0.25.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "zustand": "^5.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "packageManager": "yarn@4.5.1+sha512.341db9396b6e289fecc30cd7ab3af65060e05ebff4b3b47547b278b9e67b08f485ecd8c79006b405446262142c7a38154445ef7f17c1d5d1de7d90bf9ce7054d"
+}

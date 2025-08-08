@@ -1,0 +1,9 @@
+fragment ContentTextElementData on ContentTextElement {
+  ...IElementData
+  Paragraph {
+    ...RichTextData
+  }
+  Heading {
+    ...RichTextData
+  }
+}

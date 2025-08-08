@@ -1,0 +1,13 @@
+fragment ProductCarouselElementData on ProductCarouselElement {
+  Heading {
+    json
+    html
+  }
+  CarouselSource
+  CategoryID
+  VisibleElements {
+    ...ReferenceData
+  }
+  productsofView
+  PagingSize
+}

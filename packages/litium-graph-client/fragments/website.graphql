@@ -1,0 +1,37 @@
+fragment Website on IWebsiteItem {
+  id
+  texts {
+    ...WebsiteText
+  }
+}
+
+fragment AcceleratorWebsite on AcceleratorWebsiteWebsite {
+  ...Website
+  fields {
+    _name
+    footerHeader
+    megaMenuColumnHeader
+  }
+}
+
+fragment WebsiteText on WebsiteText {
+  key
+  value
+}
+
+fragment PointerPage on PointerPageItem {
+  id
+  item {
+    ...Page
+  }
+}
+
+fragment PointerProductField on PointerProductFieldItem {
+  fieldType
+  field
+}
+
+fragment FooterWebsiteField on FooterWebsiteFieldDefinition {
+  title
+  footerText
+}

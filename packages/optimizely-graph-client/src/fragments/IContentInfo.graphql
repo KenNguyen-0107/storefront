@@ -1,0 +1,18 @@
+fragment IContentInfo on IContentMetadata {
+  key
+  locale
+  fallbackForLocale
+  version
+  displayName
+  url {
+    ...ContentUrlData
+  }
+  types
+  published
+  status
+  changeset
+  created
+  lastModified
+  sortOrder
+  variation
+}

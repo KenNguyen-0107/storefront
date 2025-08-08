@@ -1,0 +1,44 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '20.x'
+    displayName: 'Install Node.js 20.x'
+
+  - checkout: self
+
+  - script: |
+      cd packages/niteco-ui
+      npm install
+    displayName: 'Install dependencies'
+
+#   - script: |
+#       cd packages/niteco-ui
+#       npx storybook@latest upgrade --yes
+#     displayName: 'Upgrade Storybook'
+    
+  - script: |
+      cd packages/niteco-ui
+      npm run build-storybook
+    displayName: 'Build Storybook'
+
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: 'packages/niteco-ui/storybook-static'
+      Contents: '**'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/storybook'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/storybook'
+      ArtifactName: 'storybook'

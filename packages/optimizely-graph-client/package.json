@@ -1,0 +1,74 @@
+{
+  "name": "@niteco/optimizely-graph-client",
+  "license": "Apache-2.0",
+  "version": "5.0.2",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./client": "./dist/client/index.js",
+    "./config": "./dist/config.js",
+    "./router": "./dist/services/routing/index.js",
+    "./channels": "./dist/services/channel-repository/index.js",
+    "./admin": "./dist/admin-api/index.js",
+    "./codegen": "./dist/codegen.js",
+    "./utils": "./dist/services/utils.js"
+  },
+  "typesVersions": {
+    "*": {
+      "client": [
+        "dist/client/index.d.ts"
+      ],
+      "config": [
+        "dist/config.d.ts",
+        "dist/types.d.ts"
+      ],
+      "router": [
+        "./dist/services/routing/index.d.ts",
+        "./dist/services/routing/types.d.ts"
+      ],
+      "channels": [
+        "./dist/services/channel-repository/index.d.ts",
+        "./dist/services/channel-repository/types.d.ts"
+      ],
+      "admin": [
+        "./dist/admin-api/index.d.ts"
+      ],
+      "codegen": [
+        "dist/codegen.d.ts"
+      ],
+      "utils": [
+        "./dist/services/utils.d.ts"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "^22.15.17",
+    "graphql": "^16.11.0",
+    "graphql-request": "^6.1.0",
+    "openapi-typescript-codegen": "^0.29.0",
+    "prop-types": "^15.8.1",
+    "scheduler": "^0.25.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "@niteco/utils-server": "workspace:*"
+  },
+  "peerDependencies": {
+    "graphql-request": "^6"
+  },
+  "scripts": {
+    "clean": "tsc --build --clean",
+    "compile-ts": "tsc --build",
+    "prepare": "yarn generate-admin && tsc --build",
+    "watch": "yarn tsc --watch",
+    "recompile": "tsc --build --clean && tsc --build --force",
+    "generate-admin": "openapi --input https://cg.optimizely.com/app/swagger/swagger.json --output ./src/admin-api/client --name OptimizelyGraphAdminApi && node ./scripts/update-imports.cjs"
+  }
+}

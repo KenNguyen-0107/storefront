@@ -1,0 +1,163 @@
+fragment Country on Country {
+  name
+  code
+  currency {
+    name
+    code
+    symbol
+  }
+}
+
+fragment Currency on Currency {
+  name
+  code
+  symbol
+}
+
+fragment UnitOfMeasurement on UnitOfMeasurement {
+  unitOfMeasurementId
+  name
+  decimalDigits
+}
+
+fragment VatDetail on VatDetail {
+  vatRate
+  amountIncludingVat
+  vat
+}
+
+fragment DiscountInfo on DiscountInfo {
+  description
+  discountCode
+  discountType
+}
+
+fragment Metadata on Metadata {
+  title
+  language
+  links {
+    href
+    attributes {
+      name
+      value
+    }
+  }
+  tags {
+    name
+    content
+  }
+  title
+}
+
+fragment Node on Node {
+  id
+}
+
+fragment Content on IContentItem {
+  id
+  url
+  metadata {
+    ...Metadata
+  }
+}
+
+fragment PageInfo on PageInfo {
+  hasNextPage
+  hasPreviousPage
+  startCursor
+  endCursor
+}
+
+fragment Image on PointerMediaImageItem {
+  __typename
+  item {
+    url
+    dimension {
+      ...Size
+    }
+    alt
+    filename
+  }
+}
+
+fragment Size on Size {
+  __typename
+  height
+  width
+}
+
+fragment Video on PointerMediaVideoItem {
+  __typename
+  item {
+    ...FileItem
+  }
+}
+
+fragment FileItem on IFileItem {
+  __typename
+  url
+  filename
+  alt
+}
+fragment TextOption on TextOptionDefinition {
+  __typename
+  value
+  name
+}
+
+fragment IntOption on IntOptionDefinition {
+  __typename
+  value
+  name
+}
+
+fragment Link on LinkFieldDefinition {
+  __typename
+  url
+  text
+}
+
+fragment BannerItemBlockFieldDefinition on BannerItemBlockFieldDefinition {
+  richText
+  imageAltText
+  isFullWidthImage
+  cssClass
+  backgroundLink {
+    ...Link
+  }
+  blockHeight
+  backgroundColorOverlay
+  backgroundColorOverlayOpacity
+  loading {
+    ...TextOption
+  }
+  buttonLink {
+    ...Link
+  }
+  buttonType {
+    ...TextOption
+  }
+  image {
+    ...Image
+  }
+  imageMobile {
+    ...Image
+  }
+}
+
+fragment ContentImage on ContentImageBlockFieldDefinition {
+  __typename
+  image {
+    ...Image
+  }
+  imageMobile {
+    ...Image
+  }
+  imageAltText
+  imageHeight
+  imageWidth
+  cssClass
+  isFullWidthImage
+  imageMobileHeight
+  imageMobileWidth
+}

@@ -1,0 +1,12 @@
+fragment ImageItemElementData on ImageItemElement {
+  ...IElementData
+  ImageDesktop {
+    ...ContentReferenceData
+  }
+  ImageMobile {
+    ...ContentReferenceData
+  }
+  Loading
+  Alt
+  IsFullWidthImage
+}

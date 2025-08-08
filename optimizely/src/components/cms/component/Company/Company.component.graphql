@@ -1,0 +1,4 @@
+fragment CompanyData on Company {
+  Name
+  Logo { ...ReferenceData }
+}

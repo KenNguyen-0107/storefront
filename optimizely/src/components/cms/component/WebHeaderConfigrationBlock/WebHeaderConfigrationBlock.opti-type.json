@@ -1,0 +1,98 @@
+{
+  "key": "WebHeaderConfigrationBlock",
+  "displayName": "Web Header Configration Block",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {
+    "HeaderCTA": {
+      "type": "url",
+      "displayName": "Header CTA",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "TopNavigationHeader": {
+      "type": "array",
+      "displayName": "Top Navigation Header",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 100,
+      "editorSettings": {},
+      "items": {
+        "type": "content",
+        "allowedTypes": [
+          "TopHeaderContainer"
+        ],
+        "restrictedTypes": []
+      }
+    },
+    "MainNavigationHeader": {
+      "type": "array",
+      "displayName": "Main Navigation Header",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 200,
+      "editorSettings": {},
+      "items": {
+        "type": "content",
+        "allowedTypes": [
+          "MegaMenuGroupBlock"
+        ],
+        "restrictedTypes": []
+      }
+    },
+    "SearchBarText": {
+      "type": "string",
+      "displayName": "Search Bar Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 300,
+      "editorSettings": {}
+    },
+    "SiteLogoAltText": {
+      "type": "string",
+      "displayName": "Site Logo Alt Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 400,
+      "editorSettings": {}
+    },
+    "SiteLogoIcon": {
+      "type": "contentReference",
+      "displayName": "Site Logo Icon",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 500,
+      "editorSettings": {},
+      "allowedTypes": [],
+      "restrictedTypes": []
+    },
+    "SiteSearchEnable": {
+      "type": "boolean",
+      "displayName": "Site Search Enable",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 600,
+      "editorSettings": {}
+    }
+  }
+}

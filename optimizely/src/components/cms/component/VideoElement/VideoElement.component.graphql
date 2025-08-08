@@ -1,0 +1,12 @@
+fragment VideoElementData on VideoElement {
+  Video {
+    ...ReferenceData
+  }
+  Placeholder {
+    ...ReferenceData
+  }
+  VideoUrl
+  Autoplay
+  PlayOnPopup
+  Loading
+}

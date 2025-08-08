@@ -1,0 +1,79 @@
+You are reviewing the base UI implementation for a project built with React and Next.js:
+**Target (specify one of the following)**
+- src/utils/date.ts
+- packages/core 
+- src/services/user/
+
+Please analyze the following aspects and provide detailed feedback, suggestions for improvement, and highlight any best practices or anti-patterns:
+
+1. Component Structure & Organization
+   - Are components broken down into logical, reusable pieces?
+   - Is there a clear separation between presentational (UI) and container (logic) components?
+   - Are files and folders organized according to an understandable and scalable convention (e.g., feature-based, atomic design, etc.)?
+
+2. Naming Conventions
+   - Are files, folders, and components named clearly and consistently?
+   - Are React components named using PascalCase? Are files and directories named using kebab-case or another consistent standard?
+   - Are props, functions, and variables named descriptively, avoiding abbreviations and ambiguity?
+   - Are CSS classes/selectors named consistently (e.g., BEM, Tailwind utility, or another standard)?
+   - Are constants in UPPER_SNAKE_CASE? Are hooks prefixed with `use`?
+   - Are there any naming collisions or inconsistencies?
+
+3. Reusability & Composability
+   - Are UI components generic enough to be reused across different features/pages?
+   - Are props well-defined and validated (using TypeScript or PropTypes)?
+   - Is there excessive prop drilling, or can context/hooks be used?
+
+4. Styling Approach
+   - Is the styling solution (CSS Modules, TailwindCSS, styled-components, etc.) consistent and maintainable?
+   - Are there any issues with specificity, naming collisions, or global scope leakage?
+   - Are design tokens or variables used for theme consistency?
+
+5. Accessibility (a11y)
+   - Are semantic HTML elements used appropriately?
+   - Is keyboard navigation supported?
+   - Are ARIA attributes and roles applied where needed?
+   - Is color contrast adequate for text and interactive elements?
+
+6. Performance
+   - Are components optimized to avoid unnecessary renders (e.g., useMemo, React.memo)?
+   - Are images optimized (using the Next.js Image component or similar)?
+   - Is code splitting/lazy loading applied for large or rarely used components?
+   - Are there any issues with hydration, SSR/SSG, or loading states?
+
+7. Next.js Best Practices
+   - Are data fetching methods (getStaticProps, getServerSideProps, etc.) used correctly?
+   - Are dynamic routes and API routes organized and implemented according to Next.js conventions?
+   - Is environment configuration secure and environment-specific?
+
+8. Testing & Type Safety
+   - Are there sufficient unit, integration, and/or E2E tests?
+   - Is TypeScript used effectively for type safety?
+   - Are components and hooks covered by tests?
+
+9. Storybook & UI Documentation
+   - Are components documented in Storybook with relevant stories and usage examples?
+   - Do stories cover key states, edge cases, and accessibility?
+   - Is Storybook used to demonstrate variations, theming, and responsive behaviors?
+   - Is Storybook documentation consistent and easy to understand for team members?
+
+10. Documentation & Maintainability
+    - Are components and functions well-documented (comments, Storybook, or other tools)?
+    - Is the codebase easy to navigate and understand for new developers?
+
+11. General Code Quality
+    - Are there any code smells, anti-patterns, or redundant logic?
+    - Is linting/formatting (e.g., ESLint, Prettier) enforced?
+
+---
+Please provide your review as a list of strengths and actionable recommendations. Include code or folder structure examples if needed.
+
+**FINAL DECISION:**
+- ✅ APPROVE: Ready to merge
+- 🔄 REQUEST CHANGES: Issues must be addressed
+- 💬 COMMENT: Suggestions for improvement
+
+**Priority Issues Found:**
+🔴 CRITICAL: [List blocking issues]  
+🟡 HIGH: [List important improvements]  
+🔵 MEDIUM: [List nice-to-have changes]  

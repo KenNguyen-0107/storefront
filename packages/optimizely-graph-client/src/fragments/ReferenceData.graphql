@@ -1,0 +1,6 @@
+fragment ReferenceData on ContentReference {
+  key
+  url {
+    ...ContentUrlData
+  }
+}

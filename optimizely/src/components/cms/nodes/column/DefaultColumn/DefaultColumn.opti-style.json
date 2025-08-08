@@ -1,0 +1,345 @@
+{
+  "key": "DefaultColumn",
+  "displayName": "Default",
+  "nodeType": "Column",
+  "isDefault": true,
+  "created": "2025-07-17T09:48:34.4448355+00:00",
+  "createdBy": "trang.ntt@niteco.se",
+  "lastModified": "2025-07-29T06:46:27.8693666+00:00",
+  "lastModifiedBy": "87a17fcb9943473697d7de4f94ffe4ef",
+  "settings": {
+    "width": {
+      "displayName": "Width on Mobile",
+      "editor": "",
+      "sortOrder": 0,
+      "choices": {
+        "w_full": {
+          "displayName": "w-full",
+          "sortOrder": 2
+        },
+        "w_onehalf": {
+          "displayName": "w-1/2",
+          "sortOrder": 3
+        },
+        "w_twofifths": {
+          "displayName": "w-2/5",
+          "sortOrder": 4
+        },
+        "w_threefifths": {
+          "displayName": "w-3/5",
+          "sortOrder": 4
+        },
+        "w_onethird": {
+          "displayName": "w-1/3",
+          "sortOrder": 5
+        },
+        "w_twothird": {
+          "displayName": "w-2/3",
+          "sortOrder": 5
+        }
+      }
+    },
+    "widthDesktop": {
+      "displayName": "Width on Desktop",
+      "editor": "",
+      "sortOrder": 0,
+      "choices": {
+        "w_full": {
+          "displayName": "w-full",
+          "sortOrder": 2
+        },
+        "w_onehalf": {
+          "displayName": "w-1/2",
+          "sortOrder": 3
+        },
+        "w_twofifths": {
+          "displayName": "w-2/5",
+          "sortOrder": 4
+        },
+        "w_threefifths": {
+          "displayName": "w-3/5",
+          "sortOrder": 4
+        },
+        "w_onethird": {
+          "displayName": "w-1/3",
+          "sortOrder": 5
+        },
+        "w_twothird": {
+          "displayName": "w-2/3",
+          "sortOrder": 5
+        },
+        "w_onequarter": {
+          "displayName": "w-1/4",
+          "sortOrder": 6
+        },
+        "w_threequarter": {
+          "displayName": "w-3/4",
+          "sortOrder": 6
+        },
+        "w_onefifths": {
+          "displayName": "w-1/5",
+          "sortOrder": 7
+        },
+        "w_fourfifths": {
+          "displayName": "w-4/5",
+          "sortOrder": 7
+        },
+        "w_onesixths": {
+          "displayName": "w-1/6",
+          "sortOrder": 8
+        },
+        "w_fivesixths": {
+          "displayName": "w-5/6",
+          "sortOrder": 8
+        }
+      }
+    },
+    "paddingX": {
+      "displayName": "Padding Left Right",
+      "editor": "Left Right Padding of whole column content",
+      "sortOrder": 10,
+      "choices": {
+        "none": {
+          "displayName": "none",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        }
+      }
+    },
+    "paddingY": {
+      "displayName": "Padding Top Bottom",
+      "editor": "Top Bottom Padding of whole column content",
+      "sortOrder": 20,
+      "choices": {
+        "none": {
+          "displayName": "none",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        }
+      }
+    },
+    "displayPosition": {
+      "displayName": "display Position",
+      "editor": "display position on column",
+      "sortOrder": 30,
+      "choices": {
+        "default": {
+          "displayName": "default",
+          "sortOrder": 10
+        },
+        "relative": {
+          "displayName": "relative",
+          "sortOrder": 20
+        },
+        "absolute": {
+          "displayName": "absolute",
+          "sortOrder": 20
+        }
+      }
+    },
+    "contentSpacing": {
+      "displayName": "Content Spacing of element on column",
+      "editor": "Horizontal spacing between elements on column",
+      "sortOrder": 40,
+      "choices": {
+        "none": {
+          "displayName": "none",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        }
+      }
+    },
+    "horizontalAlign": {
+      "displayName": "Horizontal Align",
+      "editor": "",
+      "sortOrder": 50,
+      "choices": {
+        "start": {
+          "displayName": "Start",
+          "sortOrder": 10
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 20
+        },
+        "end": {
+          "displayName": "End",
+          "sortOrder": 30
+        },
+        "stretch": {
+          "displayName": "Stretch",
+          "sortOrder": 40
+        },
+        "between": {
+          "displayName": "Between",
+          "sortOrder": 40
+        },
+        "around": {
+          "displayName": "Around",
+          "sortOrder": 40
+        },
+        "evenly": {
+          "displayName": "Evenly",
+          "sortOrder": 40
+        }
+      }
+    },
+    "verticalAlign": {
+      "displayName": "Vertical Align",
+      "editor": "",
+      "sortOrder": 60,
+      "choices": {
+        "start": {
+          "displayName": "Start",
+          "sortOrder": 10
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 20
+        },
+        "end": {
+          "displayName": "End",
+          "sortOrder": 30
+        },
+        "stretch": {
+          "displayName": "Stretch",
+          "sortOrder": 40
+        }
+      }
+    },
+    "direction": {
+      "displayName": "direction",
+      "editor": " ",
+      "sortOrder": 140,
+      "choices": {
+        "horizontal": {
+          "displayName": "horizontal",
+          "sortOrder": 1
+        },
+        "vertical": {
+          "displayName": "vertical",
+          "sortOrder": 2
+        }
+      }
+    },
+    "backgroundColor": {
+      "displayName": "Background Color",
+      "editor": "",
+      "sortOrder": 70,
+      "choices": {
+        "transparent": {
+          "displayName": "transparent",
+          "sortOrder": 1
+        },
+        "muted": {
+          "displayName": "muted",
+          "sortOrder": 2
+        },
+        "white": {
+          "displayName": "white",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "blue",
+          "sortOrder": 4
+        },
+        "red_Brown": {
+          "displayName": "red-brown",
+          "sortOrder": 5
+        },
+        "mocha": {
+          "displayName": "mocha",
+          "sortOrder": 6
+        },
+        "duck": {
+          "displayName": "duck",
+          "sortOrder": 7
+        },
+        "lightMuted": {
+          "displayName": "lightMuted",
+          "sortOrder": 8
+        }
+      }
+    },
+    "columnHeight": {
+      "displayName": "Column Height",
+      "editor": "",
+      "sortOrder": 80,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 1
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 2
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 3
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 4
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+query GetPageByUrl($url: String!) {
+  pageSearch(query: { field: { stringValue: { field: "_url", value: $url } } }, first: 1) {
+    nodes {
+      id
+      name
+      url
+      ... on LandingPage {
+        fields {
+          _name
+          _url
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+fragment ImageBackgroundData on ImageBackground {
+  ImageDesktop { ...ReferenceData }
+  ImageMobile { ...ReferenceData }
+  Alt
+  IsFullIWidthImage
+  Loading
+}

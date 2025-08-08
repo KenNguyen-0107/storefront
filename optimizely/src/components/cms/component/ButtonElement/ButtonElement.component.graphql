@@ -1,0 +1,5 @@
+fragment ButtonElementData on ButtonElement {
+  ButtonText
+  ButtonLink { ...LinkData }
+  className
+}

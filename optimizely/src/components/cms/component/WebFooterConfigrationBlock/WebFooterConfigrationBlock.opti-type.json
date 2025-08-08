@@ -1,0 +1,113 @@
+{
+  "key": "WebFooterConfigrationBlock",
+  "displayName": "Web Footer Configration Block",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {
+    "SiteLogoFooter": {
+      "type": "contentReference",
+      "displayName": "Site Logo Footer",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "BannerText",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [],
+      "restrictedTypes": []
+    },
+    "LogoAltText": {
+      "type": "string",
+      "displayName": "Logo Alt Text",
+      "description": "",
+      "localized": true,
+      "required": false,
+      "group": "BannerText",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "LocationDetails": {
+      "type": "string",
+      "format": "html",
+      "displayName": "Location Details",
+      "description": "",
+      "localized": true,
+      "required": false,
+      "group": "BannerText",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "ButtonURLFooter": {
+      "type": "component",
+      "contentType": "link",
+      "displayName": "Button URL Footer",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "BannerText",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "FooterNavigation": {
+      "type": "array",
+      "displayName": "Footer Navigation",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "items": {
+        "type": "content",
+        "allowedTypes": [],
+        "restrictedTypes": []
+      }
+    },
+    "SocialMediaArea": {
+      "type": "array",
+      "displayName": "Social Media Area",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "items": {
+        "type": "content",
+        "allowedTypes": [
+          "SocialMediaBlock"
+        ],
+        "restrictedTypes": []
+      }
+    },
+    "CopyrightText": {
+      "type": "string",
+      "displayName": "Copyright Text",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "TermsAndConditionsArea": {
+      "type": "array",
+      "format": "LinkCollection",
+      "displayName": "Terms And Conditions Area",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "items": {
+        "type": "component",
+        "contentType": "link"
+      }
+    }
+  }
+}

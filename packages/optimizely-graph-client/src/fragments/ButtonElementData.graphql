@@ -1,0 +1,8 @@
+fragment ButtonElementData on ButtonElement {
+  ...IElementData
+  ButtonText
+  ButtonLink {
+    ...ContentUrlData
+  }
+  className
+}

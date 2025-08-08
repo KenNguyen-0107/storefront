@@ -1,0 +1,53 @@
+# Import all fragments
+#import "../fragments/BlankExperienceData.graphql"
+#import "../fragments/IContentData.graphql"
+#import "../fragments/PageData.graphql"
+#import "../fragments/ExperienceData.graphql"
+#import "../fragments/ReferenceData.graphql"
+#import "../fragments/CompositionNodeData.graphql"
+#import "../fragments/CompositionComponentNodeData.graphql"
+#import "../fragments/ArticleListElementData.graphql"
+#import "../fragments/BannerItemData.graphql"
+#import "../fragments/ButtonBlockData.graphql"
+#import "../fragments/ButtonElementData.graphql"
+#import "../fragments/CompanyData.graphql"
+#import "../fragments/ContentTextData.graphql"
+#import "../fragments/ContentTextElementData.graphql"
+#import "../fragments/DictionaryData.graphql"
+#import "../fragments/DictionaryItemData.graphql"
+#import "../fragments/HeaderBlockData.graphql"
+#import "../fragments/HeadingData.graphql"
+#import "../fragments/HeadingElementData.graphql"
+#import "../fragments/ImageBackgroundData.graphql"
+#import "../fragments/ImageItemData.graphql"
+#import "../fragments/ImageItemElementData.graphql"
+#import "../fragments/ImageTextItemData.graphql"
+#import "../fragments/MegaMenuGroupBlockData.graphql"
+#import "../fragments/NavigationMenuBlockData.graphql"
+#import "../fragments/OfficeLocationData.graphql"
+#import "../fragments/PageSeoSettingsData.graphql"
+#import "../fragments/ElementData.graphql"
+#import "../fragments/BlockData.graphql"
+#import "../fragments/IContentListItem.graphql"
+#import "../fragments/IElementData.graphql"
+#import "../fragments/IContentInfo.graphql"
+#import "../fragments/PageSeoSettingsPropertyData.graphql"
+#import "../fragments/RichTextData.graphql"
+#import "../fragments/ContentUrlData.graphql"
+#import "../fragments/ContentReferenceData.graphql"
+#import "../fragments/LinkData.graphql"
+#import "../fragments/DictionaryItemPropertyData.graphql"
+
+query getContentByPath($path: [String!]!, $locale: [Locales!], $siteId: String, $changeset: String = null) {
+  content: _Content(
+    where: { _metadata: { url: { default: { in: $path }, base: { eq: $siteId } }, changeset: { eq: $changeset } } }
+    locale: $locale
+  ) {
+    total
+    items: item {
+      ...IContentData
+      ...PageData
+      ...BlankExperienceData
+    }
+  }
+}

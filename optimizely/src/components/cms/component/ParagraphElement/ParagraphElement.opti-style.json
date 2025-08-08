@@ -1,0 +1,46 @@
+{
+  "key": "DefaultParagraph",
+  "displayName": "Default",
+  "contentType": "ParagraphElement",
+  "isDefault": true,
+  "created": "2025-07-18T02:15:51.5409233+00:00",
+  "createdBy": "trang.ntt@niteco.se",
+  "lastModified": "2025-07-18T02:17:11.6958076+00:00",
+  "lastModifiedBy": "trang.ntt@niteco.se",
+  "settings": {
+    "transform": {
+      "displayName": "Width",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "full": {
+          "displayName": "Full width",
+          "sortOrder": 20
+        }
+      }
+    },
+    "placement": {
+      "displayName": "Placement",
+      "editor": "",
+      "sortOrder": 20,
+      "choices": {
+        "left": {
+          "displayName": "Left",
+          "sortOrder": 10
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 20
+        },
+        "right": {
+          "displayName": "Right",
+          "sortOrder": 30
+        }
+      }
+    }
+  }
+}

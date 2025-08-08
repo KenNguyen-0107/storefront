@@ -1,0 +1,6 @@
+fragment ButtonLink on stagingButtonLink {
+  __typename
+  Type
+  Value
+  Url
+}

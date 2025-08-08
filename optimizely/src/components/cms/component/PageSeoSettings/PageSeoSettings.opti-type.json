@@ -1,0 +1,58 @@
+{
+  "key": "PageSeoSettings",
+  "displayName": "Page SEO Settings",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 100,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {
+    "MetaTitle": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Meta title",
+      "description": "",
+      "localized": true,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "maxLength": 120
+    },
+    "MetaDescription": {
+      "type": "string",
+      "displayName": "Meta description",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 100,
+      "editorSettings": {}
+    },
+    "MetaKeywords": {
+      "type": "string",
+      "displayName": "Meta Keywords",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 200,
+      "editorSettings": {}
+    },
+    "ThumbnailImage": {
+      "type": "contentReference",
+      "displayName": "Thumbnail Image",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 300,
+      "editorSettings": {},
+      "allowedTypes": [
+        "Image"
+      ],
+      "restrictedTypes": []
+    }
+  }
+}

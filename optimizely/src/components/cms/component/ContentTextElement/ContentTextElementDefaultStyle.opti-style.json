@@ -1,0 +1,414 @@
+{
+  "key": "ContentTextElementDefaultStyle",
+  "displayName": "Default",
+  "contentType": "ContentTextElement",
+  "isDefault": true,
+  "created": "2025-07-17T09:48:34.5298913+00:00",
+  "createdBy": "trang.ntt@niteco.se",
+  "lastModified": "2025-07-24T04:35:18.6016343+00:00",
+  "lastModifiedBy": "trang.ntt@niteco.se",
+  "settings": {
+    "headingFontSize": {
+      "displayName": "Heading Font size",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "h1": {
+          "displayName": "Heading 1",
+          "sortOrder": 10
+        },
+        "h2": {
+          "displayName": "Heading 2",
+          "sortOrder": 20
+        },
+        "h3": {
+          "displayName": "Heading 3",
+          "sortOrder": 30
+        },
+        "h4": {
+          "displayName": "Heading 4",
+          "sortOrder": 40
+        },
+        "h5": {
+          "displayName": "Heading 5",
+          "sortOrder": 50
+        },
+        "h6": {
+          "displayName": "Heading 6",
+          "sortOrder": 60
+        },
+        "plain": {
+          "displayName": "Plain text",
+          "sortOrder": 250
+        }
+      }
+    },
+    "textAlign": {
+      "displayName": "Text align",
+      "editor": "",
+      "sortOrder": 20,
+      "choices": {
+        "left": {
+          "displayName": "Left",
+          "sortOrder": 10
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 20
+        },
+        "right": {
+          "displayName": "Right",
+          "sortOrder": 30
+        }
+      }
+    },
+    "headingColor": {
+      "displayName": "Heading Color",
+      "editor": "",
+      "sortOrder": 40,
+      "choices": {
+        "muted": {
+          "displayName": "muted",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "blue",
+          "sortOrder": 4
+        },
+        "white": {
+          "displayName": "White",
+          "sortOrder": 5
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 6
+        }
+      }
+    },
+    "paragraphColor": {
+      "displayName": "Paragraph color",
+      "editor": "",
+      "sortOrder": 50,
+      "choices": {
+        "muted": {
+          "displayName": "muted",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "blue",
+          "sortOrder": 4
+        },
+        "white": {
+          "displayName": "White",
+          "sortOrder": 5
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 6
+        }
+      }
+    },
+    "justifyContent": {
+      "displayName": "Horizontal alignment",
+      "editor": "",
+      "sortOrder": 60,
+      "choices": {
+        "start": {
+          "displayName": "Start",
+          "sortOrder": 10
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 20
+        },
+        "end": {
+          "displayName": "End",
+          "sortOrder": 30
+        },
+        "stretch": {
+          "displayName": "Stretch",
+          "sortOrder": 40
+        }
+      }
+    },
+    "alignContent": {
+      "displayName": "Vertical alignment",
+      "editor": "",
+      "sortOrder": 70,
+      "choices": {
+        "start": {
+          "displayName": "Start",
+          "sortOrder": 10
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 20
+        },
+        "end": {
+          "displayName": "End",
+          "sortOrder": 30
+        },
+        "stretch": {
+          "displayName": "Stretch",
+          "sortOrder": 40
+        }
+      }
+    },
+    "displayPosition": {
+      "displayName": "display Position",
+      "editor": "display position on column",
+      "sortOrder": 80,
+      "choices": {
+        "default": {
+          "displayName": "default",
+          "sortOrder": 10
+        },
+        "relative": {
+          "displayName": "relative",
+          "sortOrder": 20
+        },
+        "absolute": {
+          "displayName": "absolute",
+          "sortOrder": 20
+        }
+      }
+    },
+    "verticalSpacing": {
+      "displayName": "Vertical Spacing",
+      "editor": "Vertical spacing between Heading Paragraph",
+      "sortOrder": 90,
+      "choices": {
+        "none": {
+          "displayName": "none",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "textTransform": {
+      "displayName": "Text Transform",
+      "editor": "",
+      "sortOrder": 120,
+      "choices": {
+        "as_entered": {
+          "displayName": "As entered",
+          "sortOrder": 1
+        },
+        "uppercase": {
+          "displayName": "Uppercase",
+          "sortOrder": 2
+        },
+        "lowercase": {
+          "displayName": "Lowercase",
+          "sortOrder": 3
+        },
+        "capitalized": {
+          "displayName": "Capitalized",
+          "sortOrder": 4
+        }
+      }
+    },
+    "paddingY": {
+      "displayName": "Padding Top Bottom",
+      "editor": "selectOne",
+      "sortOrder": 130,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "none": {
+          "displayName": "none",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "paddingX": {
+      "displayName": "Padding Left Right",
+      "editor": "selectOne",
+      "sortOrder": 140,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "marginTop": {
+      "displayName": "Margin Top",
+      "editor": "selectOne",
+      "sortOrder": 150,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    },
+    "marginBottom": {
+      "displayName": "Margin Bottom",
+      "editor": "selectOne",
+      "sortOrder": 160,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 70
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 80
+        }
+      }
+    },
+    "maxWidth": {
+      "displayName": "Max Width",
+      "editor": "",
+      "sortOrder": 170,
+      "choices": {
+        "none": {
+          "displayName": "none",
+          "sortOrder": 0
+        },
+        "small": {
+          "displayName": "small",
+          "sortOrder": 0
+        },
+        "medium": {
+          "displayName": "medium",
+          "sortOrder": 0
+        },
+        "large": {
+          "displayName": "large",
+          "sortOrder": 0
+        },
+        "huge": {
+          "displayName": "huge",
+          "sortOrder": 0
+        },
+        "full": {
+          "displayName": "full",
+          "sortOrder": 0
+        }
+      }
+    }
+  }
+}

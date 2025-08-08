@@ -1,0 +1,38 @@
+Please create an Optimizely CMS element with the following information:
+
+Element Information:
+
+Element Name: Image Text Block
+
+Description: An "Image Text Block" is a versatile element combining images with descriptive text, ideal for creating visually engaging content sections such as product highlights, promotional banners, or feature introductions.
+
+Key Features
+
+- Supports configurable image and text alignment (left, right, center).
+
+- Includes responsive design for optimal display on various screen sizes.
+
+- Allows for optional call-to-action links or buttons.
+
+- Provides customizable background colors and padding.
+
+- Offers flexibility for image sizing and cropping.
+
+Style Variants
+ - Default (left-aligned) (xxx.opti-style.json)
+ - Centered (yyy.opti-style.json)
+ - With background image (zzz.opti-style.json)
+
+Required Outputs
+
+Please generate the following:
+
+- Complete file structure
+
+- Component implementation (index.tsx)
+
+- Type definitions (opti-type.json)
+- DisplayTemplate style (opti-style.json)
+- GraphQL schema (component.graph)
+
+You can reference existing elements like components\cms\component\CTAElement for guidance.

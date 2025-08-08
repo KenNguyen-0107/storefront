@@ -1,0 +1,8 @@
+fragment FAQsSectionData on FAQsSection {
+  HeadingText
+  allowMultiple
+  ListItem {
+    ...ContentTextElementData
+    ...HeadingElementData
+  }
+}

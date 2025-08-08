@@ -1,0 +1,13 @@
+{
+  "key": "PDPSpecificationsElement",
+  "displayName": "PDP Specifications Element",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {}
+}

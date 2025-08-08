@@ -1,0 +1,6 @@
+fragment ProductDetailExperienceData on ProductDetailExperience {
+  SEOsettings {
+    ...PageSeoSettingsData
+  }
+  ...ExperienceData
+}

@@ -1,0 +1,50 @@
+.richTextContent {
+    /* Base styles for the rich text content */
+    font-size: inherit;
+    line-height: 1.6;
+}
+
+.richTextContent ul,
+.richTextContent ol {
+    padding-left: 1.5rem;
+    margin: 0 0 1rem;
+}
+
+.richTextContent ul:last-child,
+.richTextContent ol:last-child {
+    margin-bottom: 0;
+}
+
+.richTextContent ul {
+    list-style-type: disc;
+}
+
+.richTextContent ol {
+    list-style-type: decimal;
+}
+
+.richTextContent ul li,
+.richTextContent ol li {
+    margin-bottom: 0.25rem;
+}
+
+/* Nested lists */
+.richTextContent ul ul,
+.richTextContent ol ul {
+    list-style-type: circle;
+}
+
+.richTextContent ul ol,
+.richTextContent ol ol {
+    list-style-type: lower-alpha;
+}
+
+.richTextContent a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.richTextContent a:hover {
+    color: inherit;
+    text-decoration: none;
+}

@@ -1,0 +1,19 @@
+fragment BasicRowData on stagingBasicRow {
+  Type
+  __typename
+  Columns
+  CssClass
+  CustomCSS
+  FullWidthColor
+  FullWidthImage
+  FullWidthImageFocalPoint
+  FullWidthStylingType
+  Gap
+  Id
+  IsFullWidth
+  IsLayout
+  ParentId
+  Reflow
+  Variant
+  Zone
+}

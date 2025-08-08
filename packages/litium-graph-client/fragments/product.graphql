@@ -1,0 +1,81 @@
+fragment Product on IProductItem {
+  id
+  articleNumber
+  name
+  isVariant
+  description
+  stockStatus {
+    inStockQuantity
+    description
+  }
+  price {
+    unitPriceIncludingVat
+    unitPriceExcludingVat
+    discountPriceIncludingVat
+    discountPriceExcludingVat
+    vatRate
+    currency {
+      ...Currency
+    }
+  }
+  images {
+    dimension {
+      width
+      height
+    }
+    url
+    alt
+    filename
+  }
+  unitOfMeasurement {
+    ...UnitOfMeasurement
+  }
+}
+
+fragment ProductWithVariants on ProductWithVariantsProduct {
+  ...Product
+  templateName
+  url
+  metadata {
+    ...Metadata
+  }
+  baseProduct {
+    id
+    articleNumber
+    name
+  }
+  variants(first: 100) {
+    nodes {
+      id
+      articleNumber
+      name
+      stockStatus {
+        inStockQuantity
+      }
+      price {
+        unitPriceIncludingVat
+        unitPriceExcludingVat
+      }
+      images {
+        dimension {
+          width
+          height
+        }
+        url
+        alt
+        filename
+      }
+    }
+    pageInfo {
+      ...PageInfo
+    }
+  }
+  fields {
+    _name
+    _description
+    brand {
+      name
+      value
+    }
+  }
+}

@@ -1,0 +1,3 @@
+fragment PageData on _IContent {
+  ...IContentData
+}

@@ -1,0 +1,92 @@
+{
+  "key": "ProductCarouselElement",
+  "displayName": "Product Carousel Element",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": ["sectionEnabled", "elementEnabled"],
+  "properties": {
+    "Heading": {
+      "type": "string",
+      "format": "html",
+      "displayName": "Heading",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": -100,
+      "editorSettings": {}
+    },
+    "CarouselSource": {
+      "type": "string",
+      "format": "selectOne",
+      "displayName": "CarouselSource",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "enum": {
+        "values": [
+          {
+            "displayName": "Cross Sells",
+            "value": "cross-sells"
+          },
+          {
+            "displayName": "Top Sellers",
+            "value": "top-sellers"
+          },
+          {
+            "displayName": "Recently Viewed",
+            "value": "recently-viewed"
+          }
+        ]
+      }
+    },
+    "CategoryID": {
+      "type": "string",
+      "displayName": "CategoryID",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "VisibleElements": {
+      "type": "contentReference",
+      "displayName": "Visible Elements",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [],
+      "restrictedTypes": []
+    },
+    "productsofView": {
+      "type": "integer",
+      "displayName": "Number Of Products To Display",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 30,
+      "editorSettings": {}
+    },
+    "PagingSize": {
+      "type": "integer",
+      "displayName": "PagingSize",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 100,
+      "editorSettings": {}
+    }
+  }
+}

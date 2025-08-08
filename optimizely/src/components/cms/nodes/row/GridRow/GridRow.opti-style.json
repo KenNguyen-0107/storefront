@@ -1,0 +1,264 @@
+{
+  "key": "GridRow",
+  "displayName": "Grid Row",
+  "nodeType": "row",
+  "isDefault": true,
+  "settings": {
+    "desktopColumns": {
+      "displayName": "Desktop Column",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "one": {
+          "displayName": "One",
+          "sortOrder": 1
+        },
+        "two": {
+          "displayName": "Two",
+          "sortOrder": 2
+        },
+        "three": {
+          "displayName": "Three",
+          "sortOrder": 3
+        },
+        "four": {
+          "displayName": "Four",
+          "sortOrder": 4
+        },
+        "five": {
+          "displayName": "Five",
+          "sortOrder": 5
+        },
+        "six": {
+          "displayName": "Six",
+          "sortOrder": 6
+        }
+      }
+    },
+    "mobileColumns": {
+      "displayName": "Mobile Column",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "one": {
+          "displayName": "One",
+          "sortOrder": 1
+        },
+        "two": {
+          "displayName": "Two",
+          "sortOrder": 2
+        },
+        "three": {
+          "displayName": "Three",
+          "sortOrder": 3
+        },
+        "four": {
+          "displayName": "Four",
+          "sortOrder": 4
+        },
+        "five": {
+          "displayName": "Five",
+          "sortOrder": 5
+        },
+        "six": {
+          "displayName": "Six",
+          "sortOrder": 6
+        }
+      }
+    },
+    "width": {
+      "displayName": "Width",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "full": {
+          "displayName": "Full Width",
+          "sortOrder": 2
+        },
+        "wide": {
+          "displayName": "Wide",
+          "sortOrder": 3
+        },
+        "narrow": {
+          "displayName": "Narrow",
+          "sortOrder": 4
+        }
+      }
+    },
+    "marginY": {
+      "displayName": "Margin top/bottom between row to row",
+      "editor": "Vertical spacing between row to row",
+      "sortOrder": 12,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "none": {
+          "displayName": "none",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        },
+        "minus": {
+          "displayName": "Minus",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingX": {
+      "displayName": "Padding Left Right",
+      "editor": "Left Right Padding of whole column content",
+      "sortOrder": 15,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "none": {
+          "displayName": "none",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "contentSpacing": {
+      "displayName": "Content Spacing",
+      "editor": "Horizontal spacing between Columns added to a Row",
+      "sortOrder": 20,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "none": {
+          "displayName": "none",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "backgroundColor": {
+      "displayName": "Background Color",
+      "editor": "",
+      "sortOrder": 40,
+      "choices": {
+        "muted": {
+          "displayName": "muted",
+          "sortOrder": 1
+        },
+        "white": {
+          "displayName": "white",
+          "sortOrder": 2
+        },
+        "transparent": {
+          "displayName": "transparent",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "blue",
+          "sortOrder": 4
+        },
+        "red_Brown": {
+          "displayName": "red-brown",
+          "sortOrder": 5
+        },
+        "mocha": {
+          "displayName": "mocha",
+          "sortOrder": 6
+        },
+        "duck": {
+          "displayName": "duck",
+          "sortOrder": 7
+        },
+        "none": {
+          "displayName": "None",
+          "sortOrder": 8
+        },
+        "lightMuted": {
+          "displayName": "lightMuted",
+          "sortOrder": 9
+        }
+      }
+    },
+    "justifyContent": {
+      "displayName": "Horizontal Align",
+      "editor": "",
+      "sortOrder": 50,
+      "choices": {
+        "start": {
+          "displayName": "Start",
+          "sortOrder": 10
+        },
+        "center": {
+          "displayName": "Center",
+          "sortOrder": 20
+        },
+        "end": {
+          "displayName": "End",
+          "sortOrder": 30
+        },
+        "stretch": {
+          "displayName": "Stretch",
+          "sortOrder": 40
+        }
+      }
+    }
+  }
+}

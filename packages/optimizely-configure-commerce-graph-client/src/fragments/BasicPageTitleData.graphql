@@ -1,0 +1,10 @@
+fragment BasicPageTitleData on stagingBasicPageTitle {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+}

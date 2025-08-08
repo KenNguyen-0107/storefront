@@ -1,0 +1,12 @@
+/* Utility Classes */
+.text-green {
+    color: rgb(var(--color-success) / 1);
+}
+
+.text-red {
+    color: rgb(var(--color-error) / 1);
+}
+
+.border-stroke {
+    border-color: rgb(255 255 255 / 50%);
+}

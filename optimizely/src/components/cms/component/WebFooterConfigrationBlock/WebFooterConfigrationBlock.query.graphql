@@ -1,0 +1,9 @@
+query getFooter {
+  footer: WebFooterConfigrationBlock(
+    where: { _metadata: { status: { eq: "Published" } } }
+  ) {
+    item {
+      ...WebFooterConfigrationBlockData
+    }
+  }
+}

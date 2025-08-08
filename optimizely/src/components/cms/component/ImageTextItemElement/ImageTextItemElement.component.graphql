@@ -1,0 +1,28 @@
+fragment ImageTextItemElementData on ImageTextItemElement {
+  Heading {
+    json
+    html
+  }
+  RichText {
+    json
+    html
+  }
+  Image {
+    ...ReferenceData
+  }
+  ImageMobile {
+    ...ReferenceData
+  }
+  Alt
+  IsFullWidthImage
+  Loading
+  BackgroundLink {
+    ...LinkData
+  }
+  ButtonLink {
+    ...LinkData
+  }
+  ButtonText
+  ContentImagePosition
+  CssClass
+}

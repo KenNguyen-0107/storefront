@@ -1,0 +1,10 @@
+fragment CommonSignInData on stagingCommonSignIn {
+  Type
+  __typename
+  CustomCSS
+  Id
+  IsLayout
+  ParentId
+  Type
+  Zone
+}

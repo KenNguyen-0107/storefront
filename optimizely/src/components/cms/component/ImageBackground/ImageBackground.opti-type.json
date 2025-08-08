@@ -1,0 +1,83 @@
+{
+  "key": "ImageBackground",
+  "displayName": "Image Background",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "ImageDesktop": {
+      "type": "contentReference",
+      "displayName": "ImageDesktop",
+      "description": "",
+      "localized": false,
+      "required": true,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [],
+      "restrictedTypes": []
+    },
+    "ImageMobile": {
+      "type": "contentReference",
+      "displayName": "ImageMobile",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [
+        "Image"
+      ],
+      "restrictedTypes": []
+    },
+    "Alt": {
+      "type": "string",
+      "displayName": "Alt",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 100,
+      "editorSettings": {}
+    },
+    "IsFullIWidthImage": {
+      "type": "boolean",
+      "displayName": "IsFullIWidthImage",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 200,
+      "editorSettings": {}
+    },
+    "Loading": {
+      "type": "string",
+      "format": "selectOne",
+      "displayName": "Loading",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 300,
+      "editorSettings": {},
+      "enum": {
+        "values": [
+          {
+            "displayName": "Eager",
+            "value": "eager"
+          },
+          {
+            "displayName": "Lazy",
+            "value": "lazy"
+          }
+        ]
+      }
+    }
+  }
+}

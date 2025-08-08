@@ -1,0 +1,18 @@
+fragment BasicButtonData on stagingBasicButton {
+  Type
+  __typename
+  Alignment
+  CssClass
+  CustomCSS
+  Id
+  IsLayout
+  Label
+  Link {
+    Type
+    Value
+    Url
+  }
+  ParentId
+  Variant
+  Zone
+}

@@ -1,0 +1,8 @@
+fragment ContentUrlData on ContentUrl {
+  type
+  default
+  hierarchical
+  internal
+  graph
+  base
+}

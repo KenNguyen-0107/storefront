@@ -1,0 +1,108 @@
+You are reviewing the following codebase segment:
+**Target (specify one of the following)**
+- src/utils/date.ts
+- packages/core 
+- src/services/user/
+
+Please help review the following code and configuration. Use this checklist to ensure best practices and consistency.
+
+1. NAMING CONVENTIONS & ORGANIZATION
+- Consistent CSS variable naming
+- Unified prefixing strategy (e.g., --color-, --font-, --space-)
+- Consistent multi-word conventions (kebab-case recommended)
+- Semantic naming that describes purpose, not appearance
+- Logical grouping and organization of variables
+- Consistent Tailwind CSS variable mapping
+- All Tailwind config references match actual CSS variables
+- No undefined variable references
+- Consistent referencing patterns across the config
+
+2. CSS BEST PRACTICES
+- Color System
+    - Consistent color value formats (hex vs. RGB space-separated)
+    - Proper color contrast ratios (WCAG 2.1 AA: 4.5:1 for normal text)
+    - Semantic color naming (primary, secondary, success, error)
+    - Support for alpha transparency where needed
+- Typography System
+    - Consistent font size scale
+    - Proper line height ratios
+    - Web-safe font fallbacks
+    - Responsive typography considerations
+- CSS Custom Properties
+    - Fallback values provided for critical variables
+    - Proper cascade and inheritance usage
+    - Scoped variables where appropriate
+    - No unused CSS variables
+
+3. TAILWIND CONFIGURATION
+- Content Scanning
+    - All relevant file paths included in the content array
+    - No unnecessary paths that could slow build
+    - Proper file extensions specified
+- Theme Extension
+    - Logical extension of the default theme
+    - No overriding of useful defaults unnecessarily
+    - Consistent with design system tokens
+    - Proper TypeScript typing with `satisfies Config`
+- Performance Optimization
+    - No unused custom utilities
+    - Efficient color palette (not overly large)
+    - Proper tree-shaking considerations
+
+4. RESPONSIVE DESIGN
+- Breakpoint System
+    - Logical breakpoint progression
+    - Consistent with common device sizes
+    - Mobile-first approach implemented
+    - Container queries considered where appropriate
+- Spacing System
+    - Consistent spacing scale
+    - Proper responsive spacing utilities
+    - Logical progression (4px, 8px, 16px, 32px, etc.)
+
+5. ACCESSIBILITY
+- Motion & Animation
+    - `prefers-reduced-motion` media query implemented
+    - Animations can be disabled for accessibility
+    - No motion that could trigger vestibular disorders
+- Color Accessibility
+    - Sufficient color contrast ratios
+    - Color is not the only means of conveying information
+    - High contrast mode support considered
+- Focus Management
+    - Visible focus indicators
+    - Logical focus order
+    - Custom focus styles where needed
+
+6. THEMING SYSTEM
+- Theme Implementation
+    - Complete theme coverage (not just black/white swap)
+    - Proper theme switching mechanism
+    - Theme persistence across sessions
+    - All color variables properly themed
+- CSS Variable Strategy
+    - Semantic variables for theming
+    - Proper CSS cascade usage
+    - Theme-specific overrides properly scoped
+
+7. MAINTAINABILITY
+- Documentation
+    - CSS variables documented with comments
+    - Design system rationale explained
+    - Usage examples provided
+    - Breaking changes documented
+- Scalability
+    - System can accommodate new components
+    - Easy to add new theme variants
+    - Consistent patterns for extensions
+    - No hard-coded values in components
+
+**FINAL DECISION:**
+- ✅ APPROVE: Ready to merge
+- 🔄 REQUEST CHANGES: Issues must be addressed
+- 💬 COMMENT: Suggestions for improvement
+
+**Priority Issues Found:**
+🔴 CRITICAL: [List blocking issues]  
+🟡 HIGH: [List important improvements]  
+🔵 MEDIUM: [List nice-to-have changes]  

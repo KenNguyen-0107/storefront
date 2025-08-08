@@ -1,0 +1,54 @@
+{
+  "name": "@niteco/ui",
+  "version": "1.0.0",
+  "description": "Niteco UI components library",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "storybook",
+    "tailwindcss"
+  ],
+  "author": "Niteco",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^9.0.9",
+    "@storybook/nextjs": "^9.0.11",
+    "@storybook/react-vite": "^9.0.9",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "esbuild": "^0.25.8",
+    "eslint-plugin-storybook": "^9.0.9",
+    "lucide-react": "^0.522.0",
+    "postcss": "^8.5.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^9.0.9",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.8.3",
+    "vite": "^6.0.7"
+  },
+  "overrides": {
+    "storybook": "$storybook"
+  },
+  "dependencies": {
+    "@radix-ui/react-tooltip": "^1.1.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "swiper": "^11.2.8",
+    "tailwind-merge": "^3.3.1"
+  }
+}

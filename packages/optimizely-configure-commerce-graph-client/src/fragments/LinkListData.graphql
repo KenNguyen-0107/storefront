@@ -1,0 +1,30 @@
+fragment LinkListData on stagingLinkList {
+  Type
+  __typename
+  Alignment
+  CustomCSS
+  Direction
+  Id
+  IsLayout
+  Links {
+    LinkItems {
+      Destination {
+        Type
+        Value
+        Url
+      }
+      Icon
+      OpenInNewWindow
+      OverriddenTitle
+      OverrideTitle
+      Title
+    }
+  }
+  ParentId
+  Title
+  TitleLink {
+    Type
+    Value
+  }
+  Zone
+}

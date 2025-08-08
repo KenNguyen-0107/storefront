@@ -1,0 +1,96 @@
+{
+  "key": "VideoElement",
+  "displayName": "Video Element",
+  "description": "Add a video to an experience",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "Title": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Title",
+      "description": "Alternative text when video is unavailable",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "Video": {
+      "type": "contentReference",
+      "displayName": "Video",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [
+        "Video"
+      ],
+      "restrictedTypes": []
+    },
+    "Placeholder": {
+      "type": "contentReference",
+      "displayName": "Placeholder",
+      "description": "Placeholder to show before video is started",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [
+        "Image"
+      ],
+      "restrictedTypes": []
+    },
+    "VideoUrl": {
+      "type": "string",
+      "displayName": "Video Url",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "OverlayColor": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Overlay Color",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    },
+    "OverlayOpacity": {
+      "type": "float",
+      "displayName": "Overlay Opacity",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "minimum": 0,
+      "maximum": 1
+    },
+    "IsBackground": {
+      "type": "boolean",
+      "displayName": "IsBackground",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    }
+  }
+}

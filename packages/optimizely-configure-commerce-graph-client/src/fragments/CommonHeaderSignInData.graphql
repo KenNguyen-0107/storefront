@@ -1,0 +1,14 @@
+fragment CommonHeaderSignInData on stagingCommonHeaderSignIn {
+  Type
+  __typename
+  CustomCSS
+  Icon
+  Id
+  IncludeAccountMenu
+  IsLayout
+  ParentId
+  ShowInventoryToggle
+  ShowPricingToggle
+  VisibilityState
+  Zone
+}

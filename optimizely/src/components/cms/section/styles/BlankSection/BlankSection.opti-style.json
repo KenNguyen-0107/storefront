@@ -1,0 +1,108 @@
+{
+  "key": "BlankSection",
+  "displayName": "Default",
+  "baseType": "section",
+  "isDefault": true,
+  "created": "2024-10-23T15:01:16.412779+00:00",
+  "createdBy": "binh",
+  "lastModified": "2024-10-29T08:16:20.524552+00:00",
+  "lastModifiedBy": "binh",
+  "settings": {
+    "topBottomSpacing": {
+      "displayName": "Top Bottom Spacing",
+      "editor": "op and Bottom Margin of the configed Section",
+      "sortOrder": 2,
+      "choices": {
+        "fourty_eight_px": {
+          "displayName": "48px",
+          "sortOrder": 6
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 5
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 4
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 3
+        },
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 2
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 1
+        }
+      }
+    },
+    "verticalSpacing": {
+      "displayName": "Vertical Spacing",
+      "editor": "Vertical spacing between Rows added to Section",
+      "sortOrder": 2,
+      "choices": {
+        "fourty_eight_px": {
+          "displayName": "48px",
+          "sortOrder": 6
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 5
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 4
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 3
+        },
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 2
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 1
+        }
+      }
+    },
+    "width": {
+      "displayName": "Width",
+      "editor": "",
+      "sortOrder": 1,
+      "choices": {
+        "narrow": {
+          "displayName": "Narrow",
+          "sortOrder": 4
+        },
+        "wide": {
+          "displayName": "Wide",
+          "sortOrder": 3
+        },
+        "full_width": {
+          "displayName": "Full-Width",
+          "sortOrder": 2
+        }
+      }
+    },
+    "useBackgroundImage": {
+      "displayName": "Use Background Image",
+      "editor": "",
+      "sortOrder": 0,
+      "choices": {
+        "yes": {
+          "displayName": "Yes",
+          "sortOrder": 0
+        },
+        "no": {
+          "displayName": "No",
+          "sortOrder": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+fragment CompositionNodeData on ICompositionNode {
+  type
+  nodeType
+  layoutType
+  displayName
+  key
+  displayTemplateKey
+  displaySettings {
+    key
+    value
+  }
+}

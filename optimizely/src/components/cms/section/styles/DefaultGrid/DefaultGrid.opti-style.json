@@ -1,0 +1,249 @@
+{
+  "key": "DefaultGrid",
+  "displayName": "Default",
+  "baseType": "section",
+  "isDefault": true,
+  "settings": {
+    "paddingX": {
+      "displayName": "paddingX",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 20
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 30
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 40
+        },
+        "fourty_px": {
+          "displayName": "40px",
+          "sortOrder": 50
+        },
+        "fourty_eight_px": {
+          "displayName": "48px",
+          "sortOrder": 60
+        },
+        "fifty_px": {
+          "displayName": "50px",
+          "sortOrder": 70
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingXDesktop": {
+      "displayName": "paddingXDesktop",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 20
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 30
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 40
+        },
+        "fourty_px": {
+          "displayName": "40px",
+          "sortOrder": 50
+        },
+        "fourty_eight_px": {
+          "displayName": "48px",
+          "sortOrder": 60
+        },
+        "fifty_px": {
+          "displayName": "50px",
+          "sortOrder": 70
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingY": {
+      "displayName": "paddingY",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 20
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 30
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 40
+        },
+        "fourty_px": {
+          "displayName": "40px",
+          "sortOrder": 50
+        },
+        "fourty_eight_px": {
+          "displayName": "48px",
+          "sortOrder": 60
+        },
+        "fifty_px": {
+          "displayName": "50px",
+          "sortOrder": 70
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "paddingYDesktop": {
+      "displayName": "paddingYDesktop",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "none": {
+          "displayName": "0px",
+          "sortOrder": 10
+        },
+        "sixteen_px": {
+          "displayName": "16px",
+          "sortOrder": 20
+        },
+        "twenty_four_px": {
+          "displayName": "24px",
+          "sortOrder": 30
+        },
+        "thirty_two_px": {
+          "displayName": "32px",
+          "sortOrder": 40
+        },
+        "fourty_px": {
+          "displayName": "40px",
+          "sortOrder": 50
+        },
+        "fourty_eight_px": {
+          "displayName": "48px",
+          "sortOrder": 60
+        },
+        "fifty_px": {
+          "displayName": "50px",
+          "sortOrder": 70
+        },
+        "eighty_px": {
+          "displayName": "80px",
+          "sortOrder": 80
+        }
+      }
+    },
+    "width": {
+      "displayName": "Section Width",
+      "editor": "",
+      "sortOrder": 10,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "full": {
+          "displayName": "Full width",
+          "sortOrder": 20
+        },
+        "wide": {
+          "displayName": "Wide",
+          "sortOrder": 30
+        },
+        "narrow": {
+          "displayName": "Narrow",
+          "sortOrder": 40
+        }
+      }
+    },
+    "contentSpaceY": {
+      "displayName": "Vertical spacing",
+      "editor": "",
+      "sortOrder": 20,
+      "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 10
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 20
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 30
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 30
+        }
+      }
+    },
+    "backgroundColor": {
+      "displayName": "Background Color",
+      "editor": "",
+      "sortOrder": 40,
+      "choices": {
+        "muted": {
+          "displayName": "muted",
+          "sortOrder": 1
+        },
+        "white": {
+          "displayName": "white",
+          "sortOrder": 2
+        },
+        "transparent": {
+          "displayName": "transparent",
+          "sortOrder": 3
+        },
+        "blue": {
+          "displayName": "blue",
+          "sortOrder": 4
+        },
+        "red": {
+          "displayName": "red",
+          "sortOrder": 5
+        },
+        "brown": {
+          "displayName": "brown",
+          "sortOrder": 6
+        },
+        "navy": {
+          "displayName": "navy",
+          "sortOrder": 7
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+fragment ProductCardListElementPropertyData on ProductCardListElementProperty {
+  ProductCardListElementProductItems: ProductItems {
+    ...IContentListItem
+  }
+  CategoryID
+  EnableFilter
+  EnableSorting
+  DefaultView
+  EnableProductCount
+  VisibleElements {
+    ...ReferenceData
+  }
+  PagingSize
+}

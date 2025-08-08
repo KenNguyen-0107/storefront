@@ -1,0 +1,32 @@
+fragment WebFooterConfigrationBlockData on WebFooterConfigrationBlock {
+  SiteLogoFooter {
+    ...ReferenceData
+  }
+  LogoAltText
+  LocationDetails {
+    json
+    html
+  }
+  ButtonURLFooter {
+    ...LinkItemData
+  }
+  FooterNavigation {
+    ...IContentListItem
+    ...MegaMenuGroupBlockData
+  }
+  SocialMediaArea {
+    ...IContentListItem
+    ...SocialMediaBlockData
+  }
+  CopyrightText {
+    json
+    html
+  }
+  TermsAndConditionsArea {
+    ...LinkItemData
+  }
+  paymentmethodarea {
+    ...IContentListItem
+    ...ImageItemElementData
+  }
+}

@@ -1,0 +1,9 @@
+fragment PageSeoSettingsData on PageSeoSettings {
+  ...IElementData
+  MetaTitle
+  MetaDescription
+  MetaKeywords
+  ThumbnailImage {
+    ...ContentReferenceData
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS v4 Test</title>
+    <style>
+        @import "tailwindcss";
+        @theme {
+            --color-primary-500: #3b82f6;
+            --color-btn-primary-bg: #283270;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="p-8">
+            <h1 class="text-2xl font-bold text-gray-900 mb-4">Tailwind CSS v4 Test</h1>
+            <p class="text-gray-600 mb-6">Testing if Tailwind v4 classes work correctly.</p>
+
+            <!-- Test basic utilities -->
+            <div class="space-y-4">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Basic Button
+        </button>
+
+                <!-- Test custom colors -->
+                <button class="bg-[--color-btn-primary-bg] hover:bg-blue-800 text-white font-bold py-2 px-4 rounded">
+          Custom Color Button
+        </button>
+
+                <!-- Test responsive design -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-red-100 p-4 rounded">Item 1</div>
+                    <div class="bg-green-100 p-4 rounded">Item 2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

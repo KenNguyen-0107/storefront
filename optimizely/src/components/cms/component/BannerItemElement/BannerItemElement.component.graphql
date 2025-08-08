@@ -1,0 +1,27 @@
+fragment BannerItemElementData on BannerItemElement {
+  HeadingText
+  SubHeading
+  RichText {
+    json
+    html
+  }
+  BackgroundLink {
+    ...LinkData
+  }
+  ImageDesktop {
+    ...ReferenceData
+  }
+  ImageMobile {
+    ...ReferenceData
+  }
+  OverlayColor
+  OverlayOpacity
+  Alt
+  IsFullWidthImage
+  Loading
+  ButtonText
+  ButtonLink {
+    ...LinkData
+  }
+  CssClass
+}

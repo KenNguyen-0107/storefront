@@ -1,0 +1,18 @@
+fragment WebHeaderConfigrationBlockData on WebHeaderConfigrationBlock {
+  HeaderCTA {
+    ...LinkData
+  }
+  TopNavigationHeader {
+    ...MegaMenuGroupBlockData
+    ...TopHeaderContainerData
+  }
+  MainNavigationHeader {
+    ...MegaMenuGroupBlockData
+  }
+  SearchBarText
+  SiteLogoAltText
+  SiteLogoIcon {
+    ...ReferenceData
+  }
+  SiteSearchEnable
+}
