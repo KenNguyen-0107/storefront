@@ -2,9 +2,13 @@ fragment ImageItemElementData on ImageItemElement {
   ImageDesktop {
     ...ReferenceData
   }
+  ImageWidth
+  ImageHeight
   ImageMobile {
     ...ReferenceData
   }
+  ImageMobileWidth
+  ImageMobileHeight
   Loading
   Alt
   IsFullWidthImage

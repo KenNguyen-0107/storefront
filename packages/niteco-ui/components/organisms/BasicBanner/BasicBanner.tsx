@@ -3,10 +3,9 @@ import { LinkText } from "../../atoms/link";
 import { BASIC_BANNER_CLASSES } from "./BasicBanner.constants";
 import NextImage from "next/image";
 import { IBanner } from "../../types/cms/IBanner";
-import { getButtonClass } from "../../../utils/utils";
+import { cn, getButtonClass } from "../../../utils/utils";
 import { useMediaQuery } from "../../../hook/useMediaQuery";
 import { useMemo } from "react";
-import clsx from "clsx";
 
 function BasicBanner({ block }: { block: IBanner }) {
   if (!block) return <></>;
@@ -51,13 +50,8 @@ function BasicBanner({ block }: { block: IBanner }) {
     ? `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px`
     : `${paddingTopDesktop}px ${paddingRightDesktop}px ${paddingBottomDesktop}px ${paddingLeftDesktop}px`;
 
-  const heroImage = useMemo(
-    () =>
-      isMobile
-        ? image?.imageMobile?.src || image?.image?.src
-        : image?.image?.src,
-    [isMobile, image],
-  );
+  const heroImage = image?.image?.src || "";
+  const heroImageMobile = image?.imageMobile?.src || "";
   const heroImageAlt = isMobile ? image?.imageMobile?.alt : image?.image?.alt;
 
   const { alignItems, verticalAlign, textAlign } = useMemo(() => {
@@ -98,12 +92,26 @@ function BasicBanner({ block }: { block: IBanner }) {
     >
       {heroImage && (
         <div className={BASIC_BANNER_CLASSES.backgroundImageContainer}>
+          {heroImageMobile && (
+            <NextImage
+              src={heroImageMobile || ""}
+              alt={heroImageAlt || "Image"}
+              loading={isLoading}
+              priority={loading === "eager"}
+              className={cn(BASIC_BANNER_CLASSES.backgroundImage, "md:hidden")}
+              fill
+              sizes="(max-width: 768px) 100vw, 100vw"
+            />
+          )}
           <NextImage
             src={heroImage || ""}
             alt={heroImageAlt || "Image"}
             loading={isLoading}
             priority={loading === "eager"}
-            className={BASIC_BANNER_CLASSES.backgroundImage}
+            className={cn(
+              BASIC_BANNER_CLASSES.backgroundImage,
+              heroImageMobile ? "hidden md:block" : "",
+            )}
             fill
             sizes="(max-width: 768px) 100vw, 100vw"
           />
@@ -127,7 +135,7 @@ function BasicBanner({ block }: { block: IBanner }) {
         ></a>
       )}
       <div
-        className={clsx(
+        className={cn(
           BASIC_BANNER_CLASSES.contentContainer,
           contentClassName || "",
         )}

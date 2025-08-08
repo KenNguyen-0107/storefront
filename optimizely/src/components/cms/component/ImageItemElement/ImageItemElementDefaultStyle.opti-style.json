@@ -3,12 +3,20 @@
   "displayName": "Default",
   "contentType": "ImageItemElement",
   "isDefault": true,
+  "created": "2025-07-17T09:48:34.5663155+00:00",
+  "createdBy": "trang.ntt@niteco.se",
+  "lastModified": "2025-07-24T04:35:18.6464073+00:00",
+  "lastModifiedBy": "trang.ntt@niteco.se",
   "settings": {
     "aspectRatio": {
       "displayName": "Image aspect ratio",
       "editor": "",
       "sortOrder": 10,
       "choices": {
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 0
+        },
         "square": {
           "displayName": "Square (1:1)",
           "sortOrder": 10
@@ -31,25 +39,6 @@
         }
       }
     },
-    "imageHeight": {
-      "displayName": "Image Height",
-      "editor": "",
-      "sortOrder": 20,
-      "choices": {
-        "large": {
-          "displayName": "large",
-          "sortOrder": 10
-        },
-        "medium": {
-          "displayName": "medium",
-          "sortOrder": 20
-        },
-        "small": {
-          "displayName": "small",
-          "sortOrder": 20
-        }
-      }
-    },
     "orientation": {
       "displayName": "Image orientation",
       "editor": "",
@@ -65,314 +54,150 @@
         }
       }
     },
-    "paddingTop": {
-      "displayName": "Padding Top",
+    "paddingY": {
+      "displayName": "Padding Top Bottom",
       "editor": "selectOne",
-      "sortOrder": 200,
+      "sortOrder": 130,
       "choices": {
-        "none": {
-          "displayName": "0px",
+        "default": {
+          "displayName": "Default",
           "sortOrder": 10
         },
-        "eight_px": {
-          "displayName": "8px",
+        "none": {
+          "displayName": "none",
           "sortOrder": 20
         },
-        "sixteen_px": {
-          "displayName": "16px",
+        "small": {
+          "displayName": "Small",
           "sortOrder": 30
         },
-        "twenty_four_px": {
-          "displayName": "24px",
+        "medium": {
+          "displayName": "Medium",
           "sortOrder": 40
         },
-        "thirty_two_px": {
-          "displayName": "32px",
+        "large": {
+          "displayName": "Large",
           "sortOrder": 50
         },
-        "forty_px": {
-          "displayName": "40px",
+        "xlarge": {
+          "displayName": "XLarge",
           "sortOrder": 60
         },
-        "eighty_px": {
-          "displayName": "80px",
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "paddingX": {
+      "displayName": "Padding Left Right",
+      "editor": "selectOne",
+      "sortOrder": 140,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 30
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 40
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 50
+        },
+        "xlarge": {
+          "displayName": "XLarge",
+          "sortOrder": 60
+        },
+        "xxlarge": {
+          "displayName": "XXLarge",
+          "sortOrder": 70
+        }
+      }
+    },
+    "marginTop": {
+      "displayName": "Margin Top",
+      "editor": "selectOne",
+      "sortOrder": 150,
+      "choices": {
+        "none": {
+          "displayName": "None",
+          "sortOrder": 10
+        },
+        "default": {
+          "displayName": "Default",
+          "sortOrder": 20
+        },
+        "auto": {
+          "displayName": "Auto",
+          "sortOrder": 30
+        },
+        "small": {
+          "displayName": "Small",
+          "sortOrder": 40
+        },
+        "medium": {
+          "displayName": "Medium",
+          "sortOrder": 50
+        },
+        "large": {
+          "displayName": "Large",
+          "sortOrder": 60
+        },
+        "xlarge": {
+          "displayName": "XLarge",
           "sortOrder": 70
         },
-        "one_twenty_px": {
-          "displayName": "120px",
+        "xxlarge": {
+          "displayName": "XXLarge",
           "sortOrder": 80
         }
       }
     },
-    "paddingBottom": {
-      "displayName": "Padding Bottom",
+    "marginBottom": {
+      "displayName": "Margin Bottom",
       "editor": "selectOne",
-      "sortOrder": 210,
+      "sortOrder": 160,
       "choices": {
         "none": {
-          "displayName": "0px",
+          "displayName": "None",
           "sortOrder": 10
         },
-        "eight_px": {
-          "displayName": "8px",
+        "default": {
+          "displayName": "Default",
           "sortOrder": 20
         },
-        "sixteen_px": {
-          "displayName": "16px",
+        "auto": {
+          "displayName": "Auto",
           "sortOrder": 30
         },
-        "twenty_four_px": {
-          "displayName": "24px",
+        "small": {
+          "displayName": "Small",
           "sortOrder": 40
         },
-        "thirty_two_px": {
-          "displayName": "32px",
+        "medium": {
+          "displayName": "Medium",
           "sortOrder": 50
         },
-        "forty_px": {
-          "displayName": "40px",
+        "large": {
+          "displayName": "Large",
           "sortOrder": 60
         },
-        "eighty_px": {
-          "displayName": "80px",
+        "xlarge": {
+          "displayName": "XLarge",
           "sortOrder": 70
         },
-        "one_twenty_px": {
-          "displayName": "120px",
-          "sortOrder": 80
-        }
-      }
-    },
-    "paddingLeft": {
-      "displayName": "Padding Left",
-      "editor": "selectOne",
-      "sortOrder": 220,
-      "choices": {
-        "none": {
-          "displayName": "0px",
-          "sortOrder": 10
-        },
-        "eight_px": {
-          "displayName": "8px",
-          "sortOrder": 20
-        },
-        "sixteen_px": {
-          "displayName": "16px",
-          "sortOrder": 30
-        },
-        "twenty_four_px": {
-          "displayName": "24px",
-          "sortOrder": 40
-        },
-        "thirty_two_px": {
-          "displayName": "32px",
-          "sortOrder": 50
-        },
-        "forty_px": {
-          "displayName": "40px",
-          "sortOrder": 60
-        },
-        "eighty_px": {
-          "displayName": "80px",
-          "sortOrder": 70
-        },
-        "one_twenty_px": {
-          "displayName": "120px",
-          "sortOrder": 80
-        }
-      }
-    },
-    "paddingRight": {
-      "displayName": "Padding Right",
-      "editor": "selectOne",
-      "sortOrder": 230,
-      "choices": {
-        "none": {
-          "displayName": "0px",
-          "sortOrder": 10
-        },
-        "eight_px": {
-          "displayName": "8px",
-          "sortOrder": 20
-        },
-        "sixteen_px": {
-          "displayName": "16px",
-          "sortOrder": 30
-        },
-        "twenty_four_px": {
-          "displayName": "24px",
-          "sortOrder": 40
-        },
-        "thirty_two_px": {
-          "displayName": "32px",
-          "sortOrder": 50
-        },
-        "forty_px": {
-          "displayName": "40px",
-          "sortOrder": 60
-        },
-        "eighty_px": {
-          "displayName": "80px",
-          "sortOrder": 70
-        },
-        "one_twenty_px": {
-          "displayName": "120px",
-          "sortOrder": 80
-        }
-      }
-    },
-    "paddingTopDesktop": {
-      "displayName": "Padding Top Desktop",
-      "editor": "selectOne",
-      "sortOrder": 240,
-      "choices": {
-        "none": {
-          "displayName": "0px",
-          "sortOrder": 10
-        },
-        "eight_px": {
-          "displayName": "8px",
-          "sortOrder": 20
-        },
-        "sixteen_px": {
-          "displayName": "16px",
-          "sortOrder": 30
-        },
-        "twenty_four_px": {
-          "displayName": "24px",
-          "sortOrder": 40
-        },
-        "thirty_two_px": {
-          "displayName": "32px",
-          "sortOrder": 50
-        },
-        "forty_px": {
-          "displayName": "40px",
-          "sortOrder": 60
-        },
-        "eighty_px": {
-          "displayName": "80px",
-          "sortOrder": 70
-        },
-        "one_twenty_px": {
-          "displayName": "120px",
-          "sortOrder": 80
-        }
-      }
-    },
-    "paddingBottomDesktop": {
-      "displayName": "Padding Bottom Desktop",
-      "editor": "selectOne",
-      "sortOrder": 250,
-      "choices": {
-        "none": {
-          "displayName": "0px",
-          "sortOrder": 10
-        },
-        "eight_px": {
-          "displayName": "8px",
-          "sortOrder": 20
-        },
-        "sixteen_px": {
-          "displayName": "16px",
-          "sortOrder": 30
-        },
-        "twenty_four_px": {
-          "displayName": "24px",
-          "sortOrder": 40
-        },
-        "thirty_two_px": {
-          "displayName": "32px",
-          "sortOrder": 50
-        },
-        "forty_px": {
-          "displayName": "40px",
-          "sortOrder": 60
-        },
-        "eighty_px": {
-          "displayName": "80px",
-          "sortOrder": 70
-        },
-        "one_twenty_px": {
-          "displayName": "120px",
-          "sortOrder": 80
-        }
-      }
-    },
-    "paddingLeftDesktop": {
-      "displayName": "Padding Left Desktop",
-      "editor": "selectOne",
-      "sortOrder": 260,
-      "choices": {
-        "none": {
-          "displayName": "0px",
-          "sortOrder": 10
-        },
-        "eight_px": {
-          "displayName": "8px",
-          "sortOrder": 20
-        },
-        "sixteen_px": {
-          "displayName": "16px",
-          "sortOrder": 30
-        },
-        "twenty_four_px": {
-          "displayName": "24px",
-          "sortOrder": 40
-        },
-        "thirty_two_px": {
-          "displayName": "32px",
-          "sortOrder": 50
-        },
-        "forty_px": {
-          "displayName": "40px",
-          "sortOrder": 60
-        },
-        "eighty_px": {
-          "displayName": "80px",
-          "sortOrder": 70
-        },
-        "one_twenty_px": {
-          "displayName": "120px",
-          "sortOrder": 80
-        }
-      }
-    },
-    "paddingRightDesktop": {
-      "displayName": "Padding Right Desktop",
-      "editor": "selectOne",
-      "sortOrder": 270,
-      "choices": {
-        "none": {
-          "displayName": "0px",
-          "sortOrder": 10
-        },
-        "eight_px": {
-          "displayName": "8px",
-          "sortOrder": 20
-        },
-        "sixteen_px": {
-          "displayName": "16px",
-          "sortOrder": 30
-        },
-        "twenty_four_px": {
-          "displayName": "24px",
-          "sortOrder": 40
-        },
-        "thirty_two_px": {
-          "displayName": "32px",
-          "sortOrder": 50
-        },
-        "forty_px": {
-          "displayName": "40px",
-          "sortOrder": 60
-        },
-        "eighty_px": {
-          "displayName": "80px",
-          "sortOrder": 70
-        },
-        "one_twenty_px": {
-          "displayName": "120px",
+        "xxlarge": {
+          "displayName": "XXLarge",
           "sortOrder": 80
         }
       }

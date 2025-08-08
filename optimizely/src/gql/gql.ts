@@ -16,6 +16,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 type Documents = {
     "fragment BannerItemElementData on BannerItemElement {\n  HeadingText\n  SubHeading\n  RichText {\n    json\n    html\n  }\n  BackgroundLink {\n    ...LinkData\n  }\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  OverlayColor\n  OverlayOpacity\n  Alt\n  IsFullWidthImage\n  Loading\n  ButtonText\n  ButtonLink {\n    ...LinkData\n  }\n  CssClass\n}": typeof types.BannerItemElementDataFragmentDoc,
     "fragment ButtonElementData on ButtonElement {\n  ButtonText\n  ButtonLink {\n    ...LinkData\n  }\n  className\n}": typeof types.ButtonElementDataFragmentDoc,
+    "fragment CTAElementData on CTAElement {\n  Text\n  Link {\n    ...LinkData\n  }\n}": typeof types.CTAElementDataFragmentDoc,
     "fragment CompanyData on Company {\n  Name\n  Logo {\n    ...ReferenceData\n  }\n}": typeof types.CompanyDataFragmentDoc,
     "fragment ContainerElementData on ContainerElement {\n  Items {\n    ...ReferenceData\n  }\n  TypeOfItems\n}": typeof types.ContainerElementDataFragmentDoc,
     "fragment ContentTextElementData on ContentTextElement {\n  HeadingText\n  Paragraph {\n    json\n    html\n  }\n}": typeof types.ContentTextElementDataFragmentDoc,
@@ -26,16 +27,19 @@ type Documents = {
     "fragment FAQsSectionData on FAQsSection {\n  HeadingText\n  allowMultiple\n  ListItem {\n    ...ContentTextElementData\n    ...HeadingElementData\n  }\n}": typeof types.FAQsSectionDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  HeadingText\n}": typeof types.HeadingElementDataFragmentDoc,
     "fragment ImageBackgroundData on ImageBackground {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Alt\n  IsFullIWidthImage\n  Loading\n}": typeof types.ImageBackgroundDataFragmentDoc,
-    "fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}": typeof types.ImageItemElementDataFragmentDoc,
+    "fragment ImageElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}": typeof types.ImageElementDataFragmentDoc,
+    "fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}": typeof types.ImageItemElementDataFragmentDoc,
     "fragment ImageTextItemElementData on ImageTextItemElement {\n  Heading {\n    json\n    html\n  }\n  RichText {\n    json\n    html\n  }\n  Image {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Alt\n  IsFullWidthImage\n  Loading\n  BackgroundLink {\n    ...LinkData\n  }\n  ButtonLink {\n    ...LinkData\n  }\n  ButtonText\n  ContentImagePosition\n  CssClass\n}": typeof types.ImageTextItemElementDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n    ...NavigationMenuBlockData\n    ...ButtonElementData\n    ...SocialMediaBlockData\n    ...ContentTextElementData\n    ...SocialMediaBlocksData\n  }\n  ExpandableMobile\n}": typeof types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  ...NavigationMenuBlockFields\n  SubMenuItem {\n    ...NavigationMenuBlockFields\n  }\n}\n\nfragment NavigationMenuBlockFields on NavigationMenuBlock {\n  ...IElementData\n  MenuNavigationHeading\n  Link {\n    ...LinkItemData\n  }\n  ThumbnailBanner {\n    ...ReferenceData\n  }\n}": typeof types.NavigationMenuBlockDataFragmentDoc,
     "fragment OfficeLocationData on OfficeLocation {\n  OfficeTitle\n  OfficeAddressStreet1\n  OfficeAddressStreet2\n  OfficeAddressCity\n  OfficeAddressPostalCode\n  OfficeAddressCountry\n  OfficePhone\n  OfficeEmail\n}": typeof types.OfficeLocationDataFragmentDoc,
     "fragment PageSeoSettingsData on PageSeoSettings {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  ThumbnailImage {\n    ...ReferenceData\n  }\n}": typeof types.PageSeoSettingsDataFragmentDoc,
+    "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  ThumbnailImage {\n    ...ReferenceData\n  }\n}": typeof types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}": typeof types.ParagraphElementDataFragmentDoc,
     "fragment ProductCardElementData on ProductCardElement {\n  ProductName\n  Image {\n    ...ReferenceData\n  }\n  ShortDescription {\n    json\n    html\n  }\n  InventoryStatus\n  inventory\n  CanBuy\n}": typeof types.ProductCardElementDataFragmentDoc,
     "fragment ProductCardListElementData on ProductCardListElement {\n  CategoryID\n  EnableFilter\n  EnableSorting\n  DefaultView\n  EnableProductCount\n  VisibleElements {\n    ...ReferenceData\n  }\n  PagingSize\n}": typeof types.ProductCardListElementDataFragmentDoc,
-    "fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageMobile {\n      ...ReferenceData\n    }\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}": typeof types.SocialMediaBlockDataFragmentDoc,
+    "fragment ProductVisibleElementsData on ProductVisibleElements {\n  ListElements\n}": typeof types.ProductVisibleElementsDataFragmentDoc,
+    "fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageWidth\n    ImageHeight\n    ImageMobile {\n      ...ReferenceData\n    }\n    ImageMobileWidth\n    ImageMobileHeight\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}": typeof types.SocialMediaBlockDataFragmentDoc,
     "fragment SocialMediaBlocksData on SocialMediaBlocks {\n  ListItems {\n    ...SocialMediaBlockData\n  }\n}": typeof types.SocialMediaBlocksDataFragmentDoc,
     "fragment TopHeaderContainerData on TopHeaderContainer {\n  description {\n    json\n    html\n  }\n  Links {\n    ...LinkItemData\n  }\n}": typeof types.TopHeaderContainerDataFragmentDoc,
     "fragment VideoElementData on VideoElement {\n  Video {\n    ...ReferenceData\n  }\n  Placeholder {\n    ...ReferenceData\n  }\n  VideoUrl\n  Autoplay\n  PlayOnPopup\n  Loading\n}": typeof types.VideoElementDataFragmentDoc,
@@ -45,9 +49,12 @@ type Documents = {
     "fragment WebHeaderConfigrationBlockData on WebHeaderConfigrationBlock {\n  HeaderCTA {\n    ...LinkData\n  }\n  TopNavigationHeader {\n    ...MegaMenuGroupBlockData\n    ...TopHeaderContainerData\n  }\n  MainNavigationHeader {\n    ...MegaMenuGroupBlockData\n  }\n  SearchBarText\n  SiteLogoAltText\n  SiteLogoIcon {\n    ...ReferenceData\n  }\n  SiteSearchEnable\n}": typeof types.WebHeaderConfigrationBlockDataFragmentDoc,
     "query getHeader {\n  header: WebHeaderConfigrationBlock(\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    item {\n      ...WebHeaderConfigrationBlockData\n    }\n  }\n}": typeof types.getHeaderDocument,
     "fragment LinkPropertyData on Link {\n  url {\n    ...LinkData\n  }\n  title\n  text\n  target\n}": typeof types.LinkPropertyDataFragmentDoc,
+    "fragment ImageData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}\n\nfragment ParagraphData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}": typeof types.ImageDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}": typeof types.BlankExperienceDataFragmentDoc,
     "fragment ProductDetailExperienceData on ProductDetailExperience {\n  SEOsettings {\n    ...PageSeoSettingsData\n  }\n  ...ExperienceData\n}": typeof types.ProductDetailExperienceDataFragmentDoc,
     "fragment ProductListingEPageData on ProductListingEPage {\n  ...ExperienceData\n}": typeof types.ProductListingEPageDataFragmentDoc,
+    "fragment LandingPageData on LandingPage {\n  MainContentArea {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}": typeof types.LandingPageDataFragmentDoc,
+    "fragment ProductDetailData on ProductDetail {\n  ProductHero {\n    ...BlockData\n  }\n  ProductVariants {\n    ...BlockData\n  }\n  Images {\n    ...BlockData\n  }\n  ProductFeatures {\n    ...BlockData\n  }\n  ProductTechSpecs {\n    ...BlockData\n  }\n  ProductDocuments {\n    ...BlockData\n  }\n  CrossSell {\n    ...BlockData\n  }\n  MarketingContent {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}": typeof types.ProductDetailDataFragmentDoc,
     "fragment SectionData on Section {\n  empty: _metadata {\n    key\n  }\n}": typeof types.SectionDataFragmentDoc,
     "fragment PDPCarouselElementData on PDPCarouselElement {\n  Heading {\n    json\n    html\n  }\n  CarouselSource\n  VisibleElements {\n    ...ReferenceData\n  }\n  productsofView\n  PagingSize\n}": typeof types.PDPCarouselElementDataFragmentDoc,
     "fragment PDPSpecificationsElementData on PDPSpecificationsElement {\n  empty: _metadata {\n    key\n  }\n}": typeof types.PDPSpecificationsElementDataFragmentDoc,
@@ -58,6 +65,7 @@ type Documents = {
 const documents: Documents = {
     "fragment BannerItemElementData on BannerItemElement {\n  HeadingText\n  SubHeading\n  RichText {\n    json\n    html\n  }\n  BackgroundLink {\n    ...LinkData\n  }\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  OverlayColor\n  OverlayOpacity\n  Alt\n  IsFullWidthImage\n  Loading\n  ButtonText\n  ButtonLink {\n    ...LinkData\n  }\n  CssClass\n}": types.BannerItemElementDataFragmentDoc,
     "fragment ButtonElementData on ButtonElement {\n  ButtonText\n  ButtonLink {\n    ...LinkData\n  }\n  className\n}": types.ButtonElementDataFragmentDoc,
+    "fragment CTAElementData on CTAElement {\n  Text\n  Link {\n    ...LinkData\n  }\n}": types.CTAElementDataFragmentDoc,
     "fragment CompanyData on Company {\n  Name\n  Logo {\n    ...ReferenceData\n  }\n}": types.CompanyDataFragmentDoc,
     "fragment ContainerElementData on ContainerElement {\n  Items {\n    ...ReferenceData\n  }\n  TypeOfItems\n}": types.ContainerElementDataFragmentDoc,
     "fragment ContentTextElementData on ContentTextElement {\n  HeadingText\n  Paragraph {\n    json\n    html\n  }\n}": types.ContentTextElementDataFragmentDoc,
@@ -68,16 +76,19 @@ const documents: Documents = {
     "fragment FAQsSectionData on FAQsSection {\n  HeadingText\n  allowMultiple\n  ListItem {\n    ...ContentTextElementData\n    ...HeadingElementData\n  }\n}": types.FAQsSectionDataFragmentDoc,
     "fragment HeadingElementData on HeadingElement {\n  HeadingText\n}": types.HeadingElementDataFragmentDoc,
     "fragment ImageBackgroundData on ImageBackground {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Alt\n  IsFullIWidthImage\n  Loading\n}": types.ImageBackgroundDataFragmentDoc,
-    "fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}": types.ImageItemElementDataFragmentDoc,
+    "fragment ImageElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}": types.ImageElementDataFragmentDoc,
+    "fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}": types.ImageItemElementDataFragmentDoc,
     "fragment ImageTextItemElementData on ImageTextItemElement {\n  Heading {\n    json\n    html\n  }\n  RichText {\n    json\n    html\n  }\n  Image {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Alt\n  IsFullWidthImage\n  Loading\n  BackgroundLink {\n    ...LinkData\n  }\n  ButtonLink {\n    ...LinkData\n  }\n  ButtonText\n  ContentImagePosition\n  CssClass\n}": types.ImageTextItemElementDataFragmentDoc,
     "fragment MegaMenuGroupBlockData on MegaMenuGroupBlock {\n  MenuMenuHeading\n  MegaMenuUrl {\n    ...LinkData\n  }\n  MegaMenuContentArea {\n    ...IContentListItem\n    ...NavigationMenuBlockData\n    ...ButtonElementData\n    ...SocialMediaBlockData\n    ...ContentTextElementData\n    ...SocialMediaBlocksData\n  }\n  ExpandableMobile\n}": types.MegaMenuGroupBlockDataFragmentDoc,
     "fragment NavigationMenuBlockData on NavigationMenuBlock {\n  ...NavigationMenuBlockFields\n  SubMenuItem {\n    ...NavigationMenuBlockFields\n  }\n}\n\nfragment NavigationMenuBlockFields on NavigationMenuBlock {\n  ...IElementData\n  MenuNavigationHeading\n  Link {\n    ...LinkItemData\n  }\n  ThumbnailBanner {\n    ...ReferenceData\n  }\n}": types.NavigationMenuBlockDataFragmentDoc,
     "fragment OfficeLocationData on OfficeLocation {\n  OfficeTitle\n  OfficeAddressStreet1\n  OfficeAddressStreet2\n  OfficeAddressCity\n  OfficeAddressPostalCode\n  OfficeAddressCountry\n  OfficePhone\n  OfficeEmail\n}": types.OfficeLocationDataFragmentDoc,
     "fragment PageSeoSettingsData on PageSeoSettings {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  ThumbnailImage {\n    ...ReferenceData\n  }\n}": types.PageSeoSettingsDataFragmentDoc,
+    "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  ThumbnailImage {\n    ...ReferenceData\n  }\n}": types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}": types.ParagraphElementDataFragmentDoc,
     "fragment ProductCardElementData on ProductCardElement {\n  ProductName\n  Image {\n    ...ReferenceData\n  }\n  ShortDescription {\n    json\n    html\n  }\n  InventoryStatus\n  inventory\n  CanBuy\n}": types.ProductCardElementDataFragmentDoc,
     "fragment ProductCardListElementData on ProductCardListElement {\n  CategoryID\n  EnableFilter\n  EnableSorting\n  DefaultView\n  EnableProductCount\n  VisibleElements {\n    ...ReferenceData\n  }\n  PagingSize\n}": types.ProductCardListElementDataFragmentDoc,
-    "fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageMobile {\n      ...ReferenceData\n    }\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}": types.SocialMediaBlockDataFragmentDoc,
+    "fragment ProductVisibleElementsData on ProductVisibleElements {\n  ListElements\n}": types.ProductVisibleElementsDataFragmentDoc,
+    "fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageWidth\n    ImageHeight\n    ImageMobile {\n      ...ReferenceData\n    }\n    ImageMobileWidth\n    ImageMobileHeight\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}": types.SocialMediaBlockDataFragmentDoc,
     "fragment SocialMediaBlocksData on SocialMediaBlocks {\n  ListItems {\n    ...SocialMediaBlockData\n  }\n}": types.SocialMediaBlocksDataFragmentDoc,
     "fragment TopHeaderContainerData on TopHeaderContainer {\n  description {\n    json\n    html\n  }\n  Links {\n    ...LinkItemData\n  }\n}": types.TopHeaderContainerDataFragmentDoc,
     "fragment VideoElementData on VideoElement {\n  Video {\n    ...ReferenceData\n  }\n  Placeholder {\n    ...ReferenceData\n  }\n  VideoUrl\n  Autoplay\n  PlayOnPopup\n  Loading\n}": types.VideoElementDataFragmentDoc,
@@ -87,9 +98,12 @@ const documents: Documents = {
     "fragment WebHeaderConfigrationBlockData on WebHeaderConfigrationBlock {\n  HeaderCTA {\n    ...LinkData\n  }\n  TopNavigationHeader {\n    ...MegaMenuGroupBlockData\n    ...TopHeaderContainerData\n  }\n  MainNavigationHeader {\n    ...MegaMenuGroupBlockData\n  }\n  SearchBarText\n  SiteLogoAltText\n  SiteLogoIcon {\n    ...ReferenceData\n  }\n  SiteSearchEnable\n}": types.WebHeaderConfigrationBlockDataFragmentDoc,
     "query getHeader {\n  header: WebHeaderConfigrationBlock(\n    where: {_metadata: {status: {eq: \"Published\"}}}\n  ) {\n    item {\n      ...WebHeaderConfigrationBlockData\n    }\n  }\n}": types.getHeaderDocument,
     "fragment LinkPropertyData on Link {\n  url {\n    ...LinkData\n  }\n  title\n  text\n  target\n}": types.LinkPropertyDataFragmentDoc,
+    "fragment ImageData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}\n\nfragment ParagraphData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}": types.ImageDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "fragment ProductDetailExperienceData on ProductDetailExperience {\n  SEOsettings {\n    ...PageSeoSettingsData\n  }\n  ...ExperienceData\n}": types.ProductDetailExperienceDataFragmentDoc,
     "fragment ProductListingEPageData on ProductListingEPage {\n  ...ExperienceData\n}": types.ProductListingEPageDataFragmentDoc,
+    "fragment LandingPageData on LandingPage {\n  MainContentArea {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}": types.LandingPageDataFragmentDoc,
+    "fragment ProductDetailData on ProductDetail {\n  ProductHero {\n    ...BlockData\n  }\n  ProductVariants {\n    ...BlockData\n  }\n  Images {\n    ...BlockData\n  }\n  ProductFeatures {\n    ...BlockData\n  }\n  ProductTechSpecs {\n    ...BlockData\n  }\n  ProductDocuments {\n    ...BlockData\n  }\n  CrossSell {\n    ...BlockData\n  }\n  MarketingContent {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}": types.ProductDetailDataFragmentDoc,
     "fragment SectionData on Section {\n  empty: _metadata {\n    key\n  }\n}": types.SectionDataFragmentDoc,
     "fragment PDPCarouselElementData on PDPCarouselElement {\n  Heading {\n    json\n    html\n  }\n  CarouselSource\n  VisibleElements {\n    ...ReferenceData\n  }\n  productsofView\n  PagingSize\n}": types.PDPCarouselElementDataFragmentDoc,
     "fragment PDPSpecificationsElementData on PDPSpecificationsElement {\n  empty: _metadata {\n    key\n  }\n}": types.PDPSpecificationsElementDataFragmentDoc,
@@ -120,6 +134,10 @@ export function gql(source: "fragment BannerItemElementData on BannerItemElement
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ButtonElementData on ButtonElement {\n  ButtonText\n  ButtonLink {\n    ...LinkData\n  }\n  className\n}"): (typeof documents)["fragment ButtonElementData on ButtonElement {\n  ButtonText\n  ButtonLink {\n    ...LinkData\n  }\n  className\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment CTAElementData on CTAElement {\n  Text\n  Link {\n    ...LinkData\n  }\n}"): (typeof documents)["fragment CTAElementData on CTAElement {\n  Text\n  Link {\n    ...LinkData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -163,7 +181,11 @@ export function gql(source: "fragment ImageBackgroundData on ImageBackground {\n
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}"): (typeof documents)["fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}"];
+export function gql(source: "fragment ImageElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}"): (typeof documents)["fragment ImageElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}"): (typeof documents)["fragment ImageItemElementData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageWidth\n  ImageHeight\n  ImageMobile {\n    ...ReferenceData\n  }\n  ImageMobileWidth\n  ImageMobileHeight\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n  OverlayOpacity\n  OverlayColor\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -187,6 +209,10 @@ export function gql(source: "fragment PageSeoSettingsData on PageSeoSettings {\n
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  ThumbnailImage {\n    ...ReferenceData\n  }\n}"): (typeof documents)["fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  ThumbnailImage {\n    ...ReferenceData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}"): (typeof documents)["fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -199,7 +225,11 @@ export function gql(source: "fragment ProductCardListElementData on ProductCardL
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageMobile {\n      ...ReferenceData\n    }\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}"): (typeof documents)["fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageMobile {\n      ...ReferenceData\n    }\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}"];
+export function gql(source: "fragment ProductVisibleElementsData on ProductVisibleElements {\n  ListElements\n}"): (typeof documents)["fragment ProductVisibleElementsData on ProductVisibleElements {\n  ListElements\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageWidth\n    ImageHeight\n    ImageMobile {\n      ...ReferenceData\n    }\n    ImageMobileWidth\n    ImageMobileHeight\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}"): (typeof documents)["fragment SocialMediaBlockData on SocialMediaBlock {\n  URLMedia {\n    ...LinkPropertyData\n  }\n  imageIcon {\n    ImageDesktop {\n      ...ReferenceData\n    }\n    ImageWidth\n    ImageHeight\n    ImageMobile {\n      ...ReferenceData\n    }\n    ImageMobileWidth\n    ImageMobileHeight\n    Loading\n    OverlayColor\n    OverlayOpacity\n    Alt\n    IsFullWidthImage\n    IsBackground\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -239,6 +269,10 @@ export function gql(source: "fragment LinkPropertyData on Link {\n  url {\n    .
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function gql(source: "fragment ImageData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}\n\nfragment ParagraphData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}"): (typeof documents)["fragment ImageData on ImageItemElement {\n  ImageDesktop {\n    ...ReferenceData\n  }\n  ImageMobile {\n    ...ReferenceData\n  }\n  Loading\n  Alt\n  IsFullWidthImage\n  IsBackground\n}\n\nfragment ParagraphData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function gql(source: "fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}"): (typeof documents)["fragment BlankExperienceData on BlankExperience {\n  ...ExperienceData\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -248,6 +282,14 @@ export function gql(source: "fragment ProductDetailExperienceData on ProductDeta
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ProductListingEPageData on ProductListingEPage {\n  ...ExperienceData\n}"): (typeof documents)["fragment ProductListingEPageData on ProductListingEPage {\n  ...ExperienceData\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment LandingPageData on LandingPage {\n  MainContentArea {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}"): (typeof documents)["fragment LandingPageData on LandingPage {\n  MainContentArea {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment ProductDetailData on ProductDetail {\n  ProductHero {\n    ...BlockData\n  }\n  ProductVariants {\n    ...BlockData\n  }\n  Images {\n    ...BlockData\n  }\n  ProductFeatures {\n    ...BlockData\n  }\n  ProductTechSpecs {\n    ...BlockData\n  }\n  ProductDocuments {\n    ...BlockData\n  }\n  CrossSell {\n    ...BlockData\n  }\n  MarketingContent {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}"): (typeof documents)["fragment ProductDetailData on ProductDetail {\n  ProductHero {\n    ...BlockData\n  }\n  ProductVariants {\n    ...BlockData\n  }\n  Images {\n    ...BlockData\n  }\n  ProductFeatures {\n    ...BlockData\n  }\n  ProductTechSpecs {\n    ...BlockData\n  }\n  ProductDocuments {\n    ...BlockData\n  }\n  CrossSell {\n    ...BlockData\n  }\n  MarketingContent {\n    ...BlockData\n  }\n  SeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

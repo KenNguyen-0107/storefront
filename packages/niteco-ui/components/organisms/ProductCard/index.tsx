@@ -152,7 +152,10 @@ const ProductCard: React.FC<ProductCardProps1> = ({
 
       <div className="w-full px-2 py-4 md:px-4 md:py-6 flex flex-col gap-4 justify-between h-full">
         <div className="flex flex-col gap-4">
-          <SmartLink href={variantUrl} aria-label={`View-${name}-title`}>
+          <SmartLink
+            href={from === "card-list" ? productUrl : variantUrl}
+            aria-label={`View-${name}-title`}
+          >
             <h4
               id={titleId}
               className={`${from === "card-list" ? "line-clamp-2 min-h-[42px] md:min-h-[50px] " : "line-clamp-4 md:line-clamp-3 min-h-[84px] md:min-h-[75px] "} text-blue text-left uppercase`}

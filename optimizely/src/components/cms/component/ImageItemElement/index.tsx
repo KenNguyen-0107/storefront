@@ -51,6 +51,7 @@ const ImageItemElement: ImageItemElementComponent = ({
       isFullWidth={data.IsFullWidthImage}
       overlayColor={data.OverlayColor}
       overlayOpacity={data.OverlayOpacity}
+      isAspectRatio={settings.aspectRatio !== "default"}
       loading={(data.Loading as "lazy" | "eager") || "lazy"}
     />
   );

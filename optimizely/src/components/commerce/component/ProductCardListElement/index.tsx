@@ -69,7 +69,7 @@ export const ProductCardListElementComponent: CmsComponent<
       {!error && products.length > 0 && (
         <div className="mt-4">
           {/* Display products data as JSON */}
-          {/* <div className="mt-4">
+          <div className="mt-4">
             <div className="text-sm font-semibold text-gray-700 mb-2">
               Products Data (JSON):
             </div>
@@ -88,7 +88,7 @@ export const ProductCardListElementComponent: CmsComponent<
                 2,
               )}
             </pre>
-          </div> */}
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {products &&

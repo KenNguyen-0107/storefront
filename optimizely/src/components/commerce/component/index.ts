@@ -3,6 +3,7 @@ import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 import ProductCardListElementComponent from "./ProductCardListElement";
 import ProductCarouselElementComponent from "./ProductCarouselElement";
 import PDPSpecificationsElementComponent from "./PDPSpecificationsElement";
+import PDPCarouselElementComponent from "./PDPCarouselElement";
 
 // Build commerce components dictionary
 export const CommerceComponentFactory: ComponentTypeDictionary = [
@@ -17,6 +18,10 @@ export const CommerceComponentFactory: ComponentTypeDictionary = [
   {
     type: "PDPSpecificationsElement",
     component: PDPSpecificationsElementComponent,
+  },
+  {
+    type: "PDPCarouselElement",
+    component: PDPCarouselElementComponent,
   },
 ];
 

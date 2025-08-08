@@ -6,9 +6,13 @@ fragment SocialMediaBlockData on SocialMediaBlock {
     ImageDesktop {
       ...ReferenceData
     }
+    ImageWidth
+    ImageHeight
     ImageMobile {
       ...ReferenceData
     }
+    ImageMobileWidth
+    ImageMobileHeight
     Loading
     OverlayColor
     OverlayOpacity

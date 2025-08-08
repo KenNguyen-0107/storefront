@@ -270,6 +270,23 @@ export enum marginBottomClasses {
   xlarge = "mb-4 md:mb-10",
   xxlarge = "mb-4 md:mb-16",
 }
+
+enum portraitAspectRatioClasses {
+  default = "",
+  square = "aspect-square",
+  banner = "aspect-[1/4]",
+  photo = "aspect-[2/3]",
+  monitor = "aspect-[3/4]",
+  widescreen = "aspect-[9/16]",
+}
+enum landscapeAspectRatioClasses {
+  default = "",
+  square = "aspect-square",
+  banner = "aspect-[4/1]",
+  photo = "aspect-[3/2]",
+  monitor = "aspect-[4/3]",
+  widescreen = "aspect-[16/9]",
+}
 export function getComponentSettingsClass(settings: ILayoutSettings) {
   if (!settings) return "";
 
@@ -300,6 +317,10 @@ export function getComponentSettingsClass(settings: ILayoutSettings) {
     justifyAlign: justifyAlignClasses,
     roundedCorners: roundedCornersClasses,
     buttonAlign: buttonAlignClasses,
+    aspectRatio:
+      settings.orientation === "portrait"
+        ? portraitAspectRatioClasses
+        : landscapeAspectRatioClasses,
   };
 
   // Build the class string by iterating through all possible settings

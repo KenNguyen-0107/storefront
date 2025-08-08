@@ -29,6 +29,7 @@ export interface CommerceProduct {
   metaKeywords?: string;
   metaKeywordsAllLocales?: Array<{ locale: string; value: string }>;
   relatedProducts?: Array<CommerceProduct>;
+  type?: string;
 }
 
 export interface CommerceError {

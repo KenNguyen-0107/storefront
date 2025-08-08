@@ -14,7 +14,15 @@ const ImageContent = ({ item }: { item: IImageItem }) => {
         src={imageData?.image?.src || ""}
         srcMobile={imageData?.imageMobile?.src || ""}
         alt={altText}
+        width={Number(imageData?.image?.width) || undefined}
+        height={Number(imageData?.image?.height) || undefined}
+        widthMobile={Number(imageData?.imageMobile?.width) || undefined}
+        heightMobile={Number(imageData?.imageMobile?.height) || undefined}
         className={item.image?.cssClass}
+        isFullWidth={
+          imageData?.image?.isFullWidthImage ||
+          imageData?.imageMobile?.isFullWidthImage
+        }
       />
     </>
   );

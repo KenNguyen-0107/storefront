@@ -42,6 +42,7 @@ const SliderComponent: React.FC<BlockData & { column?: ColumnData }> = (
       case "ImageTextItemBlock":
         return <ImageTextBlocks block={item} />;
       case "BannerItemBlock":
+      case "relatedProduct":
         return <BasicBanner block={item} />;
       default:
         return (

@@ -23,21 +23,20 @@ export const handleSocialMediaBlocks = (item: any, blocks: any[]) => {
 const handleSocialMediaBlock = (item: any) => {
   // Use the URL from the source data
   const socialUrl = item.URLMedia?.url?.default || "/";
-
   const socialMediaItem = {
     image: {
       type: "Image",
       image: {
         src: item.imageIcon?.ImageDesktop?.url?.default || "",
-        width: "24",
-        height: "24",
+        width: item.imageIcon?.ImageWidth || "24",
+        height: item.imageIcon?.ImageHeight || "24",
         alt: item.imageIcon?.Alt || undefined,
         isFullWidthImage: undefined,
       },
       imageMobile: {
         src: item.imageIcon?.ImageMobile?.url?.default || "",
-        width: "24",
-        height: "24",
+        width: item.imageIcon?.ImageMobileWidth || "24",
+        height: item.imageIcon?.ImageMobileHeight || "24",
         alt: item.imageIcon?.Alt || undefined,
         isFullWidthImage: undefined,
       },

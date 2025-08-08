@@ -2,6 +2,43 @@ import type * as Schema from "./graphql";
 import type { GraphQLClient, RequestOptions } from 'graphql-request';
 import gql from 'graphql-tag';
 type GraphQLClientRequestHeaders = RequestOptions['requestHeaders'];
+export const LinkDataFragmentDoc = gql`
+    fragment LinkData on ContentUrl {
+  type
+  base
+  default
+}
+    `;
+export const ReferenceDataFragmentDoc = gql`
+    fragment ReferenceData on ContentReference {
+  key
+  url {
+    ...LinkData
+  }
+}
+    `;
+export const ImageDataFragmentDoc = gql`
+    fragment ImageData on ImageItemElement {
+  ImageDesktop {
+    ...ReferenceData
+  }
+  ImageMobile {
+    ...ReferenceData
+  }
+  Loading
+  Alt
+  IsFullWidthImage
+  IsBackground
+}
+    `;
+export const ParagraphDataFragmentDoc = gql`
+    fragment ParagraphData on ParagraphElement {
+  text {
+    json
+    html
+  }
+}
+    `;
 export const CompositionNodeDataFragmentDoc = gql`
     fragment CompositionNodeData on ICompositionNode {
   name: displayName
@@ -13,13 +50,6 @@ export const CompositionNodeDataFragmentDoc = gql`
     key
     value
   }
-}
-    `;
-export const LinkDataFragmentDoc = gql`
-    fragment LinkData on ContentUrl {
-  type
-  base
-  default
 }
     `;
 export const IContentInfoFragmentDoc = gql`
@@ -60,14 +90,6 @@ export const ElementDataFragmentDoc = gql`
   ...IElementData
 }
     `;
-export const ReferenceDataFragmentDoc = gql`
-    fragment ReferenceData on ContentReference {
-  key
-  url {
-    ...LinkData
-  }
-}
-    `;
 export const BannerItemElementDataFragmentDoc = gql`
     fragment BannerItemElementData on BannerItemElement {
   HeadingText
@@ -104,6 +126,14 @@ export const ButtonElementDataFragmentDoc = gql`
     ...LinkData
   }
   className
+}
+    `;
+export const CTAElementDataFragmentDoc = gql`
+    fragment CTAElementData on CTAElement {
+  Text
+  Link {
+    ...LinkData
+  }
 }
     `;
 export const CompanyDataFragmentDoc = gql`
@@ -191,14 +221,36 @@ export const ImageBackgroundDataFragmentDoc = gql`
   Loading
 }
     `;
+export const ImageElementDataFragmentDoc = gql`
+    fragment ImageElementData on ImageItemElement {
+  ImageDesktop {
+    ...ReferenceData
+  }
+  ImageWidth
+  ImageHeight
+  ImageMobile {
+    ...ReferenceData
+  }
+  ImageMobileWidth
+  ImageMobileHeight
+  Loading
+  Alt
+  IsFullWidthImage
+  IsBackground
+}
+    `;
 export const ImageItemElementDataFragmentDoc = gql`
     fragment ImageItemElementData on ImageItemElement {
   ImageDesktop {
     ...ReferenceData
   }
+  ImageWidth
+  ImageHeight
   ImageMobile {
     ...ReferenceData
   }
+  ImageMobileWidth
+  ImageMobileHeight
   Loading
   Alt
   IsFullWidthImage
@@ -291,9 +343,13 @@ export const SocialMediaBlockDataFragmentDoc = gql`
     ImageDesktop {
       ...ReferenceData
     }
+    ImageWidth
+    ImageHeight
     ImageMobile {
       ...ReferenceData
     }
+    ImageMobileWidth
+    ImageMobileHeight
     Loading
     OverlayColor
     OverlayOpacity
@@ -383,6 +439,11 @@ export const ProductCardListElementDataFragmentDoc = gql`
     ...ReferenceData
   }
   PagingSize
+}
+    `;
+export const ProductVisibleElementsDataFragmentDoc = gql`
+    fragment ProductVisibleElementsData on ProductVisibleElements {
+  ListElements
 }
     `;
 export const TopHeaderContainerDataFragmentDoc = gql`
@@ -506,6 +567,7 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...ElementData
     ...BannerItemElementData
     ...ButtonElementData
+    ...CTAElementData
     ...CompanyData
     ...ContainerElementData
     ...ContentTextElementData
@@ -515,6 +577,7 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...FAQsSectionData
     ...HeadingElementData
     ...ImageBackgroundData
+    ...ImageElementData
     ...ImageItemElementData
     ...ImageTextItemElementData
     ...MegaMenuGroupBlockData
@@ -525,6 +588,7 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
     ...ParagraphElementData
     ...ProductCardElementData
     ...ProductCardListElementData
+    ...ProductVisibleElementsData
     ...SocialMediaBlockData
     ...SocialMediaBlocksData
     ...TopHeaderContainerData
@@ -580,6 +644,354 @@ export const ProductDetailExperienceDataFragmentDoc = gql`
 export const ProductListingEPageDataFragmentDoc = gql`
     fragment ProductListingEPageData on ProductListingEPage {
   ...ExperienceData
+}
+    `;
+export const PageSeoSettingsPropertyDataFragmentDoc = gql`
+    fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {
+  MetaTitle
+  MetaDescription
+  MetaKeywords
+  ThumbnailImage {
+    ...ReferenceData
+  }
+}
+    `;
+export const LandingPageDataFragmentDoc = gql`
+    fragment LandingPageData on LandingPage {
+  MainContentArea {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  SeoSettings {
+    ...PageSeoSettingsPropertyData
+  }
+}
+    `;
+export const ProductDetailDataFragmentDoc = gql`
+    fragment ProductDetailData on ProductDetail {
+  ProductHero {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  ProductVariants {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  Images {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  ProductFeatures {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  ProductTechSpecs {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  ProductDocuments {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  CrossSell {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  MarketingContent {
+    ...BlockData
+    ...BannerItemElementData
+    ...ButtonElementData
+    ...CTAElementData
+    ...CompanyData
+    ...ContainerElementData
+    ...ContentTextElementData
+    ...DictionaryData
+    ...DictionaryItemData
+    ...ExpandableTextData
+    ...FAQsSectionData
+    ...HeadingElementData
+    ...ImageBackgroundData
+    ...ImageElementData
+    ...ImageItemElementData
+    ...ImageTextItemElementData
+    ...MegaMenuGroupBlockData
+    ...NavigationMenuBlockData
+    ...NavigationMenuBlockFields
+    ...OfficeLocationData
+    ...PageSeoSettingsData
+    ...ParagraphElementData
+    ...ProductCardElementData
+    ...ProductCardListElementData
+    ...ProductVisibleElementsData
+    ...SocialMediaBlockData
+    ...SocialMediaBlocksData
+    ...TopHeaderContainerData
+    ...VideoElementData
+    ...WebFooterConfigrationBlockData
+    ...WebHeaderConfigrationBlockData
+    ...PDPCarouselElementData
+    ...PDPSpecificationsElementData
+    ...ProductCarouselElementData
+  }
+  SeoSettings {
+    ...PageSeoSettingsPropertyData
+  }
 }
     `;
 export const SectionDataFragmentDoc = gql`
@@ -676,6 +1088,7 @@ export const getContentByIdDocument = gql`
       ...PageData
       ...BannerItemElementData
       ...ButtonElementData
+      ...CTAElementData
       ...CompanyData
       ...ContainerElementData
       ...ContentTextElementData
@@ -685,6 +1098,7 @@ export const getContentByIdDocument = gql`
       ...FAQsSectionData
       ...HeadingElementData
       ...ImageBackgroundData
+      ...ImageElementData
       ...ImageItemElementData
       ...ImageTextItemElementData
       ...MegaMenuGroupBlockData
@@ -695,6 +1109,7 @@ export const getContentByIdDocument = gql`
       ...ParagraphElementData
       ...ProductCardElementData
       ...ProductCardListElementData
+      ...ProductVisibleElementsData
       ...SocialMediaBlockData
       ...SocialMediaBlocksData
       ...TopHeaderContainerData
@@ -707,6 +1122,8 @@ export const getContentByIdDocument = gql`
       ...BlankExperienceData
       ...ProductDetailExperienceData
       ...ProductListingEPageData
+      ...LandingPageData
+      ...ProductDetailData
       ...SectionData
     }
   }
@@ -719,6 +1136,7 @@ ${PageDataFragmentDoc}
 ${BannerItemElementDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${ButtonElementDataFragmentDoc}
+${CTAElementDataFragmentDoc}
 ${CompanyDataFragmentDoc}
 ${ContainerElementDataFragmentDoc}
 ${ContentTextElementDataFragmentDoc}
@@ -729,6 +1147,7 @@ ${ExpandableTextDataFragmentDoc}
 ${FAQsSectionDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageBackgroundDataFragmentDoc}
+${ImageElementDataFragmentDoc}
 ${ImageItemElementDataFragmentDoc}
 ${ImageTextItemElementDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
@@ -745,6 +1164,7 @@ ${PageSeoSettingsDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${ProductCardElementDataFragmentDoc}
 ${ProductCardListElementDataFragmentDoc}
+${ProductVisibleElementsDataFragmentDoc}
 ${TopHeaderContainerDataFragmentDoc}
 ${VideoElementDataFragmentDoc}
 ${WebFooterConfigrationBlockDataFragmentDoc}
@@ -759,6 +1179,9 @@ ${CompositionComponentNodeDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${ProductDetailExperienceDataFragmentDoc}
 ${ProductListingEPageDataFragmentDoc}
+${LandingPageDataFragmentDoc}
+${PageSeoSettingsPropertyDataFragmentDoc}
+${ProductDetailDataFragmentDoc}
 ${SectionDataFragmentDoc}`;
 export const getContentByPathDocument = gql`
     query getContentByPath($path: [String!]!, $locale: [Locales!], $siteId: String, $changeset: String = null) {
@@ -773,6 +1196,8 @@ export const getContentByPathDocument = gql`
       ...BlankExperienceData
       ...ProductDetailExperienceData
       ...ProductListingEPageData
+      ...LandingPageData
+      ...ProductDetailData
       ...SectionData
     }
   }
@@ -791,6 +1216,7 @@ ${IElementDataFragmentDoc}
 ${BannerItemElementDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
 ${ButtonElementDataFragmentDoc}
+${CTAElementDataFragmentDoc}
 ${CompanyDataFragmentDoc}
 ${ContainerElementDataFragmentDoc}
 ${ContentTextElementDataFragmentDoc}
@@ -801,6 +1227,7 @@ ${ExpandableTextDataFragmentDoc}
 ${FAQsSectionDataFragmentDoc}
 ${HeadingElementDataFragmentDoc}
 ${ImageBackgroundDataFragmentDoc}
+${ImageElementDataFragmentDoc}
 ${ImageItemElementDataFragmentDoc}
 ${ImageTextItemElementDataFragmentDoc}
 ${MegaMenuGroupBlockDataFragmentDoc}
@@ -816,6 +1243,7 @@ ${PageSeoSettingsDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${ProductCardElementDataFragmentDoc}
 ${ProductCardListElementDataFragmentDoc}
+${ProductVisibleElementsDataFragmentDoc}
 ${TopHeaderContainerDataFragmentDoc}
 ${VideoElementDataFragmentDoc}
 ${WebFooterConfigrationBlockDataFragmentDoc}
@@ -825,6 +1253,9 @@ ${PDPSpecificationsElementDataFragmentDoc}
 ${ProductCarouselElementDataFragmentDoc}
 ${ProductDetailExperienceDataFragmentDoc}
 ${ProductListingEPageDataFragmentDoc}
+${LandingPageDataFragmentDoc}
+${PageSeoSettingsPropertyDataFragmentDoc}
+${ProductDetailDataFragmentDoc}
 ${SectionDataFragmentDoc}`;
 export const getContentTypeDocument = gql`
     query getContentType($key: String!, $version: String, $locale: [Locales!], $path: String = "-", $domain: String) {

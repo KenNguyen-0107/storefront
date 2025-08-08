@@ -1,7 +1,5 @@
-"use client";
-import clsx from "clsx";
 import NextImage from "next/image";
-import { useMediaQuery } from "../../../hook/useMediaQuery";
+import { cn } from "../../../utils/utils";
 export interface ImageItemProps {
   src: string;
   srcMobile?: string;
@@ -17,6 +15,7 @@ export interface ImageItemProps {
   overlayColor?: string;
   overlayOpacity?: number;
   loading?: "lazy" | "eager";
+  isAspectRatio?: boolean;
   [key: string]: any;
 }
 const ImageItem = ({
@@ -34,23 +33,23 @@ const ImageItem = ({
   overlayColor,
   overlayOpacity,
   loading,
+  isAspectRatio = false,
   ...rest
 }: ImageItemProps) => {
   if (!src && !srcMobile) return null;
 
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const imageSrc = isMobile ? srcMobile : src;
-  const widhHeightStyle = isBackground
-    ? {
-        width: "100%",
-        height: "100%",
-      }
-    : isFullWidth
+  const widhHeightStyle = (width?: number, height?: number) =>
+    isBackground
       ? {
           width: "100%",
-          height: "auto",
+          height: "100%",
         }
-      : { width: "auto", height: "auto" };
+      : isFullWidth
+        ? {
+            width: "100%",
+            height: "auto",
+          }
+        : { width: width || "auto", height: height || "auto" };
   const overlayStyle = overlayColor
     ? {
         background: overlayColor || "transparent",
@@ -59,26 +58,81 @@ const ImageItem = ({
     : {};
   return (
     <div
-      className={clsx(
+      className={cn(
         "image-item-element",
         isBackground
           ? "absolute inset-0 w-full h-full overflow-hidden -z-1"
           : "relative",
-        isFullWidth && "w-full",
+        (isFullWidth || isAspectRatio) && "w-full",
         className,
       )}
       {...rest}
     >
-      <NextImage
-        src={imageSrc || ""}
-        alt={alt || ""}
-        width={width || widthMobile || 800}
-        height={height || heightMobile || 600}
-        loading={(loading as "lazy" | "eager") || "lazy"}
-        className={clsx("image-item__image object-cover", imageClasses)}
-        style={widhHeightStyle}
-        priority={loading === "eager"}
-      />
+      {isAspectRatio ? (
+        <>
+          {srcMobile && (
+            <NextImage
+              src={srcMobile || ""}
+              alt={alt || ""}
+              loading={(loading as "lazy" | "eager") || "lazy"}
+              className={cn(
+                "image-item__image object-cover",
+                imageClasses,
+                "md:hidden",
+              )}
+              fill
+              sizes="100vw"
+              priority={loading === "eager"}
+            />
+          )}
+          <NextImage
+            src={src || ""}
+            alt={alt || ""}
+            loading={(loading as "lazy" | "eager") || "lazy"}
+            className={cn(
+              "image-item__image object-cover",
+              imageClasses,
+              srcMobile ? "hidden md:block" : "",
+            )}
+            fill
+            sizes="100vw"
+            priority={loading === "eager"}
+          />
+        </>
+      ) : (
+        <>
+          {srcMobile && (
+            <NextImage
+              src={srcMobile || ""}
+              alt={alt || ""}
+              width={widthMobile || 800}
+              height={heightMobile || 600}
+              loading={(loading as "lazy" | "eager") || "lazy"}
+              className={cn(
+                "image-item__image object-cover",
+                imageClasses,
+                "md:hidden",
+              )}
+              style={widhHeightStyle(widthMobile, heightMobile)}
+              priority={loading === "eager"}
+            />
+          )}
+          <NextImage
+            src={src || ""}
+            alt={alt || ""}
+            width={width || 800}
+            height={height || 600}
+            loading={(loading as "lazy" | "eager") || "lazy"}
+            className={cn(
+              "image-item__image object-cover",
+              imageClasses,
+              srcMobile ? "hidden md:block" : "",
+            )}
+            style={widhHeightStyle(width, height)}
+            priority={loading === "eager"}
+          />
+        </>
+      )}
       {overlayColor && (
         <div
           className="image-item__overlay absolute inset-0 w-full h-full"
