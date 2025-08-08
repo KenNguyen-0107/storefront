@@ -4,6 +4,7 @@ export interface PriceWithCurrency {
   centAmount: number;
   currencyCode: string;
   currencySymbol?: string;
+  fractionDigits?: number;
 }
 
 export interface VariantWithPrice {
@@ -85,11 +86,12 @@ export function findLowestPriceFromModel<T extends VariantWithPriceModel>(
 
     // Check single price first
     if (variant.price?.value) {
-      const { centAmount, currencyCode } = variant.price.value;
+      const { centAmount, currencyCode, fractionDigits } = variant.price.value;
       variantPrice = {
         centAmount,
         currencyCode,
         currencySymbol: getCurrencySymbol(currencyCode),
+        fractionDigits,
       };
     }
     // If no single price, check prices array
@@ -101,11 +103,13 @@ export function findLowestPriceFromModel<T extends VariantWithPriceModel>(
           : lowest;
       });
 
-      const { centAmount, currencyCode } = lowestPriceFromArray.value;
+      const { centAmount, currencyCode, fractionDigits } =
+        lowestPriceFromArray.value;
       variantPrice = {
         centAmount,
         currencyCode,
         currencySymbol: getCurrencySymbol(currencyCode),
+        fractionDigits,
       };
     }
 

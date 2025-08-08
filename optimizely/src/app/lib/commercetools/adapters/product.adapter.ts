@@ -16,6 +16,17 @@ export class ProductAdapter
     private readonly defaultCurrency: string = "GBP",
   ) {}
 
+  adaptInPLP(product: Product): CommerceProduct {
+    const adaptedProduct = this.adapt(product);
+    return {
+      ...adaptedProduct,
+      description: product.masterData.current.attributesRaw?.find(
+        (attr: { name: string; value: unknown }) =>
+          attr.name === "product_short_desc",
+      )?.value as string | undefined,
+    };
+  }
+
   adapt(product: Product): CommerceProduct {
     const currentData = product.masterData.current;
     const variant = currentData.masterVariant;
@@ -62,7 +73,7 @@ export class ProductAdapter
       ),
       relatedProducts: currentData.attributesRaw
         ?.find((attr) => attr.name === "relatedproducts")
-        ?.referencedResourceSet.map((resource) => ({
+        ?.referencedResourceSet?.map((resource) => ({
           id: resource.id,
           slug: getLocalizedValue(resource.masterData.current.slug) || "",
           name: getLocalizedValue(resource.masterData.current.name) || "",

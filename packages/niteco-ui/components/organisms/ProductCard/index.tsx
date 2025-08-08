@@ -28,6 +28,7 @@ export interface ProductCardProps extends CommerceProduct, BlockData {
     centAmount: number;
     currencyCode: string;
     currencySymbol?: string;
+    fractionDigits?: number;
   };
   images?: Array<{
     url: string;
@@ -94,7 +95,21 @@ const ProductCard: React.FC<ProductCardProps1> = ({
 
   // Format price display
   const priceDisplay = price
-    ? `${price?.currencySymbol ?? price?.currencyCode}${price?.centAmount / 100}`
+    ? (() => {
+        const fd = (price.fractionDigits as number | undefined) ?? 2;
+        const amount = price.centAmount / Math.pow(10, fd);
+        try {
+          return new Intl.NumberFormat(undefined, {
+            style: "currency",
+            currency: price.currencyCode,
+            minimumFractionDigits: fd,
+            maximumFractionDigits: fd,
+          }).format(amount);
+        } catch (_e) {
+          const symbol = price.currencySymbol ?? price.currencyCode;
+          return `${symbol}${amount.toFixed(fd)}`;
+        }
+      })()
     : "";
   const variantUrl = slug && sku ? `/products/${slug}/${sku}` : "#";
   const productUrl = slug ? `/products/${slug}` : "#";

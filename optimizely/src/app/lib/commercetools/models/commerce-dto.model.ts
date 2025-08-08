@@ -2,6 +2,7 @@ export interface Money {
   centAmount: number;
   currencyCode: string;
   currencySymbol?: string;
+  fractionDigits?: number;
 }
 
 export interface CommerceProduct {

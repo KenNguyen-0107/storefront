@@ -11,6 +11,7 @@ export interface Price {
     value: Money;
   };
   country?: string;
+  fractionDigits?: number;
 }
 
 // DTOs

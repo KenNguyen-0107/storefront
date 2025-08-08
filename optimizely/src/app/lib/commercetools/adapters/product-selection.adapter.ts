@@ -54,6 +54,7 @@ export class ProductSelectionAdapter
             centAmount: variant.price.value.centAmount,
             currencyCode: variant.price.value.currencyCode,
             currencySymbol: getCurrencySymbol(variant.price.value.currencyCode),
+            fractionDigits: variant.price.value.fractionDigits,
           }
         : undefined,
       images: variant.images?.map((image) => ({

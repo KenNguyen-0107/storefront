@@ -112,6 +112,10 @@ export const GET_PRODUCTS = gql`
             metaTitle(locale: $locale)
             metaDescription(locale: $locale)
             metaKeywords(locale: $locale)
+            attributesRaw {
+              name
+              value
+            }
           }
         }
       }

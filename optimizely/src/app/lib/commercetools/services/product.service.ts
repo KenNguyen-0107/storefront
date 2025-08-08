@@ -70,7 +70,7 @@ class ProductService implements IService<Product, CommerceProduct> {
       return {
         success: true,
         data: products
-          .map((p) => this.productAdapter.adapt(p))
+          .map((p) => this.productAdapter.adaptInPLP(p))
           .filter((p) => p.price && p.price.centAmount > 0),
         error: null,
       };
