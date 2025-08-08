@@ -1,4 +1,39 @@
-import { LocalizedString } from "./product.model";
+import { LocalizedString, CategoryReference } from "./product.model";
+import { Image } from "./image.model";
+import { Price } from "./money.model";
+
+export interface ProductVariantAvailability {
+  noChannel: {
+    isOnStock: boolean;
+  };
+}
+
+export interface ProductVariant {
+  key: string;
+  sku: string;
+  price?: Price;
+  availability?: ProductVariantAvailability;
+  images?: Image[];
+  attributesRaw?: Array<{
+    name: string;
+    value: unknown;
+  }>;
+  prices?: Price[];
+}
+
+export interface ProductMasterData {
+  current: {
+    slug: string;
+    masterVariant: ProductVariant;
+    allVariants: ProductVariant[];
+    categories: CategoryReference[];
+  };
+}
+
+export interface ProductSelectionProduct {
+  id: string;
+  masterData: ProductMasterData;
+}
 
 export interface ProductVariantSelection {
   type: string;
@@ -10,21 +45,7 @@ export interface ProductVariantExclusion {
 }
 
 export interface ProductOfSelection {
-  productRef: {
-    id: string;
-    typeId: string;
-  };
-  product?: any; // Product type would be imported here
-  variantSelection?: ProductVariantSelection;
-  variantExclusion?: ProductVariantExclusion;
-}
-
-export interface ProductOfSelectionQueryResult {
-  offset: number;
-  count: number;
-  total: number;
-  exists: boolean;
-  results: ProductOfSelection[];
+  product: ProductSelectionProduct;
 }
 
 export enum ProductSelectionMode {
@@ -38,7 +59,13 @@ export interface ProductSelection {
   version: number;
   name?: LocalizedString;
   nameAllLocales: LocalizedString[];
-  productRefs: ProductOfSelectionQueryResult;
+  productRefs: {
+    results: ProductOfSelection[];
+    count: number;
+    total: number;
+    offset: number;
+    exists: boolean;
+  };
   productCount: number;
   custom?: Record<string, unknown>;
   mode: ProductSelectionMode;

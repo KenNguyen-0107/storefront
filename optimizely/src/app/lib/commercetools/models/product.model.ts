@@ -4,18 +4,10 @@ import { Image } from "@/app/lib/commercetools/models/image.model";
 // Value Objects
 export type LocalizedString = { [locale: string]: string };
 
-// Category reference for products
+// Category reference for products (matches GraphQL response)
 export interface CategoryReference {
   id: string;
   key?: string;
-  typeId: "category";
-}
-
-export interface Category {
-  id: string;
-  key?: string;
-  name?: LocalizedString;
-  slug?: LocalizedString;
 }
 
 // Product Filter Types
@@ -36,11 +28,17 @@ export interface ProductFilters {
 }
 
 export interface ProductVariant {
-  id: string;
+  id?: string;
   sku?: string;
   prices?: Price[];
+  price?: Price;
   images?: Image[];
   attributes?: ProductAttribute[];
+  availability?: {
+    noChannel?: {
+      isOnStock: boolean;
+    };
+  };
 }
 
 export interface ProductAttribute {
@@ -48,9 +46,24 @@ export interface ProductAttribute {
   value: unknown;
 }
 
+// Referenced product in attributesRaw
+export interface ReferencedProduct {
+  id: string;
+  masterData: {
+    current: {
+      slug: LocalizedString;
+      name: LocalizedString;
+      masterVariant: {
+        images: Image[];
+      };
+    };
+  };
+}
+
 export interface AttributeRaw {
   name: string;
-  referencedResourceSet: any[];
+  value: unknown;
+  referencedResourceSet: ReferencedProduct[];
 }
 
 export interface ProductData {
@@ -58,23 +71,17 @@ export interface ProductData {
   description?: LocalizedString;
   slug: LocalizedString;
   masterVariant: ProductVariant;
-  variants?: ProductVariant[];
-  categoriesRef?: CategoryReference[];
-  categories?: Category[];
+  allVariants?: ProductVariant[];
+  categories?: CategoryReference[];
   metaTitle?: LocalizedString;
-  metaTitleAllLocales?: Array<{ locale: string; value: string }>;
   metaDescription?: LocalizedString;
-  metaDescriptionAllLocales?: Array<{ locale: string; value: string }>;
   metaKeywords?: LocalizedString;
-  metaKeywordsAllLocales?: Array<{ locale: string; value: string }>;
   attributesRaw?: AttributeRaw[];
 }
 
 // Aggregate Root
 export interface Product {
   id: string;
-  key?: string;
-  version: number;
   masterData: {
     current: ProductData;
   };

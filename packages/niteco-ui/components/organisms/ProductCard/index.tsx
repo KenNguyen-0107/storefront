@@ -27,6 +27,7 @@ export interface ProductCardProps extends CommerceProduct, BlockData {
   price?: {
     centAmount: number;
     currencyCode: string;
+    currencySymbol?: string;
   };
   images?: Array<{
     url: string;
@@ -39,6 +40,7 @@ export interface ProductCardProps extends CommerceProduct, BlockData {
   }>;
   from?: string;
   cssClass?: string;
+  isInStock?: boolean;
   [x: string]: any;
 }
 
@@ -56,6 +58,7 @@ const ProductCard: React.FC<ProductCardProps1> = ({
   from,
   cssClass,
   categories,
+  isInStock,
 }) => {
   const [quantity, setQuantity] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
@@ -86,13 +89,13 @@ const ProductCard: React.FC<ProductCardProps1> = ({
   const stockId = `product-stock-${id}`;
 
   // Extract attributes
-  const isInStock = (attributes?.isInStock as boolean) ?? true;
   const originalPrice = attributes?.originalPrice as string;
   const saveText = attributes?.saveText as string;
 
   // Format price display
-  const priceDisplay =
-    price && price ? `${price?.currencyCode} ${price?.centAmount / 100}` : "";
+  const priceDisplay = price
+    ? `${price?.currencySymbol ?? price?.currencyCode}${price?.centAmount / 100}`
+    : "";
   const variantUrl = slug && sku ? `/products/${slug}/${sku}` : "#";
   const productUrl = slug ? `/products/${slug}` : "#";
   const placeholderImageSrc = placeholderImage.src;

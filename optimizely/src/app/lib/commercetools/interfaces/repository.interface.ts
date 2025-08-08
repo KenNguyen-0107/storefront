@@ -11,6 +11,7 @@ export interface SearchOptions extends Record<string, unknown> {
     direction: "asc" | "desc";
   };
   locale?: string;
+  currency?: string;
   where?: string;
 }
 
@@ -22,11 +23,15 @@ export interface SearchResult<T> {
 }
 
 export interface IRepository<T, K = string> {
-  findById(id: K): Promise<T | null>;
+  findById(id: K, locale?: string, currency?: string): Promise<T | null>;
   findAll(options?: SearchOptions): Promise<T[]>;
   search(options: SearchOptions): Promise<SearchResult<T>>;
   create(data: Partial<T>): Promise<T>;
   update(id: K, data: Partial<T>): Promise<T>;
   delete(id: K): Promise<void>;
-  findBySlug(slug: string, locale?: string): Promise<T | null>;
+  findBySlug(
+    slug: string,
+    locale?: string,
+    currency?: string,
+  ): Promise<T | null>;
 }

@@ -6,11 +6,15 @@ import {
 } from "@/app/lib/commercetools/models/commerce-dto.model";
 import { DomainError } from "@/app/lib/commercetools/models/error.model";
 import { Image } from "@/app/lib/commercetools/models/image.model";
+import { findLowestPriceFromModel } from "@/app/lib/commercetools/utils/price.utils";
 
 export class ProductAdapter
   implements IResponseAdapter<Product, CommerceProduct>
 {
-  constructor(private readonly defaultLocale: string = "en-GB") {}
+  constructor(
+    private readonly defaultLocale: string = "en-GB",
+    private readonly defaultCurrency: string = "GBP",
+  ) {}
 
   adapt(product: Product): CommerceProduct {
     const currentData = product.masterData.current;
@@ -25,13 +29,17 @@ export class ProductAdapter
       return field[this.defaultLocale] || Object.values(field)[0] || undefined;
     };
 
+    // Find the lowest price from all variants
+    const allVariants = currentData.allVariants || [variant];
+    const lowestPrice = findLowestPriceFromModel(allVariants);
+
     return {
       id: product.id,
       slug: getLocalizedValue(currentData.slug) || "",
       name: getLocalizedValue(currentData.name) || "",
       description: getLocalizedValue(currentData.description),
       sku: variant.sku,
-      price: variant.prices?.[0]?.value,
+      price: lowestPrice,
       images: variant.images?.map((img) => ({
         url: img.url,
         alt: img.label || "",
@@ -43,11 +51,8 @@ export class ProductAdapter
           key: cat.key!,
         })),
       metaTitle: getLocalizedValue(currentData.metaTitle),
-      metaTitleAllLocales: currentData.metaTitleAllLocales,
       metaDescription: getLocalizedValue(currentData.metaDescription),
-      metaDescriptionAllLocales: currentData.metaDescriptionAllLocales,
       metaKeywords: getLocalizedValue(currentData.metaKeywords),
-      metaKeywordsAllLocales: currentData.metaKeywordsAllLocales,
       attributes: currentData.attributesRaw?.reduce(
         (acc, attr) => {
           acc[attr.name] = attr.referencedResourceSet;
@@ -59,12 +64,16 @@ export class ProductAdapter
         ?.find((attr) => attr.name === "relatedproducts")
         ?.referencedResourceSet.map((resource) => ({
           id: resource.id,
-          slug: resource.masterData.current.slug,
-          name: resource.masterData.current.name,
+          slug: getLocalizedValue(resource.masterData.current.slug) || "",
+          name: getLocalizedValue(resource.masterData.current.name) || "",
           images: resource.masterData.current?.masterVariant?.images.map(
-            (img: Image) => img.url,
+            (img: Image) => ({
+              url: img.url,
+              alt: img.label || "",
+            }),
           ),
         })),
+      isInStock: variant.availability?.noChannel?.isOnStock ?? true,
     };
   }
 

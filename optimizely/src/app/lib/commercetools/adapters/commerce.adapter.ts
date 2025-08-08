@@ -43,10 +43,13 @@ export class CommerceAdapter
         ?.find((attr) => attr.name === "relatedproducts")
         ?.referencedResourceSet.map((resource) => ({
           id: resource.id,
-          slug: resource.masterData.current.slug,
-          name: resource.masterData.current.name,
+          slug: this.getLocalizedValue(resource.masterData.current.slug),
+          name: this.getLocalizedValue(resource.masterData.current.name),
           images: resource.masterData.current?.masterVariant?.images?.map(
-            (img: Image) => img.url,
+            (img: Image) => ({
+              url: img.url,
+              alt: img.label ?? img.alt ?? "",
+            }),
           ),
         })),
     };

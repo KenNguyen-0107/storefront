@@ -20,15 +20,24 @@ class ProductService implements IService<Product, CommerceProduct> {
   private readonly searchAdapter: SearchResultAdapter<Product, CommerceProduct>;
   private readonly repository: IRepository<Product>;
 
-  private constructor(defaultLocale: string = "en-GB") {
-    this.repository = getProductRepository(defaultLocale);
+  private constructor(
+    private readonly defaultLocale: string = "en-GB",
+    private readonly defaultCurrency: string = "GBP",
+  ) {
+    this.repository = getProductRepository(defaultLocale, defaultCurrency);
     this.productAdapter = new ProductAdapter(defaultLocale);
     this.searchAdapter = new SearchResultAdapter(this.productAdapter);
   }
 
-  public static getInstance(defaultLocale: string = "en-GB"): ProductService {
+  public static getInstance(
+    defaultLocale: string = "en-GB",
+    defaultCurrency: string = "GBP",
+  ): ProductService {
     if (!ProductService.instance) {
-      ProductService.instance = new ProductService(defaultLocale);
+      ProductService.instance = new ProductService(
+        defaultLocale,
+        defaultCurrency,
+      );
     }
     return ProductService.instance;
   }
@@ -60,7 +69,9 @@ class ProductService implements IService<Product, CommerceProduct> {
       const products = await this.repository.findAll(options);
       return {
         success: true,
-        data: products.map((p) => this.productAdapter.adapt(p)),
+        data: products
+          .map((p) => this.productAdapter.adapt(p))
+          .filter((p) => p.price && p.price.centAmount > 0),
         error: null,
       };
     } catch (error) {
@@ -187,8 +198,9 @@ class ProductService implements IService<Product, CommerceProduct> {
 // Export the getInstance method as the main function
 export function getProductService(
   defaultLocale: string = "en-GB",
+  defaultCurrency: string = "GBP",
 ): IService<Product, CommerceProduct> {
-  return ProductService.getInstance(defaultLocale);
+  return ProductService.getInstance(defaultLocale, defaultCurrency);
 }
 
 export { ProductService };

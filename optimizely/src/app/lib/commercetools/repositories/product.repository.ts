@@ -35,13 +35,22 @@ class ProductRepository implements IRepository<Product> {
   private readonly validator = createProductValidator();
   private readonly client: IGraphQLClient;
 
-  private constructor(private readonly defaultLocale: string = "en") {
+  private constructor(
+    private readonly defaultLocale: string = "en-GB",
+    private readonly defaultCurrency: string = "GBP",
+  ) {
     this.client = getGraphQLClient();
   }
 
-  public static getInstance(defaultLocale: string = "en"): ProductRepository {
+  public static getInstance(
+    defaultLocale: string = "en-GB",
+    defaultCurrency: string = "GBP",
+  ): ProductRepository {
     if (!ProductRepository.instance) {
-      ProductRepository.instance = new ProductRepository(defaultLocale);
+      ProductRepository.instance = new ProductRepository(
+        defaultLocale,
+        defaultCurrency,
+      );
     }
     return ProductRepository.instance;
   }
@@ -50,7 +59,7 @@ class ProductRepository implements IRepository<Product> {
     ProductRepository.instance = null as unknown as ProductRepository;
   }
 
-  async findById(id: string): Promise<Product | null> {
+  async findById(id: string, currency?: string): Promise<Product | null> {
     try {
       const response = await this.client.query<ProductResponse>(
         GET_PRODUCT_BY_ID,
@@ -79,7 +88,12 @@ class ProductRepository implements IRepository<Product> {
     options: SearchOptions = { pagination: { page: 1, perPage: 20 } },
   ): Promise<Product[]> {
     try {
-      const { filters, pagination, locale = this.defaultLocale } = options;
+      const {
+        filters,
+        pagination,
+        locale = this.defaultLocale,
+        currency,
+      } = options;
       const where = filters
         ? this.buildWhereClause(filters, locale)
         : undefined;
@@ -88,6 +102,7 @@ class ProductRepository implements IRepository<Product> {
         limit: pagination.perPage,
         offset: (pagination.page - 1) * pagination.perPage,
         locale,
+        currency: currency || this.defaultCurrency,
         where,
       });
 
@@ -101,53 +116,59 @@ class ProductRepository implements IRepository<Product> {
   async findBySlug(
     slug: string,
     locale: string = this.defaultLocale,
+    currency?: string,
   ): Promise<Product | null> {
     try {
       this.validator.validateSlug(slug);
 
-      const where = this.buildWhereClause({ slug: slug }, locale);
+      const where = this.buildWhereClause({ slug }, locale);
 
       const response = await this.client.query<ProductsResponse>(
         GET_PRODUCT_BY_SLUG,
         {
           locale,
+          currency: currency || this.defaultCurrency,
           where,
         },
       );
 
-      const product = response.products.results[0] || null;
-      if (!product) {
-        logger.warn("Product not found by slug", { slug, locale });
-        throw new ProductError(
-          `Product with slug ${slug} not found`,
-          ErrorCode.PRODUCT_NOT_FOUND,
-        );
+      if (!response.products.results.length) {
+        logger.warn("Product not found by slug", { slug });
+        return null;
       }
 
-      return product;
+      return response.products.results[0];
     } catch (error) {
-      logger.error("Error fetching product by slug", error as Error, {
-        slug,
-        locale,
-      });
+      logger.error("Error fetching product by slug", error as Error, { slug });
       throw createError(error);
     }
   }
 
   async search(options: SearchOptions): Promise<SearchResult<Product>> {
     try {
+      const {
+        filters,
+        pagination,
+        locale = this.defaultLocale,
+        currency,
+      } = options;
+      const where = filters
+        ? this.buildWhereClause(filters, locale)
+        : undefined;
+
       const response = await this.client.query<ProductsResponse>(GET_PRODUCTS, {
-        where: options.filters ? JSON.stringify(options.filters) : undefined,
-        limit: options.pagination.perPage,
-        offset: (options.pagination.page - 1) * options.pagination.perPage,
-        locale: options.locale || this.defaultLocale,
+        limit: pagination.perPage,
+        offset: (pagination.page - 1) * pagination.perPage,
+        locale,
+        currency: currency || this.defaultCurrency,
+        where,
       });
 
       return {
         items: response.products.results,
         total: response.products.total,
-        page: options.pagination.page,
-        perPage: options.pagination.perPage,
+        page: pagination.page,
+        perPage: pagination.perPage,
       };
     } catch (error) {
       logger.error("Error searching products", error as Error, { options });
@@ -278,8 +299,9 @@ class ProductRepository implements IRepository<Product> {
 // Export the getInstance method as the main function
 export function getProductRepository(
   defaultLocale: string = "en-GB",
+  defaultCurrency: string = "GBP",
 ): IRepository<Product> {
-  return ProductRepository.getInstance(defaultLocale);
+  return ProductRepository.getInstance(defaultLocale, defaultCurrency);
 }
 
 export { ProductRepository };

@@ -1,0 +1,80 @@
+{
+  "key": "PDPCarouselElement",
+  "displayName": "PDP Carousel Element",
+  "description": "Product Carousel Element",
+  "baseType": "component",
+  "sortOrder": 0,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [
+    "elementEnabled"
+  ],
+  "properties": {
+    "Heading": {
+      "type": "string",
+      "format": "html",
+      "displayName": "Heading",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": -100,
+      "editorSettings": {}
+    },
+    "CarouselSource": {
+      "type": "string",
+      "format": "selectOne",
+      "displayName": "Carousel Source",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "enum": {
+        "values": [
+          {
+            "displayName": "Related Products",
+            "value": "relatedproducts"
+          },
+          {
+            "displayName": "Variants",
+            "value": "variants"
+          }
+        ]
+      }
+    },
+    "VisibleElements": {
+      "type": "contentReference",
+      "displayName": "Visible Elements",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {},
+      "allowedTypes": [],
+      "restrictedTypes": []
+    },
+    "productsofView": {
+      "type": "integer",
+      "displayName": "Number Of Products To Display",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 30,
+      "editorSettings": {}
+    },
+    "PagingSize": {
+      "type": "integer",
+      "displayName": "PagingSize",
+      "description": "",
+      "localized": false,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 100,
+      "editorSettings": {}
+    }
+  }
+}

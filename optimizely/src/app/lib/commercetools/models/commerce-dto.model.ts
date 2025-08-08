@@ -1,6 +1,7 @@
 export interface Money {
   centAmount: number;
   currencyCode: string;
+  currencySymbol?: string;
 }
 
 export interface CommerceProduct {
@@ -19,6 +20,7 @@ export interface CommerceProduct {
     id: string;
     key: string;
   }>;
+  isInStock?: boolean;
   metaTitle?: string;
   metaTitleAllLocales?: Array<{ locale: string; value: string }>;
   metaDescription?: string;

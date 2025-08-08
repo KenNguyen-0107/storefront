@@ -1,0 +1,7 @@
+fragment PDPCarouselElementData on PDPCarouselElement {
+  Heading { json, html }
+  CarouselSource
+  VisibleElements { ...ReferenceData }
+  productsofView
+  PagingSize
+}

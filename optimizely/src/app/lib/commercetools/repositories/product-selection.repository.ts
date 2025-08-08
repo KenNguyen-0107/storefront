@@ -28,16 +28,21 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
   private static instance: ProductSelectionRepository;
   private readonly client: IGraphQLClient;
 
-  private constructor(private readonly defaultLocale: string = "en") {
+  private constructor(
+    private readonly defaultLocale: string = "en-GB",
+    private readonly defaultCurrency: string = "GBP",
+  ) {
     this.client = getGraphQLClient();
   }
 
   public static getInstance(
     defaultLocale: string = "en",
+    defaultCurrency: string = "USD",
   ): ProductSelectionRepository {
     if (!ProductSelectionRepository.instance) {
       ProductSelectionRepository.instance = new ProductSelectionRepository(
         defaultLocale,
+        defaultCurrency,
       );
     }
     return ProductSelectionRepository.instance;
@@ -48,15 +53,18 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
       null as unknown as ProductSelectionRepository;
   }
 
-  async findById(id: string): Promise<ProductSelection | null> {
+  async findById(
+    id: string,
+    locale?: string,
+    currency?: string,
+  ): Promise<ProductSelection | null> {
     try {
       const response = await this.client.query<ProductSelectionResponse>(
         GET_PRODUCT_SELECTION_BY_ID,
         {
           productSelectionId: id,
-          locale: this.defaultLocale,
-          limit: 20,
-          offset: 0,
+          locale: locale || this.defaultLocale,
+          currency: currency || this.defaultCurrency,
         },
       );
 
@@ -81,7 +89,7 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
     options: SearchOptions = { pagination: { page: 1, perPage: 20 } },
   ): Promise<ProductSelection[]> {
     try {
-      const { filters, pagination, sort } = options;
+      const { filters, pagination, sort, currency, locale } = options;
       const where = filters ? this.buildWhereClause(filters) : undefined;
       const sortArray = sort ? [`${sort.field} ${sort.direction}`] : undefined;
 
@@ -90,7 +98,8 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
         {
           limit: pagination.perPage,
           offset: (pagination.page - 1) * pagination.perPage,
-          locale: options.locale || this.defaultLocale,
+          locale: locale || this.defaultLocale,
+          currency: currency || this.defaultCurrency,
           where,
           sort: sortArray,
         },
@@ -110,6 +119,7 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
   async findBySlug(
     slug: string,
     locale?: string,
+    currency?: string,
   ): Promise<ProductSelection | null> {
     try {
       // For ProductSelection, we'll use the key as slug since ProductSelection doesn't have a slug field
@@ -118,8 +128,7 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
         {
           productSelectionKey: slug,
           locale: locale || this.defaultLocale,
-          limit: 20,
-          offset: 0,
+          currency: currency || this.defaultCurrency,
         },
       );
 
@@ -141,7 +150,7 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
     options: SearchOptions,
   ): Promise<SearchResult<ProductSelection>> {
     try {
-      const { filters, pagination, sort } = options;
+      const { filters, pagination, sort, currency, locale } = options;
       const where = filters ? this.buildWhereClause(filters) : undefined;
       const sortArray = sort ? [`${sort.field} ${sort.direction}`] : undefined;
 
@@ -150,7 +159,8 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
         {
           limit: pagination.perPage,
           offset: (pagination.page - 1) * pagination.perPage,
-          locale: options.locale || this.defaultLocale,
+          locale: locale || this.defaultLocale,
+          currency: currency || this.defaultCurrency,
           where,
           sort: sortArray,
         },
@@ -274,7 +284,8 @@ class ProductSelectionRepository implements IRepository<ProductSelection> {
 }
 
 export function getProductSelectionRepository(
-  defaultLocale: string = "en",
+  defaultLocale: string = "en-GB",
+  defaultCurrency: string = "GBP",
 ): IRepository<ProductSelection> {
-  return ProductSelectionRepository.getInstance(defaultLocale);
+  return ProductSelectionRepository.getInstance(defaultLocale, defaultCurrency);
 }

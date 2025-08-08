@@ -69,8 +69,10 @@ export const ProductCarouselElementComponent: CmsComponent<
     if (!data.CarouselSource) {
       error = "CarouselSource is required";
     } else {
-      const service: IProductSelectionService =
-        getProductSelectionService("en-GB");
+      const service: IProductSelectionService = getProductSelectionService(
+        "en-GB",
+        "GBP",
+      );
 
       // If we have a CategoryID, use the category filter method
       if (data.CategoryID) {
@@ -82,8 +84,8 @@ export const ProductCarouselElementComponent: CmsComponent<
         if (result.success && result.data) {
           // Apply pagination if specified
           let filteredProducts = result.data.filteredProducts;
-          if (data.productsofView && data.productsofView > 0) {
-            filteredProducts = filteredProducts.slice(0, data.productsofView);
+          if (data.PagingSize && data.PagingSize > 0) {
+            filteredProducts = filteredProducts.slice(0, data.PagingSize);
           }
           products = filteredProducts;
           productCount = result.data.totalFiltered;
@@ -99,8 +101,8 @@ export const ProductCarouselElementComponent: CmsComponent<
         if (result.success && result.data) {
           // Apply pagination if specified
           let allProducts = result.data;
-          if (data.productsofView && data.productsofView > 0) {
-            allProducts = allProducts.slice(0, data.productsofView);
+          if (data.PagingSize && data.PagingSize > 0) {
+            allProducts = allProducts.slice(0, data.PagingSize);
           }
           products = allProducts;
           productCount = allProducts.length;
@@ -118,26 +120,6 @@ export const ProductCarouselElementComponent: CmsComponent<
       {/* Products Display */}
       {!error && products.length > 0 && (
         <div className="mt-4">
-          {/* <div className="text-sm text-red mb-2">
-            Found {products.length} products
-            {data.CategoryID && ` in category: ${data.CategoryID}`}
-            {data.productsofView &&
-              data.productsofView > 0 &&
-              ` (showing ${products.length} of ${productCount})`}
-          </div> */}
-
-          {/* Display component data if available */}
-          {/* {Object.getOwnPropertyNames(data).length > 0 && (
-            <div className="mt-4">
-              <div className="text-sm font-semibold text-gray-700 mb-2">
-                Component Data:
-              </div>
-              <pre className="w-full overflow-x-auto font-mono text-xs bg-slate-200 p-2 rounded-sm border border-solid border-slate-900 text-slate-900">
-                {JSON.stringify(data, undefined, 2)}
-              </pre>
-            </div>
-          )} */}
-
           {/* Display products data as JSON */}
           <div className="mt-4">
             <div className="text-sm font-semibold text-gray-700 mb-2">
@@ -151,7 +133,7 @@ export const ProductCarouselElementComponent: CmsComponent<
                   displayed: products.length,
                   CategoryID: data.CategoryID,
                   carouselSource: data.CarouselSource,
-                  productsOfView: data.productsofView,
+                  pagingSize: data.PagingSize,
                   timestamp: new Date().toISOString(),
                   success: true,
                 },

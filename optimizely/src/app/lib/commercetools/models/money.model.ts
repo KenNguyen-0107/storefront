@@ -2,10 +2,14 @@
 export interface Money {
   centAmount: number;
   currencyCode: string;
+  fractionDigits: number;
 }
 
 export interface Price {
   value: Money;
+  discounted?: {
+    value: Money;
+  };
   country?: string;
 }
 

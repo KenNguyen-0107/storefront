@@ -40,7 +40,7 @@ export const ProductCardListElementComponent: CmsComponent<
   }
 
   try {
-    const productService = getProductService("en-GB");
+    const productService = getProductService("en-GB", "GBP");
     const result = await productService.getAll({
       pagination: {
         page: 1,
@@ -50,6 +50,7 @@ export const ProductCardListElementComponent: CmsComponent<
         categoryId: categoryId,
       },
       locale: "en-GB",
+      currency: "GBP",
     });
 
     if (result.success && result.data) {
@@ -67,24 +68,8 @@ export const ProductCardListElementComponent: CmsComponent<
       {/* Products Display */}
       {!error && products.length > 0 && (
         <div className="mt-4">
-          {/* <div className="text-sm text-red mb-2">
-            Found {products.length} products for category: {categoryId}
-          </div> */}
-
-          {/* Display component data if available */}
-          {/* {Object.getOwnPropertyNames(data).length > 0 && (
-            <div className="mt-4">
-              <div className="text-sm font-semibold text-gray-700 mb-2">
-                Component Data:
-              </div>
-              <pre className="w-full overflow-x-auto font-mono text-xs bg-slate-200 p-2 rounded-sm border border-solid border-slate-900 text-slate-900">
-                {JSON.stringify(data, undefined, 2)}
-              </pre>
-            </div>
-          )} */}
-
           {/* Display products data as JSON */}
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <div className="text-sm font-semibold text-gray-700 mb-2">
               Products Data (JSON):
             </div>
@@ -103,19 +88,12 @@ export const ProductCardListElementComponent: CmsComponent<
                 2,
               )}
             </pre>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {products &&
               products.length > 0 &&
               products.map((product: ProductCardProps) => (
-                // <ProductCard
-                //   mobileHeight={179}
-                //   height={264}
-                //   key={product.id}
-                //   {...product}
-                //   from="card-list"
-                // />
                 <ProductCardWrapper
                   mobileHeight={179}
                   height={264}

@@ -8,6 +8,5 @@ fragment ProductCarouselElementData on ProductCarouselElement {
   VisibleElements {
     ...ReferenceData
   }
-  productsofView
   PagingSize
 }

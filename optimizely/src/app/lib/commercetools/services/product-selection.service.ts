@@ -3,7 +3,10 @@ import {
   SearchOptions,
   SearchResult,
 } from "@/app/lib/commercetools/interfaces/repository.interface";
-import { ProductSelection } from "@/app/lib/commercetools/models/product-selection.model";
+import {
+  ProductSelection,
+  ProductSelectionProduct,
+} from "@/app/lib/commercetools/models/product-selection.model";
 import {
   CommerceResponse,
   CommerceProduct,
@@ -15,26 +18,34 @@ import {
   IProductSelectionService,
   ProductSelectionWithFilteredProducts,
 } from "@/app/lib/commercetools/interfaces/product-selection-service.interface";
-import { ProductAdapter } from "../adapters/product.adapter";
+import { ProductSelectionAdapter } from "@/app/lib/commercetools/adapters/product-selection.adapter";
 
 class ProductSelectionService implements IProductSelectionService {
   private static instance: ProductSelectionService;
   private readonly repository: IRepository<ProductSelection>;
   private readonly productService: ReturnType<typeof getProductService>;
-  private readonly productAdapter: ProductAdapter;
+  private readonly productSelectionAdapter: ProductSelectionAdapter;
 
-  private constructor(defaultLocale: string = "en") {
-    this.repository = getProductSelectionRepository(defaultLocale);
+  private constructor(
+    defaultLocale: string = "en",
+    defaultCurrency: string = "USD",
+  ) {
+    this.repository = getProductSelectionRepository(
+      defaultLocale,
+      defaultCurrency,
+    );
     this.productService = getProductService(defaultLocale);
-    this.productAdapter = new ProductAdapter(defaultLocale);
+    this.productSelectionAdapter = new ProductSelectionAdapter(defaultLocale);
   }
 
   public static getInstance(
     defaultLocale: string = "en",
+    defaultCurrency: string = "USD",
   ): ProductSelectionService {
     if (!ProductSelectionService.instance) {
       ProductSelectionService.instance = new ProductSelectionService(
         defaultLocale,
+        defaultCurrency,
       );
     }
     return ProductSelectionService.instance;
@@ -47,9 +58,10 @@ class ProductSelectionService implements IProductSelectionService {
 
   async getById(
     id: string,
+    currency?: string,
   ): Promise<CommerceResponse<ProductSelection | null>> {
     try {
-      const productSelection = await this.repository.findById(id);
+      const productSelection = await this.repository.findById(id, currency);
       return productSelection
         ? {
             success: true,
@@ -197,15 +209,23 @@ class ProductSelectionService implements IProductSelectionService {
    * Retrieves a product selection by key and filters products by categoryId
    * @param key - The product selection key
    * @param categoryId - The category ID to filter products by
+   * @param locale - Optional locale for the query
+   * @param currency - Optional currency for the query
    * @returns Promise<CommerceResponse<ProductSelectionWithFilteredProducts>>
    */
   async getProductSelectionByKeyWithCategoryFilter(
     key: string,
     categoryId: string,
+    locale?: string,
+    currency?: string,
   ): Promise<CommerceResponse<ProductSelectionWithFilteredProducts>> {
     try {
       // Get the product selection by key
-      const productSelection = await this.repository.findBySlug(key);
+      const productSelection = await this.repository.findBySlug(
+        key,
+        locale,
+        currency,
+      );
 
       if (!productSelection) {
         return {
@@ -218,13 +238,9 @@ class ProductSelectionService implements IProductSelectionService {
         };
       }
 
-      // Get all products in the selection
       const productRefs = productSelection.productRefs?.results || [];
-      const productIds = productRefs.map(
-        (productRef) => productRef.productRef.id,
-      );
-
-      if (productIds.length === 0) {
+      if (productRefs.length === 0) {
+        console.log("No products in product selection");
         return {
           success: true,
           data: {
@@ -236,24 +252,29 @@ class ProductSelectionService implements IProductSelectionService {
         };
       }
 
+      // Get all products in the selection
+
       // Get products by IDs
       const productsResponse = productRefs.map((productRef) => {
         const product = productRef.product;
-        return this.productAdapter.adaptSuccess(product);
+        if (this.productBelongsToCategory(product, categoryId)) {
+          return this.productSelectionAdapter.adaptVariantsSuccess(product);
+        } else {
+          return this.productSelectionAdapter.adaptVariantsError(
+            createError("Product does not belong to category"),
+            [],
+          );
+        }
       });
 
-      // Filter products by categoryId and extract successful responses
       const filteredProducts: CommerceProduct[] = [];
 
       for (const productResponse of productsResponse) {
         if (productResponse.success && productResponse.data) {
-          const product = productResponse.data;
-
-          // Check if the product belongs to the specified category
-          // This assumes the product has a categories field or similar
-          // You may need to adjust this logic based on your actual product structure
-          if (this.productBelongsToCategory(product, categoryId)) {
-            filteredProducts.push(product);
+          for (const product of productResponse.data) {
+            if (product.price && product.price.centAmount > 0) {
+              filteredProducts.push(product);
+            }
           }
         }
       }
@@ -288,11 +309,13 @@ class ProductSelectionService implements IProductSelectionService {
    * @returns boolean
    */
   private productBelongsToCategory(
-    product: CommerceProduct,
+    product: ProductSelectionProduct,
     categoryId: string,
   ): boolean {
-    if (product.categories) {
-      const category = product.categories.find((cat) => cat.id === categoryId);
+    if (product.masterData.current.categories) {
+      const category = product.masterData.current.categories.find(
+        (cat) => cat.id === categoryId,
+      );
       if (category) {
         return true;
       }
@@ -304,13 +327,21 @@ class ProductSelectionService implements IProductSelectionService {
   /**
    * Retrieves a product selection by key
    * @param key - The product selection key
+   * @param locale - Optional locale for the query
+   * @param currency - Optional currency for the query
    * @returns Promise<CommerceResponse<ProductSelection | null>>
    */
   async getByKey(
     key: string,
+    locale?: string,
+    currency?: string,
   ): Promise<CommerceResponse<ProductSelection | null>> {
     try {
-      const productSelection = await this.repository.findBySlug(key);
+      const productSelection = await this.repository.findBySlug(
+        key,
+        locale,
+        currency,
+      );
       return productSelection
         ? {
             success: true,
@@ -338,13 +369,21 @@ class ProductSelectionService implements IProductSelectionService {
   /**
    * Gets all products in a product selection without filtering
    * @param key - The product selection key
+   * @param locale - Optional locale for the query
+   * @param currency - Optional currency for the query
    * @returns Promise<CommerceResponse<CommerceProduct[]>> - Array of products in the selection
    */
   async getProductsInSelection(
     key: string,
+    locale?: string,
+    currency?: string,
   ): Promise<CommerceResponse<CommerceProduct[]>> {
     try {
-      const productSelection = await this.repository.findBySlug(key);
+      const productSelection = await this.repository.findBySlug(
+        key,
+        locale,
+        currency,
+      );
 
       if (!productSelection) {
         return {
@@ -358,11 +397,7 @@ class ProductSelectionService implements IProductSelectionService {
       }
 
       const productRefs = productSelection.productRefs?.results || [];
-      const productIds = productRefs.map(
-        (productRef) => productRef.productRef.id,
-      );
-
-      if (productIds.length === 0) {
+      if (productRefs.length === 0) {
         return {
           success: true,
           data: [],
@@ -370,9 +405,12 @@ class ProductSelectionService implements IProductSelectionService {
         };
       }
 
-      const productsResponse = await Promise.all(
-        productIds.map((id) => this.productService.getById(id)),
-      );
+      const productsResponse = productRefs.map((productRef) => {
+        const product = productRef.product;
+        return this.productSelectionAdapter.adaptSuccess(
+          product as ProductSelectionProduct,
+        );
+      });
 
       const products: CommerceProduct[] = [];
       for (const productResponse of productsResponse) {
@@ -403,14 +441,22 @@ class ProductSelectionService implements IProductSelectionService {
    * Filters products by multiple category IDs
    * @param key - The product selection key
    * @param categoryIds - Array of category IDs to filter by
+   * @param locale - Optional locale for the query
+   * @param currency - Optional currency for the query
    * @returns Promise<CommerceResponse<ProductSelectionWithFilteredProducts>>
    */
   async getProductSelectionByKeyWithMultipleCategoryFilter(
     key: string,
     categoryIds: string[],
+    locale?: string,
+    currency?: string,
   ): Promise<CommerceResponse<ProductSelectionWithFilteredProducts>> {
     try {
-      const productSelection = await this.repository.findBySlug(key);
+      const productSelection = await this.repository.findBySlug(
+        key,
+        locale,
+        currency,
+      );
 
       if (!productSelection) {
         return {
@@ -424,11 +470,7 @@ class ProductSelectionService implements IProductSelectionService {
       }
 
       const productRefs = productSelection.productRefs?.results || [];
-      const productIds = productRefs.map(
-        (productRef) => productRef.productRef.id,
-      );
-
-      if (productIds.length === 0) {
+      if (productRefs.length === 0) {
         return {
           success: true,
           data: {
@@ -440,19 +482,28 @@ class ProductSelectionService implements IProductSelectionService {
         };
       }
 
-      const productsResponse = await Promise.all(
-        productIds.map((id) => this.productService.getById(id)),
-      );
+      const productsResponse = productRefs.map((productRef) => {
+        const product = productRef.product;
+        if (this.productBelongsToAnyCategory(product, categoryIds)) {
+          return this.productSelectionAdapter.adaptVariantsSuccess(
+            product as ProductSelectionProduct,
+          );
+        } else {
+          return this.productSelectionAdapter.adaptVariantsError(
+            createError("Product does not belong to category"),
+            [],
+          );
+        }
+      });
 
       const filteredProducts: CommerceProduct[] = [];
 
       for (const productResponse of productsResponse) {
         if (productResponse.success && productResponse.data) {
-          const product = productResponse.data;
-
-          // Check if the product belongs to any of the specified categories
-          if (this.productBelongsToAnyCategory(product, categoryIds)) {
-            filteredProducts.push(product);
+          for (const product of productResponse.data) {
+            if (product.price && product.price.centAmount > 0) {
+              filteredProducts.push(product);
+            }
           }
         }
       }
@@ -516,7 +567,7 @@ class ProductSelectionService implements IProductSelectionService {
    * @returns boolean
    */
   private productBelongsToAnyCategory(
-    product: CommerceProduct,
+    product: ProductSelectionProduct,
     categoryIds: string[],
   ): boolean {
     return categoryIds.some((categoryId) =>
@@ -527,8 +578,9 @@ class ProductSelectionService implements IProductSelectionService {
 
 export function getProductSelectionService(
   defaultLocale: string = "en",
+  defaultCurrency: string = "USD",
 ): ProductSelectionService {
-  return ProductSelectionService.getInstance(defaultLocale);
+  return ProductSelectionService.getInstance(defaultLocale, defaultCurrency);
 }
 
 export { ProductSelectionService };
